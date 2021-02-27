@@ -3427,7 +3427,7 @@ section {
 .slides-nav-dots {
   position: fixed;
   top: 7vw;
-  left: 3vw;
+  left: 2vw;
   z-index: 6;
   /* width: 1vw; */
   max-width: 1vw;
@@ -3440,7 +3440,7 @@ section {
 }
 
 .slides-nav-dots.active {
-  left: 3vw;
+  left: 2vw;
 }
 
 .slides-nav-dot {
@@ -3761,12 +3761,13 @@ line-height: 18px;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    left: -10vw;
-    padding-left: 3vw;
+    left: -10px;
+    padding-left: 15vw;
     width: 10vw;
+    opacity: 0;
   }
   .slides-nav-dots.active {
-    left: 0;
+    left: -25px;
   }
   .slides-nav-dot {
     width: 8px;
