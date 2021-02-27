@@ -17,7 +17,7 @@ $(document).ready(function () {
     }
   });
   // Lazy
-  // $(".lazy").lazy();
+  $(".lazy").lazy();
 
   // Styles Select
   $("select").niceSelect();
