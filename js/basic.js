@@ -403,6 +403,10 @@ $(document).ready(function () {
 
   $("[name=phone]").mask("+9 (999) 999-9999");
 
+
+
+
+
   $(".phone-input").keydown(function (e) {
     if (e.target.selectionStart == 1) {
       if (e.key == "7" || e.key == "8") {
@@ -413,7 +417,15 @@ $(document).ready(function () {
     }
   });
 
-
+  $(".phone-input").keyup(function (e) {
+    if (e.target.value[1] === "8") {
+      const strArr = e.target.value.split("")
+      strArr[1] = "7"
+      e.target.value = strArr.join("")
+  
+      e.target.dispatchEvent(new Event("input"))
+    }
+  });
 
   $(".phone-input").blur(function () {
     $("[name=phone]").mask("+9 (999) 999-9999");
