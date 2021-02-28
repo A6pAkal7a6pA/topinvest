@@ -367,6 +367,7 @@ $(document).ready(function () {
         $.fn.fullpage.setAllowScrolling(true);
       }
     } else {
+      $(".slides-nav-menu").removeClass("active");
       $("body").addClass("main-menu_open");
       if (document.querySelector(".fullpage-wrapper")) {
         $.fn.fullpage.setAllowScrolling(false);
@@ -375,6 +376,7 @@ $(document).ready(function () {
     }
   });
   $(".main-menu_close").click(function () {
+
     $("body").removeClass("main-menu_open");
     if (document.querySelector(".fullpage-wrapper")) {
       $.fn.fullpage.setAllowScrolling(true);
@@ -422,7 +424,7 @@ $(document).ready(function () {
       const strArr = e.target.value.split("")
       strArr[1] = "7"
       e.target.value = strArr.join("")
-  
+
       e.target.dispatchEvent(new Event("input"))
     }
   });
@@ -445,6 +447,7 @@ $(document).ready(function () {
         step: calc.data("step"),
         slide: function (event, ui) {
           $(this).next().find(".template4-ui-slider").html(ui.value);
+          console.log($(this).next().find(".template4-ui-slider").html(ui.value));
           $(this)
             .next()
             .find(".template4-ui-slider-amount-result")
@@ -509,6 +512,7 @@ $(document).ready(function () {
     changeData();
   });
   function changeData() {
+
     var calcAmount = $(".template4-ui-slider-amount").text();
     var calcRate = $(".template4-ui-slider-rate").text();
     var calcTerm = $(".template4-ui-slider-term").text();
@@ -524,6 +528,7 @@ $(document).ready(function () {
     var payment1Result = payment1.toLocaleString();
     var payment2 = Math.trunc(calcAmount * k);
     var payment2Result = payment2.toLocaleString();
+
     if (calcPayment == "1") {
       $(".template4-calc_result-numb").text(payment1Result);
     } else if (calcPayment == "2") {
@@ -986,7 +991,7 @@ $(document).ready(function () {
     "investor",
     "contacts",
   ];
-  for (let i = 1; i < sectionsCount; i++) {
+  for (let i = 0; i < sectionsCount; i++) {
     $("#myMenu")
       .find("ul")
       .append(
@@ -999,19 +1004,17 @@ $(document).ready(function () {
   $(".slides-nav-dots").click(function () {
     $(".slides-nav-dots").toggleClass("active");
     $(".slides-nav-menu").toggleClass("active");
-    if (!$(".slides-nav-menu").hasClass("active")) {
+    if ($(".slides-nav-menu").hasClass("active")) {
       // console.log("hasnt");
       // $(".slides-nav-dots").removeClass("active");
       // $(".slides-nav-menu").addClass("active");
       fullpage_api.setAllowScrolling(true);
-
+      $("body").removeClass("main-menu_open");
     } else {
       // console.log("has");
       // $(".slides-nav-menu").removeClass("active");
       // $(".slides-nav-dots").addClass("active");
       fullpage_api.setAllowScrolling(false);
-
-      $("body").removeClass("main-menu_open");
     }
   });
 
@@ -1133,10 +1136,13 @@ $(document).ready(function () {
   }
 
   function noSpaceInNum(str) {
+    console.log("str" + str);
     return str.replace(/\D+/g, "");
+
   }
 
   function digitsInTheNumber(num) {
+
     let StringNum = String(num);
     let numLength = String(num).length;
     let firstNums = numLength % 3;
@@ -1161,6 +1167,7 @@ $(document).ready(function () {
   document.getElementById(
     "template4-ui-slider-amount-result"
   ).onkeypress = function (event) {
+
     thisInput = this;
     if (
       event.key == 1 ||
@@ -1175,6 +1182,7 @@ $(document).ready(function () {
       event.key == 0
     ) {
       setTimeout(function () {
+
         let inputVal = event.target.value;
         let count;
         let maxCount = document
@@ -1184,6 +1192,7 @@ $(document).ready(function () {
           .querySelector(".template4-ui-slider-amount")
           .getAttribute("data-min");
         count = noSpaceInNum(inputVal);
+        console.log("count: " + count);
         let percent = (count / maxCount) * 100;
         if (Number(noSpaceInNum(inputVal)) <= minCount) {
           thisInput.parentNode.parentNode.querySelector(
@@ -1195,6 +1204,94 @@ $(document).ready(function () {
           thisInput.parentNode.classList.add("minCount");
           thisInput.parentNode.classList.remove("maxCount");
         } else if (Number(noSpaceInNum(inputVal)) >= maxCount) {
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-handle"
+          ).style.left = 100 + "%";
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-range"
+          ).style.width = 100 + "%";
+          thisInput.parentNode.classList.add("maxCount");
+          thisInput.parentNode.classList.remove("minCount");
+        } else {
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-handle"
+          ).style.left = percent + "%";
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-range"
+          ).style.width = percent + "%";
+          thisInput.parentNode.classList.remove("maxCount");
+          thisInput.parentNode.classList.remove("minCount");
+        }
+        document
+          .querySelector(".template4-ui-slider-amount")
+          .setAttribute("data-value", count);
+        let resultNum = document
+          .querySelector(".template4-ui-slider-amount")
+          .getAttribute("data-value");
+        event.target.value = digitsInTheNumber(resultNum);
+        document.querySelector(
+          ".template4-ui-slider-amount"
+        ).innerHTML = noSpaceInNum(event.target.value);
+      }, 100);
+    } else {
+      return false;
+    }
+  };
+
+  document.getElementById("template4-ui-slider-amount-result-check").addEventListener("input", function () {
+    pr = document.getElementById("template4-ui-slider-amount-result-check").value;
+    tmp1 = digitsInTheNumber(pr);
+    tmp = noSpaceInNum(tmp1)
+
+    document.getElementById("template4-ui-slider-amount-result").value = tmp;
+    document.getElementById("template4-ui-slider-amount-result").parentElement.querySelector("span").dataset.value = tmp;
+    document.getElementById("template4-ui-slider-amount-result").dispatchEvent(new Event("blur", { bubbles: true }));
+    document.getElementById("template4-ui-slider-amount-result").dispatchEvent(new KeyboardEvent("keypress", { key: 1 }));
+  });
+
+  document.getElementById(
+    "template4-ui-slider-amount-result-check"
+  ).onkeypress = function (event) {
+    console.log(event.target.value);
+    thisInput = this;
+    if (
+      event.key == 1 ||
+      event.key == 2 ||
+      event.key == 3 ||
+      event.key == 4 ||
+      event.key == 5 ||
+      event.key == 6 ||
+      event.key == 7 ||
+      event.key == 8 ||
+      event.key == 9 ||
+      event.key == 0
+    ) {
+      
+      setTimeout(function () {
+
+        let inputVal = event.target.value;
+        console.log("==>" + inputVal)
+        let count;
+        let maxCount = document
+          .querySelector(".template4-ui-slider-amount")
+          .getAttribute("data-max");
+        let minCount = document
+          .querySelector(".template4-ui-slider-amount")
+          .getAttribute("data-min");
+        count = noSpaceInNum(inputVal);
+        let percent = (count / maxCount) * 100;
+        if (Number(noSpaceInNum(inputVal)) <= minCount) {
+          console.log("Number(noSpaceInNum(inputVal)) <= minCount");
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-handle"
+          ).style.left = 0 + "%";
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-range"
+          ).style.width = 0 + "%";
+          thisInput.parentNode.classList.add("minCount");
+          thisInput.parentNode.classList.remove("maxCount");
+        } else if (Number(noSpaceInNum(inputVal)) >= maxCount) {
+          console.log("Number(noSpaceInNum(inputVal)) >= maxCount");
           thisInput.parentNode.parentNode.querySelector(
             ".ui-slider .ui-slider-handle"
           ).style.left = 100 + "%";
@@ -1302,7 +1399,9 @@ $(document).ready(function () {
       changeData2();
       return false;
     }
+
     thisInput = this;
+
     if (
       event.key == 1 ||
       event.key == 2 ||
@@ -1360,6 +1459,7 @@ $(document).ready(function () {
         let resultNum = document
           .querySelector(".template4-ui-slider-amount")
           .getAttribute("data-value");
+        console.log(resultNum);
         event.target.value = digitsInTheNumber(resultNum);
         document.querySelector(
           ".template4-ui-slider-amount"
@@ -1373,6 +1473,7 @@ $(document).ready(function () {
   document.getElementById(
     "template4-ui-slider-rate-result"
   ).onkeypress = function (event) {
+
     if (event.key == "Enter") {
       let termValue = document.getElementById("template4-ui-slider-term-result")
         .value;
@@ -1573,6 +1674,7 @@ $(document).ready(function () {
   document.getElementById(
     "template4-ui-slider-term-result"
   ).onkeypress = function (event) {
+
     if (event.key == "Enter") {
       document.getElementById("template4-ui-slider-term-result").blur();
       changeData2();
@@ -1789,7 +1891,7 @@ $(document).ready(function () {
       }
     });
   } else {
-    let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() + 5;
+    let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() + 20;
     let phoneHeplerValue = $(".phone-helper-value").width();
     $(".phone-input").css("width", phoneHeplerPlaceholder);
     $(".phone-input").focus(function (event) {

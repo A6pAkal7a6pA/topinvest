@@ -3430,7 +3430,7 @@ section {
   left: 2vw;
   z-index: 6;
   /* width: 1vw; */
-  max-width: 1vw;
+  width: 2vw;
   cursor: pointer;
   transition: 0.5s;
 }
@@ -3459,7 +3459,7 @@ section {
   padding-top: 10vw;
   padding-left: 2vw;
   z-index: 5;
-  width: 25%;
+  width: 21%;
   height: 100%;
   background-color: rgba(1, 1, 1, 0.75);
   transition: 0.5s;
@@ -3467,7 +3467,7 @@ section {
   
 }
 .slides-nav-menu::after {
-  left: -25%;
+  left: -21%;
   content: "";
   position: fixed;
   top: 0;
@@ -3479,7 +3479,7 @@ section {
 }
 
 .slides-nav-menu.active::after {
-  left: 25%;
+  left: 21%;
 }
 
 
