@@ -447,7 +447,6 @@ $(document).ready(function () {
         step: calc.data("step"),
         slide: function (event, ui) {
           $(this).next().find(".template4-ui-slider").html(ui.value);
-          console.log($(this).next().find(".template4-ui-slider").html(ui.value));
           $(this)
             .next()
             .find(".template4-ui-slider-amount-result")
@@ -512,8 +511,10 @@ $(document).ready(function () {
     changeData();
   });
   function changeData() {
-
+    var tmp = document.getElementById("template4-ui-slider-amount-result-check").value;
+    console.log("gaga: " + tmp)
     var calcAmount = $(".template4-ui-slider-amount").text();
+    console.log("calc: " + calcAmount)
     var calcRate = $(".template4-ui-slider-rate").text();
     var calcTerm = $(".template4-ui-slider-term").text();
     var calcPayment = $(".template4-calc_select option:selected").val();
@@ -528,6 +529,8 @@ $(document).ready(function () {
     var payment1Result = payment1.toLocaleString();
     var payment2 = Math.trunc(calcAmount * k);
     var payment2Result = payment2.toLocaleString();
+
+    
 
     if (calcPayment == "1") {
       $(".template4-calc_result-numb").text(payment1Result);
@@ -1242,8 +1245,18 @@ $(document).ready(function () {
     pr = document.getElementById("template4-ui-slider-amount-result-check").value;
     tmp1 = digitsInTheNumber(pr);
     tmp = noSpaceInNum(tmp1)
-
+    let maxCount = document
+    .querySelector(".check")
+    .getAttribute("data-max");
+    let minCount = document
+    .querySelector(".check")
+    .getAttribute("data-min");
+    if ((Number(tmp)) >= 25000000) {
+      tmp = maxCount;
+    }
+    document.getElementById("template4-ui-slider-amount-result").value;
     document.getElementById("template4-ui-slider-amount-result").value = tmp;
+    document.getElementById("template4-ui-slider-amount-result-check").value = tmp;
     document.getElementById("template4-ui-slider-amount-result").parentElement.querySelector("span").dataset.value = tmp;
     document.getElementById("template4-ui-slider-amount-result").dispatchEvent(new Event("blur", { bubbles: true }));
     document.getElementById("template4-ui-slider-amount-result").dispatchEvent(new KeyboardEvent("keypress", { key: 1 }));
@@ -1252,7 +1265,8 @@ $(document).ready(function () {
   document.getElementById(
     "template4-ui-slider-amount-result-check"
   ).onkeypress = function (event) {
-    console.log(event.target.value);
+
+
     thisInput = this;
     if (
       event.key == 1 ||
@@ -1266,22 +1280,24 @@ $(document).ready(function () {
       event.key == 9 ||
       event.key == 0
     ) {
-      
       setTimeout(function () {
 
         let inputVal = event.target.value;
-        console.log("==>" + inputVal)
+
         let count;
         let maxCount = document
-          .querySelector(".template4-ui-slider-amount")
+          .querySelector(".check")
           .getAttribute("data-max");
+          console.log("maxCount: " + maxCount)
         let minCount = document
-          .querySelector(".template4-ui-slider-amount")
+          .querySelector(".check")
           .getAttribute("data-min");
+          console.log("minCount: " + minCount)
         count = noSpaceInNum(inputVal);
         let percent = (count / maxCount) * 100;
-        if (Number(noSpaceInNum(inputVal)) <= minCount) {
+        if (Number(noSpaceInNum(tmp)) <= minCount) {
           console.log("Number(noSpaceInNum(inputVal)) <= minCount");
+          document.getElementById("template4-ui-slider-amount-result-check").value = 200000;
           thisInput.parentNode.parentNode.querySelector(
             ".ui-slider .ui-slider-handle"
           ).style.left = 0 + "%";
@@ -1290,6 +1306,7 @@ $(document).ready(function () {
           ).style.width = 0 + "%";
           thisInput.parentNode.classList.add("minCount");
           thisInput.parentNode.classList.remove("maxCount");
+
         } else if (Number(noSpaceInNum(inputVal)) >= maxCount) {
           console.log("Number(noSpaceInNum(inputVal)) >= maxCount");
           thisInput.parentNode.parentNode.querySelector(
