@@ -1839,7 +1839,7 @@ section {
   border-radius: 0.5vw;
 }
 
-.template4-calc_numb-wr.maxCount::before {
+/* .template4-calc_numb-wr.maxCount::before {
   content: "Введенная сумма больше допустимой";
   display: block;
 }
@@ -1847,7 +1847,7 @@ section {
 .template4-calc_numb-wr.minCount::before {
   content: "Введенная сумма меньше допустимой";
   display: block;
-}
+} */
 
 .template4-calc_numb-wr.maxRate::before {
   content: "Введенная ставка больше допустимой";
