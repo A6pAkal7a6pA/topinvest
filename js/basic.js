@@ -1144,28 +1144,36 @@ $(document).ready(function () {
 
   }
 
-  function digitsInTheNumber(num) {
+  // function digitsInTheNumber(num) {
 
-    let StringNum = String(num);
-    let numLength = String(num).length;
-    let firstNums = numLength % 3;
-    let addNums = numLength - firstNums;
-    let circleFor = addNums / 3;
-    let firstNumChar = "";
-    let arrowsNum = [];
-    for (let i = 0; i < firstNums; i++) {
-      firstNumChar += StringNum[i];
-    }
-    arrowsNum.push(firstNumChar);
-    for (let i = 0; i < circleFor; i++) {
-      arrowsNum.push(
-        StringNum[firstNums + i * 3] +
-        StringNum[firstNums + 1 + i * 3] +
-        StringNum[firstNums + 2 + i * 3]
-      );
-    }
-    return arrowsNum.join(" ");
-  }
+  //   let StringNum = String(num);
+  //   let numLength = String(num).length;
+  //   let firstNums = numLength % 3;
+  //   let addNums = numLength - firstNums;
+  //   let circleFor = addNums / 3;
+  //   let firstNumChar = "";
+  //   let arrowsNum = [];
+  //   for (let i = 0; i < firstNums; i++) {
+  //     firstNumChar += StringNum[i];
+  //   }
+  //   arrowsNum.push(firstNumChar);
+  //   for (let i = 0; i < circleFor; i++) {
+  //     arrowsNum.push(
+  //       StringNum[firstNums + i * 3] +
+  //       StringNum[firstNums + 1 + i * 3] +
+  //       StringNum[firstNums + 2 + i * 3]
+  //     );
+  //   }
+  //   return arrowsNum.join(" ");
+  // }
+
+  function digitsInTheNumber(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1,$2");
+    return x;
+}
 
   document.getElementById(
     "template4-ui-slider-amount-result"
@@ -1253,10 +1261,11 @@ $(document).ready(function () {
     .getAttribute("data-min");
     if ((Number(tmp)) >= 25000000) {
       tmp = maxCount;
+      tmp = maxCount;
     }
     document.getElementById("template4-ui-slider-amount-result").value;
     document.getElementById("template4-ui-slider-amount-result").value = tmp;
-    document.getElementById("template4-ui-slider-amount-result-check").value = tmp;
+    document.getElementById("template4-ui-slider-amount-result-check").value = tmp1;
     document.getElementById("template4-ui-slider-amount-result").parentElement.querySelector("span").dataset.value = tmp;
     document.getElementById("template4-ui-slider-amount-result").dispatchEvent(new Event("blur", { bubbles: true }));
     document.getElementById("template4-ui-slider-amount-result").dispatchEvent(new KeyboardEvent("keypress", { key: 1 }));
