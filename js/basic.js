@@ -1195,6 +1195,7 @@ $(document).ready(function () {
       setTimeout(function () {
 
         let inputVal = event.target.value;
+        console.log(inputVal);
         let count;
         let maxCount = document
           .querySelector(".template4-ui-slider-amount")
@@ -1251,19 +1252,16 @@ $(document).ready(function () {
 
   document.getElementById("template4-ui-slider-amount-result-check").addEventListener("input", function () {
     pr = document.getElementById("template4-ui-slider-amount-result-check").value;
-    console.log("pr: " + pr)
+    console.log("pr: " + pr);
     pr1 = noSpaceInNum(pr);
     tmp1 = digitsInTheNumber(pr1);
     tmp = noSpaceInNum(tmp1)
     let maxCount = document
     .querySelector(".check")
     .getAttribute("data-max");
-    let minCount = document
-    .querySelector(".check")
-    .getAttribute("data-min");
-    if ((Number(tmp)) >= 25000000) {
+    if ((Number(tmp)) >= 99999999) {
       tmp = maxCount;
-      tmp = maxCount;
+      tmp1 = maxCount;
     }
     document.getElementById("template4-ui-slider-amount-result").value;
     document.getElementById("template4-ui-slider-amount-result").value = tmp;
@@ -1277,7 +1275,17 @@ $(document).ready(function () {
     "template4-ui-slider-amount-result-check"
   ).onkeypress = function (event) {
 
-
+    if (event.key == "Enter") {
+      let rateValue = document.getElementById("template4-ui-slider-rate-result")
+        .value;
+      document.getElementById(
+        "template4-ui-slider-rate-result"
+      ).value = rateValue.replace("%", "");
+      document.getElementById("template4-ui-slider-rate-result").focus();
+      changeData2();
+      return false;
+    }
+    
     thisInput = this;
     if (
       event.key == 1 ||
