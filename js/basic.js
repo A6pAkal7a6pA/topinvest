@@ -512,9 +512,7 @@ $(document).ready(function () {
   });
   function changeData() {
     var tmp = document.getElementById("template4-ui-slider-amount-result-check").value;
-    console.log("gaga: " + tmp)
     var calcAmount = $(".template4-ui-slider-amount").text();
-    console.log("calc: " + calcAmount)
     var calcRate = $(".template4-ui-slider-rate").text();
     var calcTerm = $(".template4-ui-slider-term").text();
     var calcPayment = $(".template4-calc_select option:selected").val();
@@ -534,8 +532,10 @@ $(document).ready(function () {
 
     if (calcPayment == "1") {
       $(".template4-calc_result-numb").text(payment1Result);
+      document.getElementById("template4-ui-slider-amount-result-check").value = calcAmount;
     } else if (calcPayment == "2") {
       $(".template4-calc_result-numb").text(payment2Result);
+      document.getElementById("template4-ui-slider-amount-result-check").value = calcAmount;
     }
     if ($(".template4-calc_result-numb").text().length < 8) {
       $(".template4-calc_result-numb_million").removeClass("active");
