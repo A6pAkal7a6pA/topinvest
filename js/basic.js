@@ -511,7 +511,7 @@ $(document).ready(function () {
     changeData();
   });
   function changeData() {
-    var tmp = document.getElementById("template4-ui-slider-amount-result-check").value;
+    var tmp = document.getElementById("template4-ui-slider-amount-result").value;
     var calcAmount = $(".template4-ui-slider-amount").text();
     var calcRate = $(".template4-ui-slider-rate").text();
     var calcTerm = $(".template4-ui-slider-term").text();
@@ -532,10 +532,10 @@ $(document).ready(function () {
 
     if (calcPayment == "1") {
       $(".template4-calc_result-numb").text(payment1Result);
-      document.getElementById("template4-ui-slider-amount-result-check").value = calcAmount;
+      document.getElementById("template4-ui-slider-amount-result-check").value = tmp;
     } else if (calcPayment == "2") {
       $(".template4-calc_result-numb").text(payment2Result);
-      document.getElementById("template4-ui-slider-amount-result-check").value = calcAmount;
+      document.getElementById("template4-ui-slider-amount-result-check").value = tmp;
     }
     if ($(".template4-calc_result-numb").text().length < 8) {
       $(".template4-calc_result-numb_million").removeClass("active");
