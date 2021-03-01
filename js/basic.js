@@ -1251,7 +1251,9 @@ $(document).ready(function () {
 
   document.getElementById("template4-ui-slider-amount-result-check").addEventListener("input", function () {
     pr = document.getElementById("template4-ui-slider-amount-result-check").value;
-    tmp1 = digitsInTheNumber(pr);
+    console.log("pr: " + pr)
+    pr1 = noSpaceInNum(pr);
+    tmp1 = digitsInTheNumber(pr1);
     tmp = noSpaceInNum(tmp1)
     let maxCount = document
     .querySelector(".check")
