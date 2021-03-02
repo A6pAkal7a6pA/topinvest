@@ -1444,26 +1444,7 @@ $(document).ready(function () {
   document.getElementById("template4-ui-slider-amount-result-check").addEventListener("blur", function (event) {
     some = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result-check").value);
     some1 = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result").value);
-    var calcRate = $(".template4-ui-slider-rate").text();
-    var calcTerm = $(".template4-ui-slider-term").text();
-    var calcPayment = $(".template4-calc_select option:selected").val();
-    console.log("calcPayment" + calcPayment)
-    var k = calcRate / 12 / 100;
-    var k2 = 1 + k;
-    var k3 = -calcTerm * 12;
-    var k4 = Math.pow(k2, k3);
-    var k5 = 1 - k4;
-    var k6 = k / k5;
-    var payment1 = Math.trunc(some1 * k6);
-    var payment1Result = payment1.toLocaleString();
-    var payment2 = Math.trunc(some1 * k);
-    var payment2Result = payment2.toLocaleString();
-      let rateValue = document.getElementById("template4-ui-slider-rate-result")
-        .value;
-      document.getElementById(
-        "template4-ui-slider-rate-result"
-      ).value = rateValue.replace("%", "");
-      document.getElementById("template4-ui-slider-rate-result").focus();
+  
       if(Number(some) <= 200000) {
         document.getElementById("template4-ui-slider-amount-result-check").value = "200 000";
         document.getElementById("template4-ui-slider-amount-result").value = "200000";
