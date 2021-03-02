@@ -1080,6 +1080,7 @@ $(document).ready(function () {
     var calcAmount = noSpaceInNum(calcAmount1);
     console.log("calcAmount: " + calcAmount)
     var calcRate = $(".template4-ui-slider-rate").attr("data-value");
+    console.log("calcRate: " + calcRate)
     var calcTerm = $(".template4-ui-slider-term").attr("data-value");
     var calcPayment = $(".template4-calc_select option:selected").val();
     var year = $(".template4-ui-slider-term").text();
@@ -1253,8 +1254,9 @@ $(document).ready(function () {
   document.getElementById("template4-ui-slider-amount-result-check").addEventListener("input", function (e) {
     pr = document.getElementById("template4-ui-slider-amount-result-check").value;
     pr1 = noSpaceInNum(pr);
-    if (Number(pr1 >= 99999999)) {
-      pr1 = "99999999";
+    if (pr1.length > 8) {
+      // if (Number(pr1 >= 99999999)) {
+      pr1 = pr1.substr(0, 8);
     } else if (Number(pr1 <= 0)) {
       pr1 = "";
     }
@@ -1277,7 +1279,7 @@ $(document).ready(function () {
     let maxCount = document
     .querySelector(".check")
     .getAttribute("data-max");
-    if ((Number(tmp)) >= 99999999) {
+    if (tmp.length > 8) {
       tmp = "99999999";
       tmp1 = "99999999";
     }
@@ -1317,6 +1319,7 @@ $(document).ready(function () {
       document.getElementById("template4-ui-slider-rate-result").focus();
       if(Number(some) <= 200000) {
         document.getElementById("template4-ui-slider-amount-result-check").value = "200 000";
+        document.getElementById("template4-ui-slider-amount-result").value = "200000";
         changeData2();
         // if (calcPayment == "1") {
         //   $(".template4-calc_result-numb").text(payment1Result);
@@ -1325,11 +1328,13 @@ $(document).ready(function () {
         // }
       } else if (Number(some) >= 25000000) {
         document.getElementById("template4-ui-slider-amount-result-check").value = "25 000 000";
-        if (calcPayment == "1") {
-          $(".template4-calc_result-numb").text(payment1Result);
-        } else if (calcPayment == "2") {
-          $(".template4-calc_result-numb").text(payment2Result);
-        }
+        document.getElementById("template4-ui-slider-amount-result").value = "25000000";
+        changeData2();
+        // if (calcPayment == "1") {
+        //   $(".template4-calc_result-numb").text(payment1Result);
+        // } else if (calcPayment == "2") {
+        //   $(".template4-calc_result-numb").text(payment2Result);
+        // }
       }
       return false;
     }
@@ -1436,34 +1441,70 @@ $(document).ready(function () {
   // 	$('.template4-ui-slider-amount').text(noSpaceInNum($(this).val()));
   // });
 
-  $(".template4-ui-slider-amount-result").blur(function () {
-    if (
-      Number(noSpaceInNum($(this).val())) < $(".template4-ui-slider-amount").attr("data-min")
-    ) {
-      $(this).val(
-        digitsInTheNumber($(".template4-ui-slider-amount").attr("data-min"))
-      );
-      $(".template4-ui-slider-amount").attr(
-        "data-value",
-        noSpaceInNum($(this).val())
-      );
-      $(".template4-ui-slider-amount").text(noSpaceInNum($(this).val()));
-    }
-    if (
-      Number(noSpaceInNum($(this).val())) >
-      $(".template4-ui-slider-amount").attr("data-max")
-    ) {
-      $(this).val(
-        digitsInTheNumber($(".template4-ui-slider-amount").attr("data-max"))
-      );
-      $(".template4-ui-slider-amount").attr(
-        "data-value",
-        noSpaceInNum($(this).val())
-      );
-      $(".template4-ui-slider-amount").text(noSpaceInNum($(this).val()));
-    }
-    $(this).parents(".template4-calc_numb-wr").removeClass("maxCount");
-    $(this).parents(".template4-calc_numb-wr").removeClass("minCount");
+  document.getElementById("template4-ui-slider-amount-result-check").addEventListener("blur", function (event) {
+    some = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result-check").value);
+    some1 = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result").value);
+    var calcRate = $(".template4-ui-slider-rate").text();
+    var calcTerm = $(".template4-ui-slider-term").text();
+    var calcPayment = $(".template4-calc_select option:selected").val();
+    console.log("calcPayment" + calcPayment)
+    var k = calcRate / 12 / 100;
+    var k2 = 1 + k;
+    var k3 = -calcTerm * 12;
+    var k4 = Math.pow(k2, k3);
+    var k5 = 1 - k4;
+    var k6 = k / k5;
+    var payment1 = Math.trunc(some1 * k6);
+    var payment1Result = payment1.toLocaleString();
+    var payment2 = Math.trunc(some1 * k);
+    var payment2Result = payment2.toLocaleString();
+      let rateValue = document.getElementById("template4-ui-slider-rate-result")
+        .value;
+      document.getElementById(
+        "template4-ui-slider-rate-result"
+      ).value = rateValue.replace("%", "");
+      document.getElementById("template4-ui-slider-rate-result").focus();
+      if(Number(some) <= 200000) {
+        document.getElementById("template4-ui-slider-amount-result-check").value = "200 000";
+        document.getElementById("template4-ui-slider-amount-result").value = "200000";
+        changeData2();
+        // if (calcPayment == "1") {
+        //   $(".template4-calc_result-numb").text(payment1Result);
+        // } else if (calcPayment == "2") {
+        //   $(".template4-calc_result-numb").text(payment2Result);
+        // }
+      } else if (Number(some) >= 25000000) {
+        document.getElementById("template4-ui-slider-amount-result-check").value = "25 000 000";
+        document.getElementById("template4-ui-slider-amount-result").value = "25000000";
+        changeData2();
+      }
+    // if (
+    //   Number(noSpaceInNum($(this).val())) < $(".template4-ui-slider-amount").attr("data-min")
+    // ) {
+    //   $(this).val(
+    //     digitsInTheNumber($(".template4-ui-slider-amount").attr("data-min"))
+    //   );
+    //   $(".template4-ui-slider-amount").attr(
+    //     "data-value",
+    //     noSpaceInNum($(this).val())
+    //   );
+    //   $(".template4-ui-slider-amount").text(noSpaceInNum($(this).val()));
+    // }
+    // if (
+    //   Number(noSpaceInNum($(this).val())) >
+    //   $(".template4-ui-slider-amount").attr("data-max")
+    // ) {
+    //   $(this).val(
+    //     digitsInTheNumber($(".template4-ui-slider-amount").attr("data-max"))
+    //   );
+    //   $(".template4-ui-slider-amount").attr(
+    //     "data-value",
+    //     noSpaceInNum($(this).val())
+    //   );
+    //   $(".template4-ui-slider-amount").text(noSpaceInNum($(this).val()));
+    // }
+    // $(this).parents(".template4-calc_numb-wr").removeClass("maxCount");
+    // $(this).parents(".template4-calc_numb-wr").removeClass("minCount");
     // changeData2();
   });
 
