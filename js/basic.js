@@ -1030,16 +1030,16 @@ $(document).ready(function () {
   });
 
 
-  // $(document).mouseup(function (e) {
-  //   if ($(".slides-nav-menu").hasClass("active")) {
-  //     var div = $(".slides-nav-menu");
-  //     if (!div.is(e.target) && div.has(e.target).length === 0) {
-  //       $(".slides-nav-menu").removeClass("active");
-  //       $(".slides-nav-dots").addClass("active");
-  //       fullpage_api.setAllowScrolling(true);
-  //     }
-  //   }
-  // });
+  $(document).mouseup(function (e) {
+    if ($(".slides-nav-menu").hasClass("active")) {
+      var div = $(".slides-nav-menu");
+      if (!div.is(e.target) && div.has(e.target).length === 0) {
+        $(".slides-nav-menu").removeClass("active");
+        $(".slides-nav-dots").addClass("active");
+        fullpage_api.setAllowScrolling(true);
+      }
+    }
+  });
 
   function doGetCaretPosition(oField) {
     // Initialize
