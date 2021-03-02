@@ -1021,6 +1021,8 @@ $(document).ready(function () {
     }
   });
 
+  
+
 
 
   $(".slides-nav-close").click(function () {
@@ -1030,16 +1032,16 @@ $(document).ready(function () {
   });
 
 
-  $(document).mouseup(function (e) {
-    if ($(".slides-nav-menu").hasClass("active")) {
-      var div = $(".slides-nav-menu");
-      if (!div.is(e.target) && div.has(e.target).length === 0) {
-        $(".slides-nav-menu").removeClass("active");
-        $(".slides-nav-dots").addClass("active");
-        fullpage_api.setAllowScrolling(true);
-      }
-    }
-  });
+  // $(document).mouseup(function (e) {
+  //   if ($(".slides-nav-menu").hasClass("active")) {
+  //     var div = $(".slides-nav-menu");
+  //     if (!div.is(e.target) && div.has(e.target).length === 0) {
+  //       $(".slides-nav-menu").removeClass("active");
+  //       $(".slides-nav-dots").addClass("active");
+  //       fullpage_api.setAllowScrolling(true);
+  //     }
+  //   }
+  // });
 
   function doGetCaretPosition(oField) {
     // Initialize
@@ -1171,7 +1173,7 @@ $(document).ready(function () {
     x = x.toString();
     var pattern = /(-?\d+)(\d{3})/;
     while (pattern.test(x))
-        x = x.replace(pattern, "$1,$2");
+        x = x.replace(pattern, "$1 $2");
     return x;
 }
 
@@ -1259,9 +1261,9 @@ $(document).ready(function () {
     let maxCount = document
     .querySelector(".check")
     .getAttribute("data-max");
-    if ((Number(tmp)) >= 99999999) {
-      tmp = maxCount;
-      tmp1 = maxCount;
+    if ((Number(tmp)) >= 25000000) {
+      tmp = "25000000";
+      tmp1 = "25000000";
     }
     document.getElementById("template4-ui-slider-amount-result").value;
     document.getElementById("template4-ui-slider-amount-result").value = tmp;
