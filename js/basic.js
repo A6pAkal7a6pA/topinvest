@@ -405,21 +405,29 @@ $(document).ready(function () {
 
   $("[name=phone]").mask("+9 (999) 999-9999");
 
-
-
-
-
   $(".phone-input").keydown(function (e) {
-    if (e.target.selectionStart == 1) {
-      if (e.key == "7" || e.key == "8") {
-        $("[name=phone]").mask("+9 (999) 999-9999");
-      } else {
-        $("[name=phone]").mask("+7 (999) 999-9999");
+    thisInput = this;
+    if (thisInput.value == "" || thisInput.value == "+_ (___) ___-____") {
+      $(this).get(0).setSelectionRange(1, 1);
+      console.log(e.target.selectionStart);
+      if (e.target.selectionStart == 1) {
+        if (e.key == "7" || e.key == "8") {
+
+          $("[name=phone]").mask("+9 (999) 999-9999");
+        } else {
+          $("[name=phone]").mask("+7 (999) 999-9999");
+        }
       }
     }
   });
 
+  // $(".phone-input").click(function() {
+  //   $(this).get(0).setSelectionRange(0, 0);
+  // });
+
+
   $(".phone-input").keyup(function (e) {
+
     if (e.target.value[1] === "8") {
       const strArr = e.target.value.split("")
       strArr[1] = "7"
@@ -528,7 +536,7 @@ $(document).ready(function () {
     var payment2 = Math.trunc(calcAmount * k);
     var payment2Result = payment2.toLocaleString();
 
-    
+
 
     if (calcPayment == "1") {
       $(".template4-calc_result-numb").text(payment1Result);
@@ -1021,7 +1029,7 @@ $(document).ready(function () {
     }
   });
 
-  
+
 
 
 
@@ -1174,9 +1182,9 @@ $(document).ready(function () {
     x = x.toString();
     var pattern = /(-?\d+)(\d{3})/;
     while (pattern.test(x))
-        x = x.replace(pattern, "$1 $2");
+      x = x.replace(pattern, "$1 $2");
     return x;
-}
+  }
 
   document.getElementById(
     "template4-ui-slider-amount-result"
@@ -1277,8 +1285,8 @@ $(document).ready(function () {
     tmp1 = digitsInTheNumber(pr1);
     tmp = noSpaceInNum(tmp1)
     let maxCount = document
-    .querySelector(".check")
-    .getAttribute("data-max");
+      .querySelector(".check")
+      .getAttribute("data-max");
     if (tmp.length > 8) {
       tmp = "99999999";
       tmp1 = "99999999";
@@ -1317,7 +1325,7 @@ $(document).ready(function () {
         "template4-ui-slider-rate-result"
       ).value = rateValue.replace("%", "");
       document.getElementById("template4-ui-slider-rate-result").focus();
-      if(Number(some) <= 200000) {
+      if (Number(some) <= 200000) {
         document.getElementById("template4-ui-slider-amount-result-check").value = "200 000";
         document.getElementById("template4-ui-slider-amount-result").value = "200000";
         changeData2();
@@ -1338,7 +1346,7 @@ $(document).ready(function () {
       }
       return false;
     }
-    
+
     thisInput = this;
     if (
       event.key == 1 ||
@@ -1363,7 +1371,7 @@ $(document).ready(function () {
         let minCount = document
           .querySelector(".check")
           .getAttribute("data-min");
-          console.log("minCount: " + minCount)
+        console.log("minCount: " + minCount)
         count = noSpaceInNum(inputVal);
         let percent = (count / maxCount) * 100;
         if (Number(noSpaceInNum(tmp)) <= minCount) {
@@ -1444,21 +1452,21 @@ $(document).ready(function () {
   document.getElementById("template4-ui-slider-amount-result-check").addEventListener("blur", function (event) {
     some = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result-check").value);
     some1 = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result").value);
-  
-      if(Number(some) <= 200000) {
-        document.getElementById("template4-ui-slider-amount-result-check").value = "200 000";
-        document.getElementById("template4-ui-slider-amount-result").value = "200000";
-        changeData2();
-        // if (calcPayment == "1") {
-        //   $(".template4-calc_result-numb").text(payment1Result);
-        // } else if (calcPayment == "2") {
-        //   $(".template4-calc_result-numb").text(payment2Result);
-        // }
-      } else if (Number(some) >= 25000000) {
-        document.getElementById("template4-ui-slider-amount-result-check").value = "25 000 000";
-        document.getElementById("template4-ui-slider-amount-result").value = "25000000";
-        changeData2();
-      }
+
+    if (Number(some) <= 200000) {
+      document.getElementById("template4-ui-slider-amount-result-check").value = "200 000";
+      document.getElementById("template4-ui-slider-amount-result").value = "200000";
+      changeData2();
+      // if (calcPayment == "1") {
+      //   $(".template4-calc_result-numb").text(payment1Result);
+      // } else if (calcPayment == "2") {
+      //   $(".template4-calc_result-numb").text(payment2Result);
+      // }
+    } else if (Number(some) >= 25000000) {
+      document.getElementById("template4-ui-slider-amount-result-check").value = "25 000 000";
+      document.getElementById("template4-ui-slider-amount-result").value = "25000000";
+      changeData2();
+    }
     // if (
     //   Number(noSpaceInNum($(this).val())) < $(".template4-ui-slider-amount").attr("data-min")
     // ) {
@@ -1487,6 +1495,10 @@ $(document).ready(function () {
     // $(this).parents(".template4-calc_numb-wr").removeClass("maxCount");
     // $(this).parents(".template4-calc_numb-wr").removeClass("minCount");
     // changeData2();
+  });
+  document.getElementById("template4-ui-slider-amount-result-check").addEventListener("dblclick", function () {
+    var p = document.getElementById("template4-ui-slider-amount-result-check");
+    p.select();
   });
 
   // document.getElementById(
@@ -1974,6 +1986,7 @@ $(document).ready(function () {
       });
     });
 
+
     let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() + 40;
     let phoneHeplerValue = $(".phone-helper-value").width() + 10;
     $(".phone-input").css("width", phoneHeplerPlaceholder);
@@ -1982,7 +1995,6 @@ $(document).ready(function () {
     });
     $(".phone-input").blur(function (event) {
       let thisInput = $(this);
-      console.log(thisInput.val());
       if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
         setTimeout(function (event) {
           thisInput.css("width", phoneHeplerPlaceholder);
@@ -1998,13 +2010,14 @@ $(document).ready(function () {
     let phoneHeplerValue = $(".phone-helper-value").width();
     $(".phone-input").css("width", phoneHeplerPlaceholder);
     $(".phone-input").focus(function (event) {
+      document.querySelector(".phone-input").setSelectionRange(0, 0);
       $(this).css("width", phoneHeplerValue + 10);
     });
     $(".phone-input").blur(function (event) {
       let thisInput = $(this);
-      console.log(thisInput.val());
       if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
         setTimeout(function (event) {
+          thisInput.setSelectionRange = 0;
           thisInput.css("width", phoneHeplerPlaceholder);
         }, 100);
       } else {
