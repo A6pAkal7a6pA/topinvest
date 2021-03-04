@@ -409,7 +409,7 @@ $(document).ready(function () {
     thisInput = this;
     if (thisInput.value == "" || thisInput.value == "+_ (___) ___-____") {
       $(this).get(0).setSelectionRange(1, 1);
-      console.log(e.target.selectionStart);
+    }
       if (e.target.selectionStart == 1) {
         if (e.key == "7" || e.key == "8") {
 
@@ -418,7 +418,7 @@ $(document).ready(function () {
           $("[name=phone]").mask("+7 (999) 999-9999");
         }
       }
-    }
+
   });
 
   // $(".phone-input").click(function() {
@@ -1046,7 +1046,7 @@ $(document).ready(function () {
   //     if (!div.is(e.target) && div.has(e.target).length === 0) {
   //       $(".slides-nav-menu").removeClass("active");
   //       $(".slides-nav-dots").addClass("active");
-  //       fullpage_api.setAllowScrolling(true);
+  //       fullpage_api.setAllowScrolling(false);
   //     }
   //   }
   // });
@@ -1585,162 +1585,162 @@ $(document).ready(function () {
   //   }
   // };
 
-  // document.getElementById(
-  //   "template4-ui-slider-rate-result"
-  // ).onkeypress = function (event) {
+  document.getElementById(
+    "template4-ui-slider-rate-result"
+  ).onkeypress = function (event) {
 
-  //   if (event.key == "Enter") {
-  //     let termValue = document.getElementById("template4-ui-slider-term-result")
-  //       .value;
-  //     console.log(termValue.indexOf("лет"));
-  //     if (termValue.indexOf("лет") > -1) {
-  //       termValue = termValue.replace(" лет", "");
-  //     }
-  //     if (termValue.indexOf("год") > -1) {
-  //       termValue = termValue.replace(" год", "");
-  //     }
-  //     if (termValue.indexOf("года") > -1) {
-  //       termValue = termValue.replace(" года", "");
-  //     }
-  //     document.getElementById(
-  //       "template4-ui-slider-term-result"
-  //     ).value = termValue;
-  //     document.getElementById("template4-ui-slider-term-result").focus();
-  //     changeData2();
-  //     return false;
-  //   }
-  //   if (event.target.value.indexOf(",") > -1) {
-  //     let inputArr = event.target.value.split(",");
-  //     if (inputArr[1].length > 1) {
-  //       return false;
-  //     }
-  //   }
-  //   if (event.target.value.indexOf(".") > -1) {
-  //     let inputArr = event.target.value.split(".");
-  //     if (inputArr[1].length > 1) {
-  //       return false;
-  //     }
-  //   }
-  //   if (
-  //     event.target.value.indexOf(",") > -1 &&
-  //     (event.key == "," || event.key == ".")
-  //   ) {
-  //     return false;
-  //   } else if (
-  //     event.target.value.indexOf(".") > -1 &&
-  //     (event.key == "," || event.key == ".")
-  //   ) {
-  //     return false;
-  //   } else {
-  //     thisInput = this;
-  //     if (
-  //       event.key == 1 ||
-  //       event.key == 2 ||
-  //       event.key == 3 ||
-  //       event.key == 4 ||
-  //       event.key == 5 ||
-  //       event.key == 6 ||
-  //       event.key == 7 ||
-  //       event.key == 8 ||
-  //       event.key == 9 ||
-  //       event.key == 0 ||
-  //       event.key == "," ||
-  //       event.key == "."
-  //     ) {
-  //       setTimeout(function () {
-  //         let inputVal;
-  //         if (event.target.value.indexOf(",") > -1) {
-  //           inputVal = event.target.value.replace(",", ".");
-  //           inputVal = Number(inputVal.replace("%", ""));
-  //         } else {
-  //           inputVal = Number(event.target.value.replace("%", ""));
-  //         }
-  //         let maxCount = Number(
-  //           document
-  //             .querySelector(".template4-ui-slider-rate")
-  //             .getAttribute("data-max")
-  //         );
-  //         let minCount = Number(
-  //           document
-  //             .querySelector(".template4-ui-slider-rate")
-  //             .getAttribute("data-min")
-  //         );
-  //         let percent = ((inputVal - minCount) / (maxCount - minCount)) * 100;
-  //         if (inputVal <= minCount) {
-  //           thisInput.parentNode.parentNode.querySelector(
-  //             ".ui-slider .ui-slider-handle"
-  //           ).style.left = 0 + "%";
-  //           thisInput.parentNode.parentNode.querySelector(
-  //             ".ui-slider .ui-slider-range"
-  //           ).style.width = 0 + "%";
-  //           thisInput.parentNode.classList.add("minRate");
-  //           thisInput.parentNode.classList.remove("maxRate");
-  //         } else if (inputVal >= maxCount) {
-  //           thisInput.parentNode.parentNode.querySelector(
-  //             ".ui-slider .ui-slider-handle"
-  //           ).style.left = 100 + "%";
-  //           thisInput.parentNode.parentNode.querySelector(
-  //             ".ui-slider .ui-slider-range"
-  //           ).style.width = 100 + "%";
-  //           thisInput.parentNode.classList.remove("minRate");
-  //           thisInput.parentNode.classList.add("maxRate");
-  //         } else {
-  //           thisInput.parentNode.parentNode.querySelector(
-  //             ".ui-slider .ui-slider-handle"
-  //           ).style.left = percent + "%";
-  //           thisInput.parentNode.parentNode.querySelector(
-  //             ".ui-slider .ui-slider-range"
-  //           ).style.width = percent + "%";
-  //           thisInput.parentNode.classList.remove("minRate");
-  //           thisInput.parentNode.classList.remove("maxRate");
-  //         }
-  //         document
-  //           .querySelector(".template4-ui-slider-rate")
-  //           .setAttribute("data-value", inputVal);
-  //       }, 100);
-  //     } else {
-  //       return false;
-  //     }
-  //   }
-  // };
+    if (event.key == "Enter") {
+      let termValue = document.getElementById("template4-ui-slider-term-result")
+        .value;
+      console.log(termValue.indexOf("лет"));
+      if (termValue.indexOf("лет") > -1) {
+        termValue = termValue.replace(" лет", "");
+      }
+      if (termValue.indexOf("год") > -1) {
+        termValue = termValue.replace(" год", "");
+      }
+      if (termValue.indexOf("года") > -1) {
+        termValue = termValue.replace(" года", "");
+      }
+      document.getElementById(
+        "template4-ui-slider-term-result"
+      ).value = termValue;
+      document.getElementById("template4-ui-slider-term-result").focus();
+      changeData2();
+      return false;
+    }
+    if (event.target.value.indexOf(",") > -1) {
+      let inputArr = event.target.value.split(",");
+      if (inputArr[1].length > 1) {
+        return false;
+      }
+    }
+    if (event.target.value.indexOf(".") > -1) {
+      let inputArr = event.target.value.split(".");
+      if (inputArr[1].length > 1) {
+        return false;
+      }
+    }
+    if (
+      event.target.value.indexOf(",") > -1 &&
+      (event.key == "," || event.key == ".")
+    ) {
+      return false;
+    } else if (
+      event.target.value.indexOf(".") > -1 &&
+      (event.key == "," || event.key == ".")
+    ) {
+      return false;
+    } else {
+      thisInput = this;
+      if (
+        event.key == 1 ||
+        event.key == 2 ||
+        event.key == 3 ||
+        event.key == 4 ||
+        event.key == 5 ||
+        event.key == 6 ||
+        event.key == 7 ||
+        event.key == 8 ||
+        event.key == 9 ||
+        event.key == 0 ||
+        event.key == "," ||
+        event.key == "."
+      ) {
+        setTimeout(function () {
+          let inputVal;
+          if (event.target.value.indexOf(",") > -1) {
+            inputVal = event.target.value.replace(",", ".");
+            inputVal = Number(inputVal.replace("%", ""));
+          } else {
+            inputVal = Number(event.target.value.replace("%", ""));
+          }
+          let maxCount = Number(
+            document
+              .querySelector(".template4-ui-slider-rate")
+              .getAttribute("data-max")
+          );
+          let minCount = Number(
+            document
+              .querySelector(".template4-ui-slider-rate")
+              .getAttribute("data-min")
+          );
+          let percent = ((inputVal - minCount) / (maxCount - minCount)) * 100;
+          if (inputVal <= minCount) {
+            thisInput.parentNode.parentNode.querySelector(
+              ".ui-slider .ui-slider-handle"
+            ).style.left = 0 + "%";
+            thisInput.parentNode.parentNode.querySelector(
+              ".ui-slider .ui-slider-range"
+            ).style.width = 0 + "%";
+            thisInput.parentNode.classList.add("minRate");
+            thisInput.parentNode.classList.remove("maxRate");
+          } else if (inputVal >= maxCount) {
+            thisInput.parentNode.parentNode.querySelector(
+              ".ui-slider .ui-slider-handle"
+            ).style.left = 100 + "%";
+            thisInput.parentNode.parentNode.querySelector(
+              ".ui-slider .ui-slider-range"
+            ).style.width = 100 + "%";
+            thisInput.parentNode.classList.remove("minRate");
+            thisInput.parentNode.classList.add("maxRate");
+          } else {
+            thisInput.parentNode.parentNode.querySelector(
+              ".ui-slider .ui-slider-handle"
+            ).style.left = percent + "%";
+            thisInput.parentNode.parentNode.querySelector(
+              ".ui-slider .ui-slider-range"
+            ).style.width = percent + "%";
+            thisInput.parentNode.classList.remove("minRate");
+            thisInput.parentNode.classList.remove("maxRate");
+          }
+          document
+            .querySelector(".template4-ui-slider-rate")
+            .setAttribute("data-value", inputVal);
+        }, 100);
+      } else {
+        return false;
+      }
+    }
+  };
 
-  // $('.template4-ui-slider-rate-result').on('input keyup', function(){
-  // 	let inputValue;
-  // 	if ($(this).val().indexOf(',') > -1) {
-  // 		if ($(this).val().indexOf(',', $(this).val().indexOf(',') + 1) > -1) {
-  // 				return false;
-  // 		}
-  // 		if ($(this).val().indexOf('.', $(this).val().indexOf(',') + 1) > -1) {
-  // 			return false;
-  // 		}
-  // 		inputValue = $(this).val().replace(',', '.');
-  // 	} else {
-  // 		inputValue = $(this).val();
-  // 	}
+  $('.template4-ui-slider-rate-result').on('input keyup', function(){
+  	let inputValue;
+  	if ($(this).val().indexOf(',') > -1) {
+  		if ($(this).val().indexOf(',', $(this).val().indexOf(',') + 1) > -1) {
+  				return false;
+  		}
+  		if ($(this).val().indexOf('.', $(this).val().indexOf(',') + 1) > -1) {
+  			return false;
+  		}
+  		inputValue = $(this).val().replace(',', '.');
+  	} else {
+  		inputValue = $(this).val();
+  	}
 
-  // 	let inputVal = Number(inputValue.replace('%', ''));
-  // 	let maxCount = Number($('.template4-ui-slider-rate').attr('data-max'));
-  // 	let minCount = Number($('.template4-ui-slider-rate').attr('data-min'));
-  // 	let percent = ((inputVal - minCount) / (maxCount - minCount)) * 100;
-  // 	if (inputVal <= minCount) {
-  // 		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `0%`);
-  // 		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `0%`);
-  // 		$(this).parents('.template4-calc_numb-wr').addClass('minRate');
-  // 		$(this).parents('.template4-calc_numb-wr').removeClass('maxRate');
-  // 	} else if(inputVal >= maxCount) {
-  // 		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `100%`);
-  // 		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `100%`);
-  // 		$(this).parents('.template4-calc_numb-wr').addClass('maxRate');
-  // 		$(this).parents('.template4-calc_numb-wr').removeClass('minRate');
-  // 	} else {
-  // 		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `${percent}%`);
-  // 		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `${percent}%`);
-  // 		$(this).parents('.template4-calc_numb-wr').removeClass('maxCount');
-  // 		$(this).parents('.template4-calc_numb-wr').removeClass('minCount');
-  // 	}
-  // 	$('.template4-ui-slider-rate').attr('data-value', inputVal);
-  // 	let resultNum = $('.template4-ui-slider-rate').attr('data-value');
-  // });
+  	let inputVal = Number(inputValue.replace('%', ''));
+  	let maxCount = Number($('.template4-ui-slider-rate').attr('data-max'));
+  	let minCount = Number($('.template4-ui-slider-rate').attr('data-min'));
+  	let percent = ((inputVal - minCount) / (maxCount - minCount)) * 100;
+  	if (inputVal <= minCount) {
+  		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `0%`);
+  		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `0%`);
+  		$(this).parents('.template4-calc_numb-wr').addClass('minRate');
+  		$(this).parents('.template4-calc_numb-wr').removeClass('maxRate');
+  	} else if(inputVal >= maxCount) {
+  		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `100%`);
+  		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `100%`);
+  		$(this).parents('.template4-calc_numb-wr').addClass('maxRate');
+  		$(this).parents('.template4-calc_numb-wr').removeClass('minRate');
+  	} else {
+  		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `${percent}%`);
+  		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `${percent}%`);
+  		$(this).parents('.template4-calc_numb-wr').removeClass('maxCount');
+  		$(this).parents('.template4-calc_numb-wr').removeClass('minCount');
+  	}
+  	$('.template4-ui-slider-rate').attr('data-value', inputVal);
+  	let resultNum = $('.template4-ui-slider-rate').attr('data-value');
+  });
 
   $(".template4-ui-slider-rate-result").on("mousedown", function () {
     $(this).val($(this).val().replace("%", ""));
