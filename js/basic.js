@@ -407,18 +407,19 @@ $(document).ready(function () {
 
   $(".phone-input").keydown(function (e) {
     thisInput = this;
-    if (thisInput.value == "" || thisInput.value == "+_ (___) ___-____") {
+    console.log(thisInput.value);
+    console.log(e.target.selectionStart)
+    if (thisInput.value == "" || thisInput.value == "+_ (___) ___-____" || e.target.selectionStart == 0) {
+      thisInput.value = "+_ (___) ___-____";
       $(this).get(0).setSelectionRange(1, 1);
     }
-      if (e.target.selectionStart == 1) {
-        if (e.key == "7" || e.key == "8") {
-
-          $("[name=phone]").mask("+9 (999) 999-9999");
-        } else {
-          $("[name=phone]").mask("+7 (999) 999-9999");
-        }
+    if (e.target.selectionStart == 1) {
+      if (e.key == "7" || e.key == "8") {
+        $("[name=phone]").mask("+9 (999) 999-9999");
+      } else {
+        $("[name=phone]").mask("+7 (999) 999-9999");
       }
-
+    }
   });
 
   // $(".phone-input").click(function() {
@@ -739,6 +740,7 @@ $(document).ready(function () {
     navigation: true,
     menu: "#myMenu",
     bigSectionsDestination: top,
+    lazyLoading: false,
     afterResponsive: function (isResponsive) {
       autoScrolling: false;
     },
@@ -1704,42 +1706,42 @@ $(document).ready(function () {
     }
   };
 
-  $('.template4-ui-slider-rate-result').on('input keyup', function(){
-  	let inputValue;
-  	if ($(this).val().indexOf(',') > -1) {
-  		if ($(this).val().indexOf(',', $(this).val().indexOf(',') + 1) > -1) {
-  				return false;
-  		}
-  		if ($(this).val().indexOf('.', $(this).val().indexOf(',') + 1) > -1) {
-  			return false;
-  		}
-  		inputValue = $(this).val().replace(',', '.');
-  	} else {
-  		inputValue = $(this).val();
-  	}
+  $('.template4-ui-slider-rate-result').on('input keyup', function () {
+    let inputValue;
+    if ($(this).val().indexOf(',') > -1) {
+      if ($(this).val().indexOf(',', $(this).val().indexOf(',') + 1) > -1) {
+        return false;
+      }
+      if ($(this).val().indexOf('.', $(this).val().indexOf(',') + 1) > -1) {
+        return false;
+      }
+      inputValue = $(this).val().replace(',', '.');
+    } else {
+      inputValue = $(this).val();
+    }
 
-  	let inputVal = Number(inputValue.replace('%', ''));
-  	let maxCount = Number($('.template4-ui-slider-rate').attr('data-max'));
-  	let minCount = Number($('.template4-ui-slider-rate').attr('data-min'));
-  	let percent = ((inputVal - minCount) / (maxCount - minCount)) * 100;
-  	if (inputVal <= minCount) {
-  		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `0%`);
-  		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `0%`);
-  		$(this).parents('.template4-calc_numb-wr').addClass('minRate');
-  		$(this).parents('.template4-calc_numb-wr').removeClass('maxRate');
-  	} else if(inputVal >= maxCount) {
-  		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `100%`);
-  		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `100%`);
-  		$(this).parents('.template4-calc_numb-wr').addClass('maxRate');
-  		$(this).parents('.template4-calc_numb-wr').removeClass('minRate');
-  	} else {
-  		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `${percent}%`);
-  		$(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `${percent}%`);
-  		$(this).parents('.template4-calc_numb-wr').removeClass('maxCount');
-  		$(this).parents('.template4-calc_numb-wr').removeClass('minCount');
-  	}
-  	$('.template4-ui-slider-rate').attr('data-value', inputVal);
-  	let resultNum = $('.template4-ui-slider-rate').attr('data-value');
+    let inputVal = Number(inputValue.replace('%', ''));
+    let maxCount = Number($('.template4-ui-slider-rate').attr('data-max'));
+    let minCount = Number($('.template4-ui-slider-rate').attr('data-min'));
+    let percent = ((inputVal - minCount) / (maxCount - minCount)) * 100;
+    if (inputVal <= minCount) {
+      $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `0%`);
+      $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `0%`);
+      $(this).parents('.template4-calc_numb-wr').addClass('minRate');
+      $(this).parents('.template4-calc_numb-wr').removeClass('maxRate');
+    } else if (inputVal >= maxCount) {
+      $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `100%`);
+      $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `100%`);
+      $(this).parents('.template4-calc_numb-wr').addClass('maxRate');
+      $(this).parents('.template4-calc_numb-wr').removeClass('minRate');
+    } else {
+      $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `${percent}%`);
+      $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `${percent}%`);
+      $(this).parents('.template4-calc_numb-wr').removeClass('maxCount');
+      $(this).parents('.template4-calc_numb-wr').removeClass('minCount');
+    }
+    $('.template4-ui-slider-rate').attr('data-value', inputVal);
+    let resultNum = $('.template4-ui-slider-rate').attr('data-value');
   });
 
   $(".template4-ui-slider-rate-result").on("mousedown", function () {
