@@ -1096,11 +1096,13 @@ $(document).ready(function () {
 
   $(".slides-nav-menu").mouseenter(function (e) {
     // $('.slides-nav-menu').css('overflow-y', 'scroll');
+    $("body").css('overflow', 'hidden');
     fullpage_api.setAllowScrolling(false);
   });
 
   $(".slides-nav-menu").mouseleave(function (e) {
     fullpage_api.setAllowScrolling(true);
+    $("body").css('overflow', 'visible');
   });
 
 
