@@ -1057,32 +1057,33 @@ $(document).ready(function () {
   // });
 
   $(".slides-nav-dots").click(function () {
-    if ($(".slides-nav-menu").hasClass("active")) {
-      $(".slides-nav-menu").removeClass("active");
-      $(".slides-nav-dots").addClass("active");
-      fullpage_api.setAllowScrolling(true);
-      fullpage_api.setKeyboardScrolling(true);
-    } else {
-      $(".slides-nav-dots").removeClass("active");
+    if (!$(".slides-nav-menu").hasClass("active")) {
       $(".slides-nav-menu").addClass("active");
-
+      $(".slides-nav-dots").removeClass("active");
       fullpage_api.setAllowScrolling(true);
       fullpage_api.setKeyboardScrolling(true);
-      //setDotsStatus(true)
-      $("body").removeClass("main-menu_open");
-    }
-    callScrollBarLeft()
+    } 
+    // else {
+      // $(".slides-nav-dots").removeClass("active");
+      // $(".slides-nav-menu").addClass("active");
+
+      // // fullpage_api.setAllowScrolling(true);
+      // // fullpage_api.setKeyboardScrolling(true);
+      // //setDotsStatus(true)
+      // $("body").removeClass("main-menu_open");
+    // }
+    // callScrollBarLeft()
 
   });
 
-  function callScrollBarLeft() {
-    var nanoTextarea = document.querySelector(".slides-nav-menu .nano-content");
-    //$(".nano-content").css("display", "block")
-    addListenerMulti(nanoTextarea, "scroll", function () {
-    });
+  // function callScrollBarLeft() {
+  //   var nanoTextarea = document.querySelector(".slides-nav-menu .nano-content");
+  //   //$(".nano-content").css("display", "block")
+  //   addListenerMulti(nanoTextarea, "scroll", function () {
+  //   });
 
-    $("#myMenu").nanoScroller();
-  }
+  //   $("#myMenu").nanoScroller();
+  // }
 
 
 
@@ -1102,7 +1103,7 @@ $(document).ready(function () {
 
   $(".slides-nav-menu").mouseleave(function (e) {
     fullpage_api.setAllowScrolling(true);
-    $("body").css('overflow', 'visible');
+    // $("body").css('overflow', 'visible');
   });
 
 
