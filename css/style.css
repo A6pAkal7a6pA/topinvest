@@ -4,6 +4,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+  scrollbar-track-color: black!important;
 }
 
 .main-wrapper {
@@ -101,6 +102,7 @@ b {
 p {
   line-height: 2.222vw;
 }
+
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -939,7 +941,7 @@ textarea {
 
 .header-menu ul li.active a,
 .header-menu ul li a:hover,
-.fancybox-active .header-menu ul li a.active {
+.popup-services-wr .header-menu ul li a.active {
   border-color: #eb5757;
 }
 
@@ -1046,7 +1048,7 @@ body.fp-viewing-contacts .header .header-sandwich:hover svg path,
 }
 
 /* Main menu */
-html + .main-menu_open,
+html + .main-menu_open
 .main-menu_open {
   overflow: hidden !important;
 }
@@ -3650,8 +3652,8 @@ section {
     right: 3vw;
   }
   .slides-nav-dot {
-    width: 3px;
-    height: 3px;
+    width: 0.45vw;
+    height: 0.45vw;
     margin-bottom: 7px;
   }
   .slides-nav-menu {
@@ -3668,16 +3670,28 @@ section {
     height: 2.53vw;
   }
   #myMenu li {
-    margin-bottom: 0.667vw;
+    margin-bottom: 0.467vw;
   }
   #myMenu li a {
     font-size: 1.5vw;
-    line-height: 2vw;
+    line-height: 2.6vw;
   }
 
   #myMenu li::before {
     width: 0.593vw;
     height: 0.593vw;
+  }
+
+  #myMenu li:nth-child(5n + 5) {
+    margin-bottom: 1.8vw;
+  }
+  .copy-for-eblan {
+    margin-top: 16px;
+    text-align: right;
+    font-size: 1.2vw;
+    font-weight: 500;
+    color: black;
+    transform: translateX(0vw);
   }
 }
 
@@ -3715,16 +3729,22 @@ section {
   .slides-nav-dots.active {
     right: 3.9vw;
   }
+
+  .slides-nav-dot {
+    width: 0.65vw;
+    height: 0.65vw;
+    margin-bottom: 7px;
+  }
   #myMenu li {
-    margin-bottom: 1.5vw;
+    margin-bottom: 0.5vw;
     font-size: 2.25vw;
-    line-height: 2.5vw;
+    /* line-height: 2.5vw; */
     padding-left: 3.125vw;
   }
 
   #myMenu li a {
     text-shadow: 0 0 3.125vw black;
-    line-height: 2.5vw;
+    line-height: 3.9vw;
     font-size: 2.25vw;
   }
 
@@ -3740,6 +3760,17 @@ section {
   html,
   body {
     overflow-x: hidden !important;
+  }
+  #myMenu li:nth-child(5n + 5) {
+    margin-bottom: 2.8vw;
+  }
+  .copy-for-eblan {
+    margin-top: 16px;
+    text-align: right;
+    font-size: 1.8vw;
+    font-weight: 500;
+    color: black;
+    transform: translateX(0vw);
   }
 }
 
@@ -3806,16 +3837,13 @@ section {
     top: 5vw;
   }
   #myMenu li {
-    margin-bottom: 7.005vw;
+    margin-bottom: 1.005vw;
     font-size: 5.676vw;
     padding-left: 5vw;
   }
-  #myMenu li:nth-child(5n + 5) {
-    margin-bottom: 7.005vw;
-  }
   #myMenu li a {
     text-shadow: 0 0 8.171vw black;
-    line-height: 6.039vw;
+    line-height: 8.039vw;
     font-size: 5.676vw;
   }
   #myMenu li::before {
@@ -3830,8 +3858,20 @@ section {
     overflow-x: hidden!important;
     /* overflow-y: scroll; */
   }
+
+  #myMenu li:nth-child(5n + 5) {
+    margin-bottom: 5vw;
+  }
   /* html + .slides-nav-menu.active, */
   /* body + .slides-nav-menu.active {
     overflow: hidden!important;
   } */
+  .copy-for-eblan {
+    margin-top: 16px;
+    text-align: right;
+    font-size: 3.4vw;
+    font-weight: 500;
+    color: black;
+    transform: translateX(0vw);
+  }
 }

@@ -14,7 +14,6 @@ $(document).ready(function () {
 
   $('.header-menu #navig li a').click(function (e) {
     var location = window.location.href;
-    console.log(location);
     // e.preventDefault();
     // var link = this.href;
     // if (location == link) {
@@ -23,7 +22,7 @@ $(document).ready(function () {
     // }
   });
 
-  $('body').css("overflow-y", "scroll");
+  // $('body').css("overflow-y", "scroll");
   // document.getElementById("navig").getElementsByTagName('a').addEventListener('click', function(e) {
   //     var location = window.location.href;
   //     console.log(location)
@@ -671,6 +670,8 @@ $(document).ready(function () {
   });
 
   $(".header-logo").click(function (e) {
+    $.fancybox.close();
+    $("body").removeClass("main-menu_open");
     e.preventDefault();
     fullpage_api.moveTo(1);
   });
@@ -731,11 +732,13 @@ $(document).ready(function () {
   });
 
   $('[data-src="#popup-request"]').fancybox({
+
     touch: false,
     beforeLoad: function () {
       if (document.querySelector(".fullpage-wrapper")) {
         $.fn.fullpage.setAllowScrolling(false);
       }
+      $('.header-menu #navig li a').removeClass('active');
       $("body").addClass("popup-request-wr popup-wr popup-wr-hidden");
       $("body").removeClass("main-menu_open");
       $(".fancybox-stage").addClass("nano");
@@ -1102,7 +1105,7 @@ $(document).ready(function () {
 
   // function callScrollBarLeft() {
   //   var nanoTextarea = document.querySelector(".slides-nav-menu .nano-content");
-  //   //$(".nano-content").css("display", "block")
+  //   $(".nano-content").css("display", "block")
   //   addListenerMulti(nanoTextarea, "scroll", function () {
   //   });
 
@@ -1124,8 +1127,8 @@ $(document).ready(function () {
     // if ($(window).width() <= 800) {
     //   $("body").css('overflow', 'hidden');
     // } else {
-      $("body").css('overflow', 'hidden');
-      $("html").css('overflow', 'hidden');
+      // $("body").css('overflow', 'hidden');
+      // $("html").css('overflow', 'hidden');
       fullpage_api.setAllowScrolling(false);
     // }
 
@@ -1135,7 +1138,7 @@ $(document).ready(function () {
   $(".slides-nav-menu").mouseleave(function (e) {
     fullpage_api.setAllowScrolling(true);
     // $("body").css('overflow-y', 'scroll');
-    $("html").css('overflow', 'auto'); 
+    // $("html").css('overflow', 'auto'); 
   });
 
 

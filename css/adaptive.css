@@ -1230,7 +1230,7 @@
         width: 3px;
     }
     body::-webkit-scrollbar-track {
-        background: gray;
+        background: black;
         border-radius: 3px;
     }
     body::-webkit-scrollbar-thumb {
