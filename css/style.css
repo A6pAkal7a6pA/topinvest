@@ -2,6 +2,7 @@
 
 html,
 body {
+  width: 100%;
   height: 100%;
 }
 
@@ -13,7 +14,7 @@ body {
 
 body {
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   background: black;
   color: white;
   font: 1.25vw/2.222vw "Montserrat", sans-serif;
@@ -165,7 +166,6 @@ textarea {
 .logo img,
 .photo img {
   display: block;
-
 }
 
 .logo a {
@@ -780,7 +780,7 @@ textarea {
 
 .fp-viewing-contacts-wr body:not(.popup-privacyPolicy-wr) .header-menu ul li a {
   color: black;
-  font-weight: 400;
+  /* font-weight: 400; */
 }
 
 .fp-viewing-contacts-wr body:not(.popup-privacyPolicy-wr) .header-logo svg path {
@@ -831,8 +831,8 @@ textarea {
   background: rgb(0 0 0 / 0.2);
 }
 
-.fp-viewing-contacts-wr .slides-nav-dots.active .slides-nav-dot{
-  background-color: black!important;
+.fp-viewing-contacts-wr .slides-nav-dots.active .slides-nav-dot {
+  background-color: black !important;
 }
 
 .header {
@@ -1046,7 +1046,7 @@ body.fp-viewing-contacts .header .header-sandwich:hover svg path,
 }
 
 /* Main menu */
-
+html + .main-menu_open,
 .main-menu_open {
   overflow: hidden !important;
 }
@@ -2773,7 +2773,7 @@ section {
 }
 
 .fancybox-slide {
-  overflow: visible;
+  overflow-y: hidden;
 }
 
 .fancybox-slide--html {
@@ -3487,7 +3487,7 @@ section {
 }
 
 #myMenu li:nth-child(1)::before {
-  background-color:  #EB5757;
+  background-color: #eb5757;
 }
 
 #myMenu li:nth-child(2)::before {
@@ -3642,7 +3642,6 @@ section {
 }
 
 @media (max-width: 1200px) {
-
   .slides-nav-dots {
     top: 9vw;
     right: -25%;
@@ -3666,7 +3665,7 @@ section {
     top: 9vw;
     right: 1.6vw;
     width: 2.658vw;
-    height: 2.530vw;
+    height: 2.53vw;
   }
   #myMenu li {
     margin-bottom: 0.667vw;
@@ -3676,7 +3675,7 @@ section {
     line-height: 2vw;
   }
 
-  #myMenu li::before{
+  #myMenu li::before {
     width: 0.593vw;
     height: 0.593vw;
   }
@@ -3736,7 +3735,11 @@ section {
   .slides-nav-close {
     right: 2.4vw;
     width: 3.987vw;
-    height: 3.800vw;
+    height: 3.8vw;
+  }
+  html,
+  body {
+    overflow-x: hidden !important;
   }
 }
 
@@ -3770,7 +3773,7 @@ section {
   .slides-nav-menu {
     width: 100%;
     height: 100%;
-    right: -100%;
+    right: -150%;
     padding-left: 10vw;
     padding-top: 25vw;
     padding-bottom: 10vw;
@@ -3822,4 +3825,13 @@ section {
   .slides-nav-menu.active::after {
     opacity: 0;
   }
+
+  html, body {
+    overflow-x: hidden!important;
+    /* overflow-y: scroll; */
+  }
+  /* html + .slides-nav-menu.active, */
+  /* body + .slides-nav-menu.active {
+    overflow: hidden!important;
+  } */
 }
