@@ -939,7 +939,7 @@ textarea {
 
 .header-menu ul li.active a,
 .header-menu ul li a:hover,
-.header-menu ul li a.active {
+.fancybox-active .header-menu ul li a.active {
   border-color: #eb5757;
 }
 
@@ -3186,7 +3186,7 @@ section {
 }
 
 .popup-privacyPolicy_content {
-  overflow: auto;
+  overflow: hidden;
   height: 33vw;
 }
 

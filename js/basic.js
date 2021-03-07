@@ -9,9 +9,10 @@ $(document).ready(function () {
   //   }
   // });
 
+
   $('.header-menu #navig li a').click(function (e) {
-    // var location = window.location.href;
-    // console.log(location);
+    var location = window.location.href;
+    console.log(location);
     // e.preventDefault();
     // var link = this.href;
     // if (location == link) {
