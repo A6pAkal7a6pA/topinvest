@@ -1,21 +1,38 @@
+
 $(document).ready(function () {
-  $('.header-menu ul li a').each(function () {
-    var location = window.location.href;
+  // $('#myMenu li a').each(function (e) {
+  //   var location = window.location.href;
+  //   e.preventDefault();
+  //   var link = this.href;
+  //   if (location == link) {
+  //     $(this).addClass('active');
+  //   }
+  // });
 
-    var link = this.href;
-    if (location == link) {
+  $('.header-menu #navig li a').click(function (e) {
+    // var location = window.location.href;
+    // console.log(location);
+    // e.preventDefault();
+    // var link = this.href;
+    // if (location == link) {
+      $('.header-menu #navig li a').removeClass('active');
       $(this).addClass('active');
-    }
+    // }
   });
+  // document.getElementById("navig").getElementsByTagName('a').addEventListener('click', function(e) {
+  //     var location = window.location.href;
+  //     console.log(location)
+  //     e.preventDefault();
+  //     var link = this.href;
+  
+  //     if (location == link) {
+  //       $(this).addClass('active');
+  //     }
 
-  $('#myMenu li a').each(function (e) {
-    var location = window.location.href;
-    e.preventDefault();
-    var link = this.href;
-    if (location == link) {
-      $(this).addClass('active');
-    }
-  });
+  // })
+  // $('.navig li a').each(function (el) {
+
+  // });
   // Lazy
   // $(".lazy").lazy();
 
@@ -1062,15 +1079,15 @@ $(document).ready(function () {
       $(".slides-nav-dots").removeClass("active");
       fullpage_api.setAllowScrolling(true);
       fullpage_api.setKeyboardScrolling(true);
-    } 
+    }
     // else {
-      // $(".slides-nav-dots").removeClass("active");
-      // $(".slides-nav-menu").addClass("active");
+    // $(".slides-nav-dots").removeClass("active");
+    // $(".slides-nav-menu").addClass("active");
 
-      // // fullpage_api.setAllowScrolling(true);
-      // // fullpage_api.setKeyboardScrolling(true);
-      // //setDotsStatus(true)
-      // $("body").removeClass("main-menu_open");
+    // // fullpage_api.setAllowScrolling(true);
+    // // fullpage_api.setKeyboardScrolling(true);
+    // //setDotsStatus(true)
+    // $("body").removeClass("main-menu_open");
     // }
     // callScrollBarLeft()
 
