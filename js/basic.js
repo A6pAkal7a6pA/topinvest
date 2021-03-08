@@ -1,4 +1,5 @@
 
+
 $(document).ready(function () {
   // $('#myMenu li a').each(function (e) {
   //   var location = window.location.href;
@@ -8,7 +9,6 @@ $(document).ready(function () {
   //     $(this).addClass('active');
   //   }
   // });
-
 
 
 
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
   // });
   // Lazy
-  // $(".lazy").lazy();
+  $(".lazy").lazy();
 
   // Styles Select
   $("select").niceSelect();
@@ -799,6 +799,7 @@ $(document).ready(function () {
       ".popup-services_content, .popup-services_info2-desc, .popup-privacyPolicy_content, .main-menu1, .main-menu2, .textarea-noscroll, .slides-nav-menu",
     responsiveWidth: 800,
     scrollingSpeed: 1000,
+    scrollHorizontally: false,
     navigation: true,
     menu: "#myMenu",
     bigSectionsDestination: top,
