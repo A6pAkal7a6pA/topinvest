@@ -4,7 +4,6 @@ html,
 body {
   width: 100%;
   height: 100%;
-  scrollbar-track-color: black!important;
 }
 
 .main-wrapper {
@@ -1058,10 +1057,6 @@ body.fp-viewing-contacts .header .header-sandwich:hover svg path,
 }
 
 /* Main menu */
-html + .main-menu_open
-.main-menu_open {
-  overflow: hidden !important;
-}
 
 .main-menu_open > .nano-pane {
   display: none;
@@ -3869,16 +3864,11 @@ section {
 
   html, body {
     overflow-x: hidden!important;
-    /* overflow-y: scroll; */
   }
 
   #myMenu li:nth-child(5n + 5) {
     margin-bottom: 5vw;
   }
-  /* html + .slides-nav-menu.active, */
-  /* body + .slides-nav-menu.active {
-    overflow: hidden!important;
-  } */
   .copy-for-eblan {
     margin-top: 16px;
     text-align: right;
