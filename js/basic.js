@@ -12,13 +12,14 @@ $(document).ready(function () {
 
 
 
+
   $('.header-menu #navig li a').click(function (e) {
     var location = window.location.href;
     // e.preventDefault();
     // var link = this.href;
     // if (location == link) {
-      $('.header-menu #navig li a').removeClass('active');
-      $(this).addClass('active');
+    $('.header-menu #navig li a').removeClass('active');
+    $(this).addClass('active');
     // }
   });
 
@@ -28,7 +29,7 @@ $(document).ready(function () {
   //     console.log(location)
   //     e.preventDefault();
   //     var link = this.href;
-  
+
   //     if (location == link) {
   //       $(this).addClass('active');
   //     }
@@ -381,10 +382,14 @@ $(document).ready(function () {
   });
 
   // Menu
+
+
   $(".header-sandwich").click(function () {
     if ($("body").hasClass("main-menu_open")) {
       $("body").removeClass("main-menu_open");
-      $('html').css('overflow-y', "scroll");
+      if ($(window).width() <= 800) {
+        $('html').css('overflow-y', "scroll");
+      }
       if (document.querySelector(".fullpage-wrapper")) {
         $.fn.fullpage.setAllowScrolling(true);
       }
@@ -399,7 +404,9 @@ $(document).ready(function () {
     }
   });
   $(".main-menu_close").click(function () {
-
+    if ($(window).width() <= 800) {
+      $('html').css('overflow-y', "scroll");
+    }
     $("body").removeClass("main-menu_open");
     if (document.querySelector(".fullpage-wrapper")) {
       $.fn.fullpage.setAllowScrolling(true);
@@ -412,6 +419,11 @@ $(document).ready(function () {
       $.fn.fullpage.setAllowScrolling(true);
     }
   });
+  // document.getElementById('popup-privacyPolicy').get.addEventListener('click', function() {
+  //   console.log('click');
+  //   $('html').css('overflow-y', "scroll");
+  // })
+
 
   // Masked Input
   $.fn.setCursorPosition = function (pos) {
@@ -790,6 +802,7 @@ $(document).ready(function () {
     navigation: true,
     menu: "#myMenu",
     bigSectionsDestination: top,
+    lazyLoading: false,
     afterResponsive: function (isResponsive) {
       autoScrolling: false;
     },
@@ -1127,9 +1140,9 @@ $(document).ready(function () {
     // if ($(window).width() <= 800) {
     //   $("body").css('overflow', 'hidden');
     // } else {
-      // $("body").css('overflow', 'hidden');
-      // $("html").css('overflow', 'hidden');
-      fullpage_api.setAllowScrolling(false);
+    // $("body").css('overflow', 'hidden');
+    // $("html").css('overflow', 'hidden');
+    fullpage_api.setAllowScrolling(false);
     // }
 
 

@@ -266,7 +266,7 @@
         position: relative;
     }
     .main-menu_inner {
-        overflow: auto;
+        overflow-y: auto;
         flex-wrap: wrap;
         padding-right: 6.333vw;
     }
@@ -976,7 +976,7 @@
         height: 2.161vw;
     }
     .contacts-inner_wrapper {
-        align-content: center;
+        /* align-content: center; */
     }
     .contacts-address ul li {
         line-height: 2.750vw;
@@ -1529,7 +1529,7 @@
         height: 2.9vw;
     }
     .header_inner-wrapper {
-        padding: 2.125vw 3.375vw;
+        padding: 1.5vw 3.375vw;
     }
     .header-logo span:first-child,
     .header-logo span:last-child {
@@ -2901,7 +2901,7 @@
         padding-left: 3vw;
     }
     .main-menu {
-        overflow: auto;
+        overflow-y: auto;
         flex-wrap: wrap;
         padding-top: 40vw;
         padding-right: 0;
@@ -2911,7 +2911,7 @@
         position: relative;
     }
     .main-menu_inner {
-        overflow: auto;
+        overflow-y: auto;
         flex-wrap: wrap;
     }
     .main-menu1 {
