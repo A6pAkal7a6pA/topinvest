@@ -1187,11 +1187,11 @@
 
 @media all and (max-width: 828px) {
     .popup-privacyPolicy {
-        padding: 33.116vw 0 2.083vw 6.264vw;
+        padding: 10.116vw 0 2.083vw 6.264vw;
     }
     .popup-privacyPolicy_title {
         padding-right: 13vw;
-        padding-bottom: 8.696vw;
+        padding-bottom: 3.696vw;
     }
     .popup-privacyPolicy_title h2 {
         font-size: 3.5vw;
@@ -1207,8 +1207,8 @@
         padding-right: 0;
     }
     .popup-privacyPolicy_block p {
-        font-size: 4.589vw;
-        line-height: 5.556vw;
+        font-size: 3.589vw;
+        line-height: 4vw;
         text-shadow: 0 0 6.464vw black;
         padding-bottom: 4.589vw;
     }
@@ -4068,6 +4068,9 @@
         top: 6.634vw;
         right: 3.484vw;
     }
+    .popup-privacyPolicy {
+      padding: 29.116vw 0 2.083vw 6.264vw;
+    }
     .popup-privacyPolicy .fancybox-close-small,
     .popup-services .fancybox-close-small {
         top: 6.662vw;
@@ -4078,8 +4081,12 @@
         height: 7.961vw;
     }
     .popup-privacyPolicy_title h2 {
-        font-size: 5.676vw;
-        line-height: 7.246vw;
+      font-size: 4.227vw;
+      line-height: 3.865vw;
+    }
+    .popup-privacyPolicy_block p {
+    font-size: 3.623vw;
+    line-height: 4.469vw;
     }
     .popup-services-wr .fancybox-slide {
         overflow: visible;

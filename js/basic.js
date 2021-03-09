@@ -1,50 +1,31 @@
 
-  window.onload = function () {
-    document.body.classList.add('loaded_hiding');
-    window.setTimeout(function () {
-      document.body.classList.add('loaded');
-      document.body.classList.remove('loaded_hiding');
-    }, 500);
-  }
+window.onload = function () {
+  document.body.classList.add('loaded_hiding');
+  window.setTimeout(function () {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
+  }, 1000);
+}
 
 $(document).ready(function () {
-  // $('#myMenu li a').each(function (e) {
-  //   var location = window.location.href;
-  //   e.preventDefault();
-  //   var link = this.href;
-  //   if (location == link) {
-  //     $(this).addClass('active');
-  //   }
-  // });
-
-
-
-
   $('.header-menu #navig li a').click(function (e) {
-    var location = window.location.href;
+    // var location = window.location.href;
     // e.preventDefault();
     // var link = this.href;
     // if (location == link) {
+    //   if ($('body').hasClass('fancybox-active')) {
+
+    //   }
+    // if (!$('.header-menu #navig li a').hasClass('active')) {
+    //   if ($(window).width() <= 800) {
+    //     $('html').css('overflow', 'hidden');
+    //   }
+    // }
     $('.header-menu #navig li a').removeClass('active');
     $(this).addClass('active');
     // }
   });
 
-  // $('body').css("overflow-y", "scroll");
-  // document.getElementById("navig").getElementsByTagName('a').addEventListener('click', function(e) {
-  //     var location = window.location.href;
-  //     console.log(location)
-  //     e.preventDefault();
-  //     var link = this.href;
-
-  //     if (location == link) {
-  //       $(this).addClass('active');
-  //     }
-
-  // })
-  // $('.navig li a').each(function (el) {
-
-  // });
   // Lazy
   $(".lazy").lazy();
 
@@ -200,6 +181,9 @@ $(document).ready(function () {
   // Информация для Popap Services из главного меню
   var clicks = 0;
   $(".header-menu ul li a").on("click", function () {
+    if ($(window).width() <= 800) {
+      $('html').css('overflow', 'hidden');
+    }
     $(
       ".popup-request .fancybox-close-small, .popup-privacyPolicy .fancybox-close-small"
     ).trigger("click");
@@ -226,9 +210,14 @@ $(document).ready(function () {
         },
         beforeClose: function () {
           $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
+          if ($(window).width() <= 800) {
+            $('html').css('overflow-y', 'scroll');
+          }
+
         },
         afterClose: function () {
           $(".popup-services_content").empty();
+ 
           if (document.querySelector(".fullpage-wrapper")) {
             $.fn.fullpage.setAllowScrolling(true);
           }
@@ -275,6 +264,9 @@ $(document).ready(function () {
 
   // Информация для Popap Services из внутренного меню
   $(".main-menu1 ul li a").click(function (e) {
+    if ($(window).width() <= 800) {
+      $('html').css('overflow', 'hidden');
+    }
     e.preventDefault();
     if (clicks <= 0) {
       $.fancybox.open({
@@ -298,6 +290,9 @@ $(document).ready(function () {
           }, 1);
         },
         beforeClose: function () {
+          if ($(window).width() <= 800) {
+            $('html').css('overflow-y', 'scroll');
+          }
           $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
         },
         afterClose: function () {
@@ -697,6 +692,9 @@ $(document).ready(function () {
 
   // Информация для Popap Services
   $(".services-list1_link, .services-list2_link").click(function (e) {
+    if ($(window).width() <= 800) {
+      $('html').css('overflow', 'hidden');
+    }
     e.preventDefault();
     if (clicks <= 0) {
       $.fancybox.open({
@@ -720,6 +718,9 @@ $(document).ready(function () {
           }, 1);
         },
         beforeClose: function () {
+          if ($(window).width() <= 800) {
+            $('html').css('overflow-y', 'scroll');
+          }
           $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
         },
         afterClose: function () {
@@ -754,6 +755,9 @@ $(document).ready(function () {
 
     touch: false,
     beforeLoad: function () {
+      if ($(window).width() <= 800) {
+        $('html').css('overflow', 'hidden');
+      }
       if (document.querySelector(".fullpage-wrapper")) {
         $.fn.fullpage.setAllowScrolling(false);
       }
@@ -769,6 +773,9 @@ $(document).ready(function () {
       }, 1);
     },
     beforeClose: function () {
+      if ($(window).width() <= 800) {
+        $('html').css('overflow-y', 'scroll');
+      }
       $("body").removeClass("popup-wr popup-wr-hidden");
       $(".fancybox-stage").removeClass("nano");
       $(".fancybox-slide").removeClass("nano-content");
@@ -937,6 +944,7 @@ function fancyboxResize() {
       },
     });
     $('[data-src="#popup-privacyPolicy"]').fancybox({
+      // $('html').css('overflow', 'hidden');
       btnTpl: {
         smallBtn:
           '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
@@ -944,8 +952,12 @@ function fancyboxResize() {
       closeExisting: true,
       touch: false,
       beforeLoad: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow', 'hidden');
+        }
         $("body").addClass("popup-privacyPolicy-wr popup-wr popup-wr-hidden");
         $("body").removeClass("main-menu_open");
+        $('html').css('overflow', 'hidden')
         if (document.querySelector(".fullpage-wrapper")) {
           $.fn.fullpage.setAllowScrolling(false);
         }
@@ -956,6 +968,9 @@ function fancyboxResize() {
         }, 1);
       },
       beforeClose: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow-y', 'scroll');
+        }
         $("body").removeClass(
           "popup-wr popup-privacyPolicy-wr popup-wr-hidden"
         );
@@ -974,6 +989,9 @@ function fancyboxResize() {
       closeExisting: true,
       touch: false,
       beforeLoad: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow', 'hidden');
+        }
         if (document.querySelector(".fullpage-wrapper")) {
           $.fn.fullpage.setAllowScrolling(false);
         }
@@ -986,6 +1004,9 @@ function fancyboxResize() {
         }, 1);
       },
       beforeClose: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow-y', 'scroll');
+        }
         $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
       },
       afterClose: function () {
@@ -1005,6 +1026,9 @@ function fancyboxResize() {
       closeExisting: true,
       backFocus: false,
       beforeLoad: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow', 'hidden');
+        }
         $("body").addClass("popup-privacyPolicy-wr popup-wr popup-wr-hidden");
         $("body").removeClass("main-menu_open");
       },
@@ -1014,6 +1038,9 @@ function fancyboxResize() {
         }, 1);
       },
       beforeClose: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow-y', 'scroll');
+        }
         $("body").removeClass(
           "popup-wr popup-privacyPolicy-wr popup-wr-hidden"
         );
@@ -1028,6 +1055,9 @@ function fancyboxResize() {
       closeExisting: true,
       backFocus: false,
       beforeLoad: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow', 'hidden');
+        }
         $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
         $("body").removeClass("main-menu_open");
       },
@@ -1037,6 +1067,9 @@ function fancyboxResize() {
         }, 1);
       },
       beforeClose: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow-y', 'scroll');
+        }
         $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
       },
       afterClose: function () {
@@ -2113,29 +2146,31 @@ $(document).ready(function () {
     });
 
 
-    let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() + 40;
+    let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() ;
     let phoneHeplerValue = $(".phone-helper-value").width() + 10;
-    $(".phone-input").css("width", phoneHeplerPlaceholder);
+    $(".phone-input").css("width", '100%');
     $(".phone-input").focus(function (event) {
-      $(this).css("width", phoneHeplerValue + 10);
+      $(this).css("width", '100%');
     });
     $(".phone-input").blur(function (event) {
       let thisInput = $(this);
       if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
         setTimeout(function (event) {
-          thisInput.css("width", phoneHeplerPlaceholder);
+          thisInput.css("width", '100%');
         }, 100);
       } else {
         setTimeout(function (event) {
-          $(this).css("width", phoneHeplerValue + 10);
+          $(this).css("width", '100%');
         }, 100);
       }
     });
   } else {
-    let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() + 20;
-    let phoneHeplerValue = $(".phone-helper-value").width();
-    $(".phone-input").css("width", phoneHeplerPlaceholder);
+    
+    // let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() ;
+    let phoneHeplerValue = $(".phone-helper-value").width() + 20;
+    $(".phone-input").css('width', '100%');
     $(".phone-input").focus(function (event) {
+      // $(this).css('text-align','left')
       document.querySelector(".phone-input").setSelectionRange(0, 0);
       $(this).css("width", phoneHeplerValue + 10);
     });
@@ -2144,7 +2179,7 @@ $(document).ready(function () {
       if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
         setTimeout(function (event) {
           thisInput.setSelectionRange = 0;
-          thisInput.css("width", phoneHeplerPlaceholder);
+          thisInput.css("width", '100%');
         }, 100);
       } else {
         setTimeout(function (event) {
