@@ -1189,26 +1189,27 @@ $(document).ready(function () {
 
 
 
-
+  let isGlobalScrollEnabled = false;
   $(".slides-nav-menu").mouseenter(function (e) {
     if ($(window).width() <= 800) {
-      $("html").css('overflow', 'hidden');
-      // $('html').css('padding-right', '3px');
-      // $(".slides-nav-menu.active").css('right', '3px')
-  
+      isGlobalScrollEnabled = false;
     }
     fullpage_api.setAllowScrolling(false);
   });
 
   $(".slides-nav-menu").mouseleave(function (e) {
-    fullpage_api.setAllowScrolling(true);
     if ($(window).width() <= 800) {
-      $("html").css('overflow-y', 'scroll');
-      // $('html').css('padding-right', '0');
-      // $(".slides-nav-menu.active").css('right', '0')
+      isGlobalScrollEnabled = true;
     }
+    fullpage_api.setAllowScrolling(true);
   });
-  
+
+
+  window.addEventListener("wheel", event => {
+    console.log(isGlobalScrollEnabled);
+    if (isGlobalScrollEnabled) event.preventDefault()
+  }, { passive: false })
+
 
 
   // document.onwheel = function (e) {
@@ -2198,68 +2199,68 @@ $(document).ready(function () {
     });
 
 
-  //   let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width();
-  //   let phoneHeplerValue = $(".phone-helper-value").width() + 10;
-  //   $(".phone-input").css("width", '100%');
-  //   $(".phone-input").focus(function (event) {
-  //     $(this).css("width", '100%');
-  //   });
-  //   $(".phone-input").blur(function (event) {
-  //     let thisInput = $(this);
-  //     if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
-  //       setTimeout(function (event) {
-  //         thisInput.css("width", '100%');
-  //       }, 100);
-  //     } else {
-  //       setTimeout(function (event) {
-  //         $(this).css("width", '100%');
-  //       }, 100);
-  //     }
-  //   });
-  // } else {
+    //   let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width();
+    //   let phoneHeplerValue = $(".phone-helper-value").width() + 10;
+    //   $(".phone-input").css("width", '100%');
+    //   $(".phone-input").focus(function (event) {
+    //     $(this).css("width", '100%');
+    //   });
+    //   $(".phone-input").blur(function (event) {
+    //     let thisInput = $(this);
+    //     if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+    //       setTimeout(function (event) {
+    //         thisInput.css("width", '100%');
+    //       }, 100);
+    //     } else {
+    //       setTimeout(function (event) {
+    //         $(this).css("width", '100%');
+    //       }, 100);
+    //     }
+    //   });
+    // } else {
 
-  //   // let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() ;
-  //   let phoneHeplerValue = $(".phone-helper-value").width() + 20;
-  //   $(".phone-input").css('width', '100%');
-  //   $(".phone-input").focus(function (event) {
-  //     // $(this).css('text-align','left')
-  //     document.querySelector(".phone-input").setSelectionRange(0, 0);
-  //     $(this).css("width", phoneHeplerValue + 10);
-  //   });
-  //   $(".phone-input").blur(function (event) {
-  //     let thisInput = $(this);
-  //     if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
-  //       setTimeout(function (event) {
-  //         thisInput.setSelectionRange = 0;
-  //         thisInput.css("width", '100%');
-  //       }, 100);
-  //     } else {
-  //       setTimeout(function (event) {
-  //         $(this).css("width", phoneHeplerValue + 10);
-  //       }, 100);
-  //     }
-  //   });
+    //   // let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() ;
+    //   let phoneHeplerValue = $(".phone-helper-value").width() + 20;
+    //   $(".phone-input").css('width', '100%');
+    //   $(".phone-input").focus(function (event) {
+    //     // $(this).css('text-align','left')
+    //     document.querySelector(".phone-input").setSelectionRange(0, 0);
+    //     $(this).css("width", phoneHeplerValue + 10);
+    //   });
+    //   $(".phone-input").blur(function (event) {
+    //     let thisInput = $(this);
+    //     if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+    //       setTimeout(function (event) {
+    //         thisInput.setSelectionRange = 0;
+    //         thisInput.css("width", '100%');
+    //       }, 100);
+    //     } else {
+    //       setTimeout(function (event) {
+    //         $(this).css("width", phoneHeplerValue + 10);
+    //       }, 100);
+    //     }
+    //   });
 
   }
-//   $('#myMenu').hover(function() {
-//     console.log('mar')
-//     $(document).bind('mousewheel DOMMouseScroll',function(){ 
-//         stopWheel(); 
-//     });
-// }, function() {
-//     $(document).unbind('mousewheel DOMMouseScroll');
-// });
+  //   $('#myMenu').hover(function() {
+  //     console.log('mar')
+  //     $(document).bind('mousewheel DOMMouseScroll',function(){ 
+  //         stopWheel(); 
+  //     });
+  // }, function() {
+  //     $(document).unbind('mousewheel DOMMouseScroll');
+  // });
 
 
-// function stopWheel(e){
-//     if(!e){ /* IE7, IE8, Chrome, Safari */ 
-//         e = window.event; 
-//     }
-//     if(e.preventDefault) { /* Chrome, Safari, Firefox */ 
-//         e.preventDefault(); 
-//     } 
-//     e.returnValue = false; /* IE7, IE8 */
-// }
+  // function stopWheel(e){
+  //     if(!e){ /* IE7, IE8, Chrome, Safari */ 
+  //         e = window.event; 
+  //     }
+  //     if(e.preventDefault) { /* Chrome, Safari, Firefox */ 
+  //         e.preventDefault(); 
+  //     } 
+  //     e.returnValue = false; /* IE7, IE8 */
+  // }
 });
 
 
