@@ -1193,6 +1193,7 @@ $(document).ready(function () {
   $(".slides-nav-menu").mouseenter(function (e) {
     if ($(window).width() <= 800) {
       $("html").css('overflow', 'hidden');
+      $('html').css('padding-right', '3px');
     }
     fullpage_api.setAllowScrolling(false);
   });
@@ -1201,6 +1202,7 @@ $(document).ready(function () {
     fullpage_api.setAllowScrolling(true);
     if ($(window).width() <= 800) {
       $("html").css('overflow-y', 'scroll');
+      $('html').css('padding-right', '0');
     }
   });
   
