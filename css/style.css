@@ -75,6 +75,10 @@ body {
   height: 100%;
 }
 
+html {
+  padding-right: 10px;
+}
+
 .main-wrapper {
   display: flex;
   flex-direction: column;
@@ -3660,9 +3664,17 @@ section {
   outline: none;
 }
 
-.phone-input {
+.form-fields .phone-input {
   transition: all 0.5s;
+  /* margin-left: 0; */
 }
+
+
+.phone-input:focus {
+  width: 8em;
+}
+
+
 
 .phone-helper-placeholder {
   font: 300 1.25vw "Montserrat", sans-serif;
@@ -3865,6 +3877,9 @@ section {
   }
   .form-fields input {
     text-align: left;
+  }
+  html.fp-enabled {
+    padding-right: 1px;
   }
 }
 

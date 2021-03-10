@@ -1226,6 +1226,9 @@
 }
 
 @media all and (max-width: 800px) {
+  html {
+    padding-right: 1px!important;
+  }
     body::-webkit-scrollbar {
         width: 5px;
     }

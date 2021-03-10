@@ -217,7 +217,7 @@ $(document).ready(function () {
         },
         afterClose: function () {
           $(".popup-services_content").empty();
- 
+
           if (document.querySelector(".fullpage-wrapper")) {
             $.fn.fullpage.setAllowScrolling(true);
           }
@@ -397,8 +397,8 @@ $(document).ready(function () {
       }
     } else {
       $(".slides-nav-menu").removeClass("active");
-      $('html').css('overflow', "hidden");
       $("body").addClass("main-menu_open");
+      $('html').css('overflow', "hidden");
       if (document.querySelector(".fullpage-wrapper")) {
         $.fn.fullpage.setAllowScrolling(false);
       }
@@ -695,6 +695,7 @@ $(document).ready(function () {
     if ($(window).width() <= 800) {
       $('html').css('overflow', 'hidden');
     }
+    console.log('loh')
     e.preventDefault();
     if (clicks <= 0) {
       $.fancybox.open({
@@ -916,13 +917,18 @@ window.addEventListener("resize", function () {
 function fancyboxResize() {
   if ($(window).width() >= 800) {
     $("[data-fancybox]").fancybox({
+
       btnTpl: {
         smallBtn:
           '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
       },
+
       closeExisting: true,
       touch: false,
       beforeLoad: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow', 'hidden');
+        }
         if (document.querySelector(".fullpage-wrapper")) {
           $.fn.fullpage.setAllowScrolling(false);
         }
@@ -935,6 +941,9 @@ function fancyboxResize() {
         }, 1);
       },
       beforeClose: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow-y', 'scroll');
+        }
         $("body").removeClass("popup-wr popup-wr-hidden");
       },
       afterClose: function () {
@@ -1140,6 +1149,7 @@ $(document).ready(function () {
     if (!$(".slides-nav-menu").hasClass("active")) {
       $(".slides-nav-menu").addClass("active");
       $(".slides-nav-dots").removeClass("active");
+      // $('html').css('overflow', 'hidden')
 
       fullpage_api.setAllowScrolling(true);
       fullpage_api.setKeyboardScrolling(true);
@@ -1173,27 +1183,63 @@ $(document).ready(function () {
   $(".slides-nav-close").click(function () {
     $(".slides-nav-menu").removeClass("active");
     $(".slides-nav-dots").addClass("active");
+    $('html').css('overflow-y', 'scroll')
     fullpage_api.setAllowScrolling(true);
   });
 
+
+
+
   $(".slides-nav-menu").mouseenter(function (e) {
-    // $('.slides-nav-menu').css('overflow-y', 'scroll');
-    // if ($(window).width() <= 800) {
-    //   $("body").css('overflow', 'hidden');
-    // } else {
-    // $("body").css('overflow', 'hidden');
-    // $("html").css('overflow', 'hidden');
+    if ($(window).width() <= 800) {
+      $("html").css('overflow', 'hidden');
+    }
     fullpage_api.setAllowScrolling(false);
-    // }
-
-
   });
 
   $(".slides-nav-menu").mouseleave(function (e) {
     fullpage_api.setAllowScrolling(true);
-    // $("body").css('overflow-y', 'scroll');
-    // $("html").css('overflow', 'auto'); 
+    if ($(window).width() <= 800) {
+      $("html").css('overflow-y', 'scroll');
+    }
   });
+  
+
+
+  // document.onwheel = function (e) {
+  //   // console.log(e.target.closest('.slides-nav-menu.active').className);
+  //   if (e.target.id != 'slides-nav-menu active') {
+  //     return;
+  //   } else {
+  //     var area = e.target;
+
+  //     var delta = e.deltaY || e.detail || e.wheelDelta;
+
+  //     if (delta < 0 && area.scrollTop == 0) {
+  //       e.preventDefault();
+  //     }
+
+  //     if (delta > 0 && area.scrollHeight - area.clientHeight - area.scrollTop <= 1) {
+  //       e.preventDefault();
+  //     }
+  //   }
+  // };
+
+
+  //   $('.slides-nav-menu.active').bind('mousewheel DOMMouseScroll', function(e) {
+  //     var scrollTo = null;
+  //     if (e.type == 'mousewheel') {
+  //         scrollTo = (e.originalEvent.wheelDelta * -1);
+  //     }
+  //     else if (e.type == 'DOMMouseScroll') {
+  //         scrollTo = 40 * e.originalEvent.detail;
+  //     }
+  //     if (scrollTo) {
+  //         e.preventDefault();
+  //         $(this).scrollTop(scrollTo + $(this).scrollTop());
+  //     }
+  // });
+
 
 
 
@@ -1204,6 +1250,7 @@ $(document).ready(function () {
       if (!div.is(e.target) && div.has(e.target).length === 0 && !dots.is(e.target) && dots.has(e.target).length === 0) {
         $(".slides-nav-menu").removeClass("active");
         $(".slides-nav-dots").addClass("active");
+        // $('html').css('overflow-y', 'scroll');
         // $("body").addClass("main-menu_open");
         fullpage_api.setAllowScrolling(true);
       }
@@ -2146,46 +2193,68 @@ $(document).ready(function () {
     });
 
 
-    let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() ;
-    let phoneHeplerValue = $(".phone-helper-value").width() + 10;
-    $(".phone-input").css("width", '100%');
-    $(".phone-input").focus(function (event) {
-      $(this).css("width", '100%');
-    });
-    $(".phone-input").blur(function (event) {
-      let thisInput = $(this);
-      if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
-        setTimeout(function (event) {
-          thisInput.css("width", '100%');
-        }, 100);
-      } else {
-        setTimeout(function (event) {
-          $(this).css("width", '100%');
-        }, 100);
-      }
-    });
-  } else {
-    
-    // let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() ;
-    let phoneHeplerValue = $(".phone-helper-value").width() + 20;
-    $(".phone-input").css('width', '100%');
-    $(".phone-input").focus(function (event) {
-      // $(this).css('text-align','left')
-      document.querySelector(".phone-input").setSelectionRange(0, 0);
-      $(this).css("width", phoneHeplerValue + 10);
-    });
-    $(".phone-input").blur(function (event) {
-      let thisInput = $(this);
-      if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
-        setTimeout(function (event) {
-          thisInput.setSelectionRange = 0;
-          thisInput.css("width", '100%');
-        }, 100);
-      } else {
-        setTimeout(function (event) {
-          $(this).css("width", phoneHeplerValue + 10);
-        }, 100);
-      }
-    });
+  //   let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width();
+  //   let phoneHeplerValue = $(".phone-helper-value").width() + 10;
+  //   $(".phone-input").css("width", '100%');
+  //   $(".phone-input").focus(function (event) {
+  //     $(this).css("width", '100%');
+  //   });
+  //   $(".phone-input").blur(function (event) {
+  //     let thisInput = $(this);
+  //     if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+  //       setTimeout(function (event) {
+  //         thisInput.css("width", '100%');
+  //       }, 100);
+  //     } else {
+  //       setTimeout(function (event) {
+  //         $(this).css("width", '100%');
+  //       }, 100);
+  //     }
+  //   });
+  // } else {
+
+  //   // let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() ;
+  //   let phoneHeplerValue = $(".phone-helper-value").width() + 20;
+  //   $(".phone-input").css('width', '100%');
+  //   $(".phone-input").focus(function (event) {
+  //     // $(this).css('text-align','left')
+  //     document.querySelector(".phone-input").setSelectionRange(0, 0);
+  //     $(this).css("width", phoneHeplerValue + 10);
+  //   });
+  //   $(".phone-input").blur(function (event) {
+  //     let thisInput = $(this);
+  //     if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+  //       setTimeout(function (event) {
+  //         thisInput.setSelectionRange = 0;
+  //         thisInput.css("width", '100%');
+  //       }, 100);
+  //     } else {
+  //       setTimeout(function (event) {
+  //         $(this).css("width", phoneHeplerValue + 10);
+  //       }, 100);
+  //     }
+  //   });
+
   }
+//   $('#myMenu').hover(function() {
+//     console.log('mar')
+//     $(document).bind('mousewheel DOMMouseScroll',function(){ 
+//         stopWheel(); 
+//     });
+// }, function() {
+//     $(document).unbind('mousewheel DOMMouseScroll');
+// });
+
+
+// function stopWheel(e){
+//     if(!e){ /* IE7, IE8, Chrome, Safari */ 
+//         e = window.event; 
+//     }
+//     if(e.preventDefault) { /* Chrome, Safari, Firefox */ 
+//         e.preventDefault(); 
+//     } 
+//     e.returnValue = false; /* IE7, IE8 */
+// }
 });
+
+
