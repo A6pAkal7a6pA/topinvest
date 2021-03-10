@@ -3789,7 +3789,13 @@ section {
     transform: translateX(0vw);
   }
   .popup-privacyPolicy_block p {
-    font-size: 1.25vw;
+    font-size: 1.333vw;
+    line-height: 1.667vw;
+  }
+
+  .popup-privacyPolicy_title h2 {
+    line-height: 1.833vw;
+    font-size: 1.500vw;
   }
 
 }
@@ -3878,9 +3884,7 @@ section {
   .form-fields input {
     text-align: left;
   }
-  html.fp-enabled {
-    padding-right: 1px;
-  }
+
 }
 
 @media (max-width: 500px) {
