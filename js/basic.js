@@ -1180,6 +1180,31 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+  // let isGlobalScrollEnabled = false;
+  // $(".slides-nav-menu").mouseenter(function (e) {
+  //   if ($(window).width() <= 800) {
+  //     isGlobalScrollEnabled = false;
+  //   }
+  //   fullpage_api.setAllowScrolling(false);
+  // });
+
+  // $(".slides-nav-menu").mouseleave(function (e) {
+  //   if ($(window).width() <= 800) {
+  //     isGlobalScrollEnabled = true;
+  //   }
+  //   fullpage_api.setAllowScrolling(true);
+  // });
+
+
+  // window.addEventListener("wheel", event => {
+  //   console.log(isGlobalScrollEnabled);
+  //   if (isGlobalScrollEnabled) event.preventDefault()
+  // }, { passive: false })
+
   $(".slides-nav-close").click(function () {
     $(".slides-nav-menu").removeClass("active");
     $(".slides-nav-dots").addClass("active");
@@ -1187,29 +1212,31 @@ $(document).ready(function () {
     fullpage_api.setAllowScrolling(true);
   });
 
+  let isGlobalScrollEnabled = true
 
+  document.body.addEventListener("wheel", e => {
+    const menuScroll = document.getElementById("myMenu").nanoscroller
+    if (!isGlobalScrollEnabled) {
 
-  let isGlobalScrollEnabled = false;
+      if (menuScroll.contentScrollTop === 0 && event.deltaY < 0) e.preventDefault()
+      else if (menuScroll.contentScrollTop === menuScroll.maxScrollTop && event.deltaY > 0) e.preventDefault()
+    }
+  }, { passive: false })
+
   $(".slides-nav-menu").mouseenter(function (e) {
+    fullpage_api.setAllowScrolling(false);
     if ($(window).width() <= 800) {
       isGlobalScrollEnabled = false;
     }
-    fullpage_api.setAllowScrolling(false);
   });
 
   $(".slides-nav-menu").mouseleave(function (e) {
+    fullpage_api.setAllowScrolling(true);
     if ($(window).width() <= 800) {
       isGlobalScrollEnabled = true;
     }
-    fullpage_api.setAllowScrolling(true);
+
   });
-
-
-  window.addEventListener("wheel", event => {
-    console.log(isGlobalScrollEnabled);
-    if (isGlobalScrollEnabled) event.preventDefault()
-  }, { passive: false })
-
 
 
   // document.onwheel = function (e) {
