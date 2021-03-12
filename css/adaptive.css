@@ -1044,10 +1044,14 @@
     .popup-privacyPolicy .fancybox-close-small,
     .popup-services .fancybox-close-small {
         top: 7.133vw;
-        right: 1.405vw;
+        right: 0.8vw;
         width: 2.658vw;
         height: 2.530vw;
     }
+
+    /* .popup-privacyPolicy .fancybox-close-small {
+      top: 10.133vw;
+    } */
     .popup-services {
         padding: 11.667vw 0 1.25vw 4.333vw;
     }

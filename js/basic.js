@@ -200,6 +200,9 @@ $(document).ready(function () {
           if (document.querySelector(".fullpage-wrapper")) {
             $.fn.fullpage.setAllowScrolling(false);
           }
+          if ($(window).width() <= 800) {
+            $('html').css('overflow', 'hidden');
+          }
           $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
           $("body").removeClass("main-menu_open");
         },
@@ -966,7 +969,6 @@ function fancyboxResize() {
         }
         $("body").addClass("popup-privacyPolicy-wr popup-wr popup-wr-hidden");
         $("body").removeClass("main-menu_open");
-        $('html').css('overflow', 'hidden')
         if (document.querySelector(".fullpage-wrapper")) {
           $.fn.fullpage.setAllowScrolling(false);
         }
@@ -980,7 +982,7 @@ function fancyboxResize() {
         if ($(window).width() <= 800) {
           $('html').css('overflow-y', 'scroll');
         }
-        
+
         $("body").removeClass(
           "popup-wr popup-privacyPolicy-wr popup-wr-hidden"
         );
@@ -1036,12 +1038,13 @@ function fancyboxResize() {
       closeExisting: true,
       backFocus: false,
       beforeLoad: function () {
-        if (document.querySelector(".fullpage-wrapper")) {
-          $.fn.fullpage.setAllowScrolling(false);
-        }
         if ($(window).width() <= 800) {
           $('html').css('overflow', 'hidden');
         }
+        if (document.querySelector(".fullpage-wrapper")) {
+          $.fn.fullpage.setAllowScrolling(false);
+        }
+ 
         $("body").addClass("popup-privacyPolicy-wr popup-wr popup-wr-hidden");
         $("body").removeClass("main-menu_open");
       },
@@ -1072,7 +1075,7 @@ function fancyboxResize() {
       backFocus: false,
       beforeLoad: function () {
         if (document.querySelector(".fullpage-wrapper")) {
-          $.fn.fullpage.setAllowScrolling(true);
+          $.fn.fullpage.setAllowScrolling(false);
         }
         if ($(window).width() <= 800) {
           $('html').css('overflow', 'hidden');
@@ -1086,6 +1089,9 @@ function fancyboxResize() {
         }, 1);
       },
       beforeClose: function () {
+        if (document.querySelector(".fullpage-wrapper")) {
+          $.fn.fullpage.setAllowScrolling(true);
+        }
         if ($(window).width() <= 800) {
           $('html').css('overflow-y', 'scroll');
         }
@@ -1227,8 +1233,9 @@ $(document).ready(function () {
   document.body.addEventListener("wheel", e => {
     const menuScroll = document.getElementById("myMenu").nanoscroller
     if (!isGlobalScrollEnabled) {
-      if (menuScroll.contentScrollTop === 0 && e.deltaY < 0) e.preventDefault()
-      else if (menuScroll.contentScrollTop === menuScroll.maxScrollTop && e.deltaY > 0) e.preventDefault()
+
+      if (menuScroll.contentScrollTop === 0 && event.deltaY < 0) e.preventDefault()
+      else if (menuScroll.contentScrollTop === menuScroll.maxScrollTop && event.deltaY > 0) e.preventDefault()
     }
   }, { passive: false })
 
