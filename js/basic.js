@@ -445,7 +445,7 @@ $(document).ready(function () {
 
   $("[name=phone]").mask("+9 (999) 999-9999");
 
-  $("#phone-input").keydown(function (e) {
+  $("[name=phone]").keydown(function (e) {
     thisInput = this;
     if (thisInput.value == "" || thisInput.value == "+_ (___) ___-____" || e.target.selectionStart == 0) {
       thisInput.value = "+_ (___) ___-____";
@@ -489,8 +489,8 @@ $(document).ready(function () {
   });
 
 
-  $("#phone-input").keyup(function (e) {
-
+  $("[name=phone]").keyup(function (e) {
+    console.log('helo')
     if (e.target.value[1] === "8") {
       const strArr = e.target.value.split("")
       strArr[1] = "7"
@@ -500,7 +500,7 @@ $(document).ready(function () {
     }
   });
 
-  $("#phone-input").blur(function () {
+  $("[name=phone]").blur(function () {
     // thisInput = this;
     // if (!thisInput.value == "" || !thisInput.value == "+_ (___) ___-____") {
     //   $(this).css('margin-left', '-1.5em')
