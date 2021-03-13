@@ -3678,14 +3678,14 @@ section {
 }
 
 .form-fields .phone-input {
+  /* text-align: right; */
   transition: all 0.5s;
-  /* margin-left: 0; */
 }
 
 
-.phone-input:focus {
-  width: 8em;
-}
+/* .field-phone input:focus {
+  margin-left: -1.5em;
+} */
 
 
 

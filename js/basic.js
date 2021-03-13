@@ -445,12 +445,12 @@ $(document).ready(function () {
 
   $("[name=phone]").mask("+9 (999) 999-9999");
 
-  $(".phone-input").keydown(function (e) {
+  $("#phone-input").keydown(function (e) {
     thisInput = this;
-    console.log(thisInput.value);
-    console.log(e.target.selectionStart)
     if (thisInput.value == "" || thisInput.value == "+_ (___) ___-____" || e.target.selectionStart == 0) {
       thisInput.value = "+_ (___) ___-____";
+      // $(this).css('margin-left', '0em')
+
       $(this).get(0).setSelectionRange(1, 1);
     }
     if (e.target.selectionStart == 1) {
@@ -489,7 +489,7 @@ $(document).ready(function () {
   });
 
 
-  $(".phone-input").keyup(function (e) {
+  $("#phone-input").keyup(function (e) {
 
     if (e.target.value[1] === "8") {
       const strArr = e.target.value.split("")
@@ -500,7 +500,13 @@ $(document).ready(function () {
     }
   });
 
-  $(".phone-input").blur(function () {
+  $("#phone-input").blur(function () {
+    // thisInput = this;
+    // if (!thisInput.value == "" || !thisInput.value == "+_ (___) ___-____") {
+    //   $(this).css('margin-left', '-1.5em')
+    // } else {
+    //   $(this).css('margin-left', '0em')
+    // }
     $("[name=phone]").mask("+9 (999) 999-9999");
   });
 
@@ -698,7 +704,6 @@ $(document).ready(function () {
     if ($(window).width() <= 800) {
       $('html').css('overflow', 'hidden');
     }
-    console.log('loh')
     e.preventDefault();
     if (clicks <= 0) {
       $.fancybox.open({
@@ -1044,7 +1049,7 @@ function fancyboxResize() {
         if (document.querySelector(".fullpage-wrapper")) {
           $.fn.fullpage.setAllowScrolling(false);
         }
- 
+
         $("body").addClass("popup-privacyPolicy-wr popup-wr popup-wr-hidden");
         $("body").removeClass("main-menu_open");
       },
@@ -1183,61 +1188,28 @@ $(document).ready(function () {
 
   });
 
-  // function callScrollBarLeft() {
-  //   var nanoTextarea = document.querySelector(".slides-nav-menu .nano-content");
-  //   $(".nano-content").css("display", "block")
-  //   addListenerMulti(nanoTextarea, "scroll", function () {
-  //   });
-
-  //   $("#myMenu").nanoScroller();
-  // }
-
-
-
-
-
-
-
-
-
-  // let isGlobalScrollEnabled = false;
-  // $(".slides-nav-menu").mouseenter(function (e) {
-  //   if ($(window).width() <= 800) {
-  //     isGlobalScrollEnabled = false;
-  //   }
-  //   fullpage_api.setAllowScrolling(false);
-  // });
-
-  // $(".slides-nav-menu").mouseleave(function (e) {
-  //   if ($(window).width() <= 800) {
-  //     isGlobalScrollEnabled = true;
-  //   }
-  //   fullpage_api.setAllowScrolling(true);
-  // });
-
-
-  // window.addEventListener("wheel", event => {
-  //   console.log(isGlobalScrollEnabled);
-  //   if (isGlobalScrollEnabled) event.preventDefault()
-  // }, { passive: false })
-
   $(".slides-nav-close").click(function () {
     $(".slides-nav-menu").removeClass("active");
     $(".slides-nav-dots").addClass("active");
-    $('html').css('overflow-y', 'scroll')
+    if ($(window).width() <= 800) {
+      $('html').css('overflow-y', 'scroll')
+    }
     fullpage_api.setAllowScrolling(true);
   });
 
   let isGlobalScrollEnabled = true
 
   document.body.addEventListener("wheel", e => {
-    const menuScroll = document.getElementById("myMenu").nanoscroller
+    const menuScroll = document.getElementById("myMenu").nanoscroller;
     if (!isGlobalScrollEnabled) {
-
-      if (menuScroll.contentScrollTop === 0 && event.deltaY < 0) e.preventDefault()
-      else if (menuScroll.contentScrollTop === menuScroll.maxScrollTop && event.deltaY > 0) e.preventDefault()
+      console.log(menuScroll.maxScrollTop);
+      if (menuScroll.contentScrollTop === 0 && e.deltaY < 0) {
+        e.preventDefault();
+      } else if (menuScroll.contentScrollTop === menuScroll.maxScrollTop && e.deltaY > 0) {
+        e.preventDefault();
+      }
     }
-  }, { passive: false })
+  }, { passive: false });
 
   $(".slides-nav-menu").mouseenter(function (e) {
     fullpage_api.setAllowScrolling(false);
@@ -1253,44 +1225,6 @@ $(document).ready(function () {
     }
 
   });
-
-
-  // document.onwheel = function (e) {
-  //   // console.log(e.target.closest('.slides-nav-menu.active').className);
-  //   if (e.target.id != 'slides-nav-menu active') {
-  //     return;
-  //   } else {
-  //     var area = e.target;
-
-  //     var delta = e.deltaY || e.detail || e.wheelDelta;
-
-  //     if (delta < 0 && area.scrollTop == 0) {
-  //       e.preventDefault();
-  //     }
-
-  //     if (delta > 0 && area.scrollHeight - area.clientHeight - area.scrollTop <= 1) {
-  //       e.preventDefault();
-  //     }
-  //   }
-  // };
-
-
-  //   $('.slides-nav-menu.active').bind('mousewheel DOMMouseScroll', function(e) {
-  //     var scrollTo = null;
-  //     if (e.type == 'mousewheel') {
-  //         scrollTo = (e.originalEvent.wheelDelta * -1);
-  //     }
-  //     else if (e.type == 'DOMMouseScroll') {
-  //         scrollTo = 40 * e.originalEvent.detail;
-  //     }
-  //     if (scrollTo) {
-  //         e.preventDefault();
-  //         $(this).scrollTop(scrollTo + $(this).scrollTop());
-  //     }
-  // });
-
-
-
 
   $(document).mouseup(function (e) {
     if ($(".slides-nav-menu").hasClass("active")) {
@@ -2262,27 +2196,27 @@ $(document).ready(function () {
     //   });
     // } else {
 
-    //   // let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() ;
-    //   let phoneHeplerValue = $(".phone-helper-value").width() + 20;
-    //   $(".phone-input").css('width', '100%');
-    //   $(".phone-input").focus(function (event) {
-    //     // $(this).css('text-align','left')
-    //     document.querySelector(".phone-input").setSelectionRange(0, 0);
-    //     $(this).css("width", phoneHeplerValue + 10);
-    //   });
-    //   $(".phone-input").blur(function (event) {
-    //     let thisInput = $(this);
-    //     if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
-    //       setTimeout(function (event) {
-    //         thisInput.setSelectionRange = 0;
-    //         thisInput.css("width", '100%');
-    //       }, 100);
-    //     } else {
-    //       setTimeout(function (event) {
-    //         $(this).css("width", phoneHeplerValue + 10);
-    //       }, 100);
-    //     }
-    //   });
+    // let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() ;
+    // let phoneHeplerValue = $(".phone-helper-value").width() + 20;
+    // $(".phone-input").css('width', '100%');
+    // $(".phone-input").focus(function (event) {
+    //   // $(this).css('text-align','left')
+    //   document.querySelector(".phone-input").setSelectionRange(0, 0);
+    //   $(this).css("width", phoneHeplerValue + 10);
+    // });
+    // $(".phone-input").blur(function (event) {
+    //   let thisInput = $(this);
+    //   if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+    //     setTimeout(function (event) {
+    //       thisInput.setSelectionRange = 0;
+    //       thisInput.css("width", '10px');
+    //     }, 100);
+    //   } else {
+    //     setTimeout(function (event) {
+    //       $(this).css("width", '10px');
+    //     }, 100);
+    //   }
+    // });
 
   }
   //   $('#myMenu').hover(function() {

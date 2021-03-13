@@ -81,7 +81,7 @@ function functionsResizeStretchy() {
               }
 
               var width = Math.max(offset, element.scrollWidth - element.clientWidth);
-
+              
               element.style.width = width + "px";
 
               // To bulletproof, we will set scrollLeft to a
