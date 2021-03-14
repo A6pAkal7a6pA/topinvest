@@ -26,6 +26,15 @@ $(document).ready(function () {
     // }
   });
 
+  $( window ).resize(function() {
+    console.log($('body').hasClass('fancybox-active'))
+    if ($('body').hasClass('fancybox-active')) {
+      console.log('huy')
+      $('html').css('overflow', 'hidden');
+    }
+  });
+
+
   // Lazy
   $(".lazy").lazy();
 
@@ -1188,38 +1197,42 @@ $(document).ready(function () {
 
   });
 
+
+
   $(".slides-nav-close").click(function () {
     $(".slides-nav-menu").removeClass("active");
     $(".slides-nav-dots").addClass("active");
     if ($(window).width() <= 800) {
-      $('html').css('overflow-y', 'scroll')
+      $('html').css('overflow-y', 'auto')
     }
     fullpage_api.setAllowScrolling(true);
   });
 
   let isGlobalScrollEnabled = true
 
-  document.body.addEventListener("wheel", e => {
-    const menuScroll = document.getElementById("myMenu").nanoscroller;
+  document.body.addEventListener("wheel", function (e) {
+    console.log(e.deltaY)
+    const menuScroll = document.querySelector("#myMenu").nanoscroller;
     if (!isGlobalScrollEnabled) {
-      console.log(menuScroll.maxScrollTop);
       if (menuScroll.contentScrollTop === 0 && e.deltaY < 0) {
+        console.log("menuScroll.contentScrollTop === 0 && e.deltaY < 0")
         e.preventDefault();
-      } else if (menuScroll.contentScrollTop === menuScroll.maxScrollTop && e.deltaY > 0) {
+      } else if ((menuScroll.contentScrollTop + 1 === menuScroll.maxScrollTop || menuScroll.contentScrollTop === menuScroll.maxScrollTop) && e.deltaY > 0) {
+        console.log("menuScroll.contentScrollTop === menuScroll.maxScrollTop && e.deltaY > 0")
         e.preventDefault();
       }
     }
   }, { passive: false });
 
   $(".slides-nav-menu").mouseenter(function (e) {
-    fullpage_api.setAllowScrolling(false);
-    if ($(window).width() <= 800) {
-      isGlobalScrollEnabled = false;
-    }
+      fullpage_api.setAllowScrolling(false);
+      if ($(window).width() <= 800) {
+        isGlobalScrollEnabled = false;
+      }
   });
 
   $(".slides-nav-menu").mouseleave(function (e) {
-    fullpage_api.setAllowScrolling(true);
+    $.fn.fullpage.setAllowScrolling(false, 'up, down');
     if ($(window).width() <= 800) {
       isGlobalScrollEnabled = true;
     }
