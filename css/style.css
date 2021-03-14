@@ -222,14 +222,21 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 99999999s ease-in-out 0s;
   -webkit-text-fill-color: #eb5757 !important;
+  /* -webkit-box-shadow: inset 0 0 0 50px #fff; */
 }
 
 label,
 input,
 select,
 textarea {
+
   color: white;
   font: 300 1.25vw "Montserrat", sans-serif;
+}
+
+input::before {
+  content: "";
+  display: block;
 }
 
 textarea {

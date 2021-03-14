@@ -8,7 +8,7 @@
   <meta name="HandheldFriendly" content="true" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <meta name="viewport" content="wicth=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
   <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
   <link rel="stylesheet" href="css/nanoscroller.css" />
@@ -2776,13 +2776,13 @@
       <div class="popup-form_title">
         <h2>Добро пожаловать в мир инвестиций</h2>
       </div>
-      <form action="#" method="POST">
+      <form action="#" method="POST" autocomplete="nope" onfocus="this.removeAttribute('readonly');" readonly>
         <div class="popup-form_fields">
           <div class="popup-form_field popup-form_field-name">
             <div class="popup-form_icon">
               <img src="img/icons/popup-form_name.svg" class="lazy" alt="Icon" />
             </div>
-            <input autocomplete="off" type="text" name="name" placeholder="Ваше имя" />
+            <input autocomplete="off" type="text" name="name" placeholder="Ваше имя" onfocus="this.removeAttribute('readonly');" readonly />
           </div>
           <div class="popup-form_field popup-form_field-phone">
             <div class="popup-form_icon">
@@ -2910,7 +2910,7 @@
   </div>
   <script src="js/jquery.min.js"></script>
   <script src="js/stretchy.js" data-stretchy-filter=".foo"></script>
-  <script src="js/jquery.nanoscroller.min.js"></script>
+  <script src="js/jquery.nanoscroller.min 2.js"></script>
   <script src="js/jquery-ui-slider.min.js"></script>
   <script src="js/jquery.ui.touch-punch.min.js"></script>
   <script src="js/jquery.maskedinput.min.js"></script>
