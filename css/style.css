@@ -792,7 +792,6 @@ textarea {
 
 .bg-photo img,
 .bg-video video {
-  transition: none;
   width: 100%;
   height: 100%;
   object-fit: cover;
