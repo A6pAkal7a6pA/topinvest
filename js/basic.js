@@ -44,7 +44,7 @@ $(document).ready(function () {
   $(".form-stretchy .form-field-foo input").addClass("foo");
 
   // ScrollBar
-  $(".nano").nanoScroller();
+  $(".nano").nanoScroller({ disableResize: true });
 
   // ScrollBar Textarea
   function addListenerMulti(element, eventNames, listener) {
@@ -1210,8 +1210,11 @@ $(document).ready(function () {
   let isGlobalScrollEnabled = true
 
   document.body.addEventListener("wheel", function (e) {
-    console.log(e.deltaY)
     const menuScroll = document.querySelector("#myMenu").nanoscroller;
+    const menuMy = document.querySelector("#myMenu").clientHeight;
+    const menuUl = document.querySelector(".slides-nav-menu div ul").clientHeight;
+    console.log(menuMy)
+    console.log(menuUl)
     if (!isGlobalScrollEnabled) {
       if (menuScroll.contentScrollTop === 0 && e.deltaY < 0) {
         console.log("menuScroll.contentScrollTop === 0 && e.deltaY < 0")
