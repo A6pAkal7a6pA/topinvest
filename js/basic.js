@@ -2188,49 +2188,91 @@ $(document).ready(function () {
     });
 
 
-    //   let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width();
-    //   let phoneHeplerValue = $(".phone-helper-value").width() + 10;
-    //   $(".phone-input").css("width", '100%');
-    //   $(".phone-input").focus(function (event) {
-    //     $(this).css("width", '100%');
-    //   });
-    //   $(".phone-input").blur(function (event) {
-    //     let thisInput = $(this);
-    //     if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
-    //       setTimeout(function (event) {
-    //         thisInput.css("width", '100%');
-    //       }, 100);
-    //     } else {
-    //       setTimeout(function (event) {
-    //         $(this).css("width", '100%');
-    //       }, 100);
-    //     }
-    //   });
-    // } else {
+    let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width();
+    let phoneHeplerValue = $(".phone-helper-value").width() + 10;
+    $(".phone-input").css("width", '100%');
+    $(".phone-input").focus(function (event) {
+      $(this).css("width", phoneHeplerValue);
+    });
+    $(".phone-input").blur(function (event) {
+      let thisInput = $(this);
+      if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+        setTimeout(function (event) {
+          thisInput.css("width", '100%');
+        }, 100);
+      } else {
+        setTimeout(function (event) {
+          $(this).css("width", '100%');
+        }, 100);
+      }
+    });
+  } else {
 
-    // let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() ;
-    // let phoneHeplerValue = $(".phone-helper-value").width() + 20;
-    // $(".phone-input").css('width', '100%');
-    // $(".phone-input").focus(function (event) {
-    //   // $(this).css('text-align','left')
-    //   document.querySelector(".phone-input").setSelectionRange(0, 0);
-    //   $(this).css("width", phoneHeplerValue + 10);
-    // });
-    // $(".phone-input").blur(function (event) {
-    //   let thisInput = $(this);
-    //   if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
-    //     setTimeout(function (event) {
-    //       thisInput.setSelectionRange = 0;
-    //       thisInput.css("width", '10px');
-    //     }, 100);
-    //   } else {
-    //     setTimeout(function (event) {
-    //       $(this).css("width", '10px');
-    //     }, 100);
-    //   }
-    // });
+    let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width();
 
   }
+  let phoneHeplerValue = $(".phone-helper-value").width();
+  if ($(window).width() > 1200) {
+    phoneHeplerValue += 10;
+  } else if ($(window).width() <= 1200 && $(window).width() > 800) {
+    phoneHeplerValue += 20;
+  } else if ($(window).width() <= 500 ) {
+    phoneHeplerValue += 30;
+  }
+  //   $.fn.textWidth = function(text, font) {
+  //     if (!$.fn.textWidth.fakeEl) $.fn.textWidth.fakeEl = $('<span>').hide().appendTo(document.body);
+  //     $.fn.textWidth.fakeEl.text(text || this.val() || this.text()).css('font', font || this.css('font'));
+  //     return $.fn.textWidth.fakeEl.width();
+  // };
+
+  // $('name=phone]').on('input', function() {
+  //     $(this).html($(this).textWidth() + 'px');
+  // }).trigger('input');
+
+  // $('#inpt4-width').html($.fn.textWidth('Pass string without element', '13px arial') + 'px');
+
+  $("[name=phone]").focus(function (event) {
+    $(this).css("width", phoneHeplerValue);
+  });
+
+  //   $.fn.textWidth = function(text, font) {
+
+  //     if (!$.fn.textWidth.fakeEl) $.fn.textWidth.fakeEl = $('<span>').hide().appendTo(document.body);
+
+  //     $.fn.textWidth.fakeEl.text(text || this.val() || this.text() || this.attr('placeholder')).css('font', font || this.css('font'));
+
+  //     return $.fn.textWidth.fakeEl.width();
+  // };
+
+  // $('[name=phone]').on('input', function() {
+  //     var inputWidth = $(this).textWidth();
+  //     $(this).css({
+  //         width: inputWidth
+  //     })
+  // }).trigger('input');
+
+
+  // function inputWidth(elem, minW, maxW) {
+  //     elem = $(this);
+  // }
+
+  // var targetElem = $('[name=phone]');
+
+  // inputWidth(targetElem);
+
+  $("[name=phone]").blur(function (event) {
+    let thisInput = $(this);
+    if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+      setTimeout(function (event) {
+        thisInput.setSelectionRange = 0;
+        thisInput.css("width", '100%');
+      }, 100);
+    } else {
+      setTimeout(function (event) {
+        $(this).css("width", '100%');
+      }, 100);
+    }
+  });
   //   $('#myMenu').hover(function() {
   //     console.log('mar')
   //     $(document).bind('mousewheel DOMMouseScroll',function(){ 
