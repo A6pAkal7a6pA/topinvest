@@ -2257,7 +2257,7 @@ $(document).ready(function () {
         }, 100);
       } else {
         setTimeout(function (event) {
-          $(this).css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '1.042vw');
+          thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '1.042vw');
         }, 100);
       }
       
@@ -2270,7 +2270,7 @@ $(document).ready(function () {
         }, 100);
       } else {
         setTimeout(function (event) {
-          $(this).css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '4.225vw');
+          thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '4.225vw');
         }, 100);
       }
       
@@ -2283,7 +2283,7 @@ $(document).ready(function () {
         }, 100);
       } else {
         setTimeout(function (event) {
-          $(this).css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '2.936vw');
+          thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '2.936vw');
         }, 100);
       }
       

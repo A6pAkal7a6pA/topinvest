@@ -9,6 +9,17 @@
 }
 
 @media all and (min-width: 801px) and (max-width: 1200px) {
+
+  .phone-helper-value {
+    font-size: 1.500vw;
+    line-height: 1.833vw;
+  }
+
+  .phone-helper-placeholder {
+    font-size: 1.500vw;
+    line-height: 1.833vw;
+  }
+
     body {
         font-size: 1.500vw;
         line-height: 2.417vw;
