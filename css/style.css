@@ -47,6 +47,7 @@
   width: 100%;
   position: fixed;
   z-index: -1;
+  background-color: transparent;
 }
 
 .hidd-block .hidd {
@@ -54,6 +55,7 @@
   left: 0;
   top: 0;
   z-index: -1;
+  background-color: transparent;
 }
 
 @keyframes preloader-rotate {
@@ -89,7 +91,7 @@ body {
 }
 
 html {
-  padding-right: 10px;
+  position: fixed;
 }
 
 .main-wrapper {
