@@ -2822,7 +2822,7 @@
     }
     .form-fields input {
         padding-left: 0;
-        padding-right: 2.936vw;
+        margin-right: 2.936vw;
         margin-right: 0;
     }
     .form-message_title span {

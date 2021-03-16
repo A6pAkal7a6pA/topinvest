@@ -14,22 +14,27 @@
   <link rel="stylesheet" href="css/nanoscroller.css" />
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/fonts.css" />
-    <link rel="stylesheet" href="css/fullpage.css" />
+  <link rel="stylesheet" href="css/fullpage.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/adaptive.css" />
   <link rel="stylesheet" href="css/animate.css" />
-  <link rel="preload" href="img/template1-bg.jpg" as="image"/>
-  <link rel="preload" href="img/template2-bg.jpg" as="image"/>
-  <link rel="preload" href="img/template3-bg.jpg" as="image"/>
-  <link rel="preload" href="img/template4-bg.jpg" as="image"/>
-  <link rel="preload" href="img/template5-bg.jpg" as="image"/>
-  <link rel="preload" href="img/template6-bg.jpg" as="image"/>
-  <link rel="preload" href="img/template7-bg.jpg" as="image"/>
-  <link rel="preload" href="img/template8-bg.jpg" as="image"/>
-  <link rel="preload" href="img/template9-bg.jpg" as="image"/>
-  <link rel="preload" href="img/template10-bg.jpg" as="image"/>
+  <!-- <link rel="preload" href="img/template1-bg.jpg" as="image" />
+  <link rel="preload" href="img/template2-bg.jpg" as="image" />
+  <link rel="preload" href="img/template3-bg.jpg" as="image" />
+  <link rel="preload" href="img/template4-bg.jpg" as="image" />
+  <link rel="preload" href="img/template5-bg.jpg" as="image" />
+  <link rel="preload" href="img/template6-bg.jpg" as="image" />
+  <link rel="preload" href="img/template7-bg.jpg" as="image" />
+  <link rel="preload" href="img/template8-bg.jpg" as="image" />
+  <link rel="preload" href="img/template9-bg.jpg" as="image" />
+  <link rel="preload" href="img/template10-bg.jpg" as="image" /> -->
+  <link rel="preload" href="js/jquery.min.js" as="script">
+  <link rel="preload" href="js/stretchy.js" as="script">
+  <link rel="preload" href="js/fullpage.min.js" as="script">
+  <link rel="preload" href="js/basic.js" as="script">
 
 </head>
+
 <body>
   <div class="preloader">
     <div class="preloader__row">
@@ -401,8 +406,7 @@
                   </div>
                   <div class="form-field_wr">
                     <div class="form-field form-field-foo field-phone">
-                      <input autocomplete="off" type="tel" name="phone" id="phone-input"
-                        placeholder="НОМЕР ТЕЛЕФОНА"/>
+                      <input autocomplete="off" type="tel" name="phone" id="phone-input" placeholder="НОМЕР ТЕЛЕФОНА" />
                       <div class="form-icon">
                         <img src="img/icons/form-phone.svg" class="lazy" alt="Icon2" />
                       </div>
@@ -562,7 +566,7 @@
                     <div class="form-field_wr">
                       <div class="form-field form-field-foo field-phone">
                         <input autocomplete="off" type="tel" name="phone" id="phone-input"
-                          placeholder="НОМЕР ТЕЛЕФОНА"/>
+                          placeholder="НОМЕР ТЕЛЕФОНА" />
                         <div class="form-icon">
                           <img src="img/icons/form-phone.svg" class="lazy" alt="Icon3" />
                         </div>
@@ -626,8 +630,7 @@
                   </div>
                   <div class="form-field_wr">
                     <div class="form-field form-field-foo field-phone">
-                      <input autocomplete="off" type="tel" name="phone" id="phone-input"
-                        placeholder="НОМЕР ТЕЛЕФОНА"/>
+                      <input autocomplete="off" type="tel" name="phone" id="phone-input" placeholder="НОМЕР ТЕЛЕФОНА" />
                       <div class="form-icon">
                         <img src="img/icons/form-phone.svg" class="lazy" alt="Icon3" />
                       </div>
@@ -697,8 +700,8 @@
                           data-max="25000000" data-step="100000" data-value="200000"></span>
                         <input autocomplete="off" type="hidden" id="template4-ui-slider-amount-result" value="200 000"
                           class="template4-ui-slider-amount-result" />
-                        <input autocomplete="off" type="text" id="template4-ui-slider-amount-result-check" class="check" data-min="200000"
-                          data-max="99999999" data-step="100000" value="200 000" />
+                        <input autocomplete="off" type="text" id="template4-ui-slider-amount-result-check" class="check"
+                          data-min="200000" data-max="99999999" data-step="100000" value="200 000" />
                       </div>
                     </div>
                     <div class="template4-calc_row">
@@ -790,9 +793,10 @@
                   Узнайте <span class="text-mob">стоимость</span> вашей
                   квартиры <span class="text-desk">за 5 минут</span>
                 </h3>
-                <input autocomplete="off" class="phone-helper-placeholder" type="tel" placeholder="НОМЕР ТЕЛЕФОНА" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';"/>
+                <input autocomplete="off" class="phone-helper-placeholder" type="tel" placeholder="НОМЕР ТЕЛЕФОНА"
+                  onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';" />
                 <!-- <div class="phone-helper-placeholder">НОМЕР ТЕЛЕФОНА</div> -->
-                <div class="phone-helper-value">+7 (777) 777-7777</div>
+                <div class="phone-helper-value">+7 (555) 555-5555</div>
               </div>
               <form action="#" method="POST">
                 <div class="form-fields template4-form_fields">
@@ -822,8 +826,7 @@
                   </div>
                   <div class="form-field_wr">
                     <div class="form-field form-field-foo field-phone">
-                      <input autocomplete="off" type="tel" name="phone" id="phone-input"
-                        placeholder="НОМЕР ТЕЛЕФОНА" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';"/>
+                      <input autocomplete="off" type="tel" name="phone" id="phone-input" placeholder="НОМЕР ТЕЛЕФОНА"/>
                       <div class="form-icon">
                         <img src="img/icons/form-phone.svg" class="lazy" alt="Icon4" />
                       </div>
@@ -931,8 +934,7 @@
                   </div>
                   <div class="form-field_wr">
                     <div class="form-field form-field-foo field-phone">
-                      <input autocomplete="off" type="tel" name="phone" id="phone-input"
-                        placeholder="НОМЕР ТЕЛЕФОНА" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';"/>
+                      <input autocomplete="off" type="tel" name="phone" id="phone-input" placeholder="НОМЕР ТЕЛЕФОНА"/>
                       <div class="form-icon">
                         <img src="img/icons/form-phone.svg" class="lazy" alt="Icon1" />
                       </div>
@@ -1055,8 +1057,7 @@
                   </div>
                   <div class="form-field_wr">
                     <div class="form-field form-field-foo field-phone">
-                      <input autocomplete="off" type="tel" name="phone" id="phone-input"
-                        placeholder="НОМЕР ТЕЛЕФОНА" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';"/>
+                      <input autocomplete="off" type="tel" name="phone" id="phone-input" placeholder="НОМЕР ТЕЛЕФОНА"/>
                       <div class="form-icon">
                         <img src="img/icons/form-phone.svg" class="lazy" alt="Icon1" />
                       </div>
@@ -1186,8 +1187,7 @@
                   </div>
                   <div class="form-field_wr">
                     <div class="form-field form-field-foo field-phone">
-                      <input autocomplete="off" type="tel" name="phone" id="phone-input"
-                        placeholder="НОМЕР ТЕЛЕФОНА" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';"/>
+                      <input autocomplete="off" type="tel" name="phone" id="phone-input" placeholder="НОМЕР ТЕЛЕФОНА"/>
                       <div class="form-icon">
                         <img src="img/icons/form-phone.svg" class="lazy" alt="Icon1" />
                       </div>
@@ -1317,8 +1317,7 @@
                   </div>
                   <div class="form-field_wr">
                     <div class="form-field form-field-foo field-phone">
-                      <input autocomplete="off" type="tel" name="phone" id="phone-input"
-                        placeholder="НОМЕР ТЕЛЕФОНА" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';"/>
+                      <input autocomplete="off" type="tel" name="phone" id="phone-input" placeholder="НОМЕР ТЕЛЕФОНА"/>
                       <div class="form-icon">
                         <img src="img/icons/form-phone.svg" class="lazy" alt="Icon1" />
                       </div>
@@ -1448,8 +1447,7 @@
                   </div>
                   <div class="form-field_wr">
                     <div class="form-field form-field-foo field-phone">
-                      <input autocomplete="off" type="tel" name="phone" id="phone-input"
-                        placeholder="НОМЕР ТЕЛЕФОНА" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';"/>
+                      <input autocomplete="off" type="tel" name="phone" id="phone-input" placeholder="НОМЕР ТЕЛЕФОНА"/>
                       <div class="form-icon">
                         <img src="img/icons/form-phone.svg" class="lazy" alt="Icon1" />
                       </div>
@@ -1573,8 +1571,7 @@
                   </div>
                   <div class="form-field_wr">
                     <div class="form-field form-field-foo field-phone">
-                      <input autocomplete="off" type="tel" name="phone" id="phone-input"
-                        placeholder="НОМЕР ТЕЛЕФОНА" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';"/>
+                      <input autocomplete="off" type="tel" name="phone" id="phone-input" placeholder="НОМЕР ТЕЛЕФОНА"/>
                       <div class="form-icon">
                         <img src="img/icons/form-phone.svg" class="lazy" alt="Icon1" />
                       </div>
@@ -2782,13 +2779,14 @@
             <div class="popup-form_icon">
               <img src="img/icons/popup-form_name.svg" class="lazy" alt="Icon" />
             </div>
-            <input autocomplete="off" type="text" name="name" placeholder="Ваше имя" onfocus="this.removeAttribute('readonly');" readonly />
+            <input autocomplete="off" type="text" name="name" placeholder="Ваше имя"
+              onfocus="this.removeAttribute('readonly');" readonly />
           </div>
           <div class="popup-form_field popup-form_field-phone">
             <div class="popup-form_icon">
               <img src="img/icons/popup-form_phone.svg" class="lazy" alt="Icon" />
             </div>
-            <input autocomplete="off" type="tel" name="phone" id="phone-input" placeholder="Номер телефона" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';"/>
+            <input autocomplete="off" type="tel" name="phone" id="phone-input" placeholder="Номер телефона"/>
           </div>
           <div class="popup-form_field popup-form_field-activity">
             <div class="popup-form_icon">
@@ -2909,8 +2907,8 @@
     </div>
   </div>
   <script src="js/jquery.min.js"></script>
-  <script src="js/stretchy.js" data-stretchy-filter=".foo"></script>
-  <script src="js/jquery.nanoscroller.min 2.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+  <script src="js/jquery.nanoscroller.min.js"></script>
   <script src="js/jquery-ui-slider.min.js"></script>
   <script src="js/jquery.ui.touch-punch.min.js"></script>
   <script src="js/jquery.maskedinput.min.js"></script>
@@ -2919,8 +2917,8 @@
   <script src="js/jquery.lazy.min.js"></script>
   <script src="js/jquery.menu-anchor.min.js"></script>
   <script src="js/fullpage.min.js"></script>
-
-
+  <!-- <script src="js/stretchy.js" data-stretchy-filter=".foo"></script> -->
+  <script src="js/stretchy.min.js" data-stretchy-filter=".foo" async></script>
   <script src="js/jquery.touchSwipe.min.js"></script>
   <script src="js/basic.js"></script>
 </body>

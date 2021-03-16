@@ -3837,7 +3837,7 @@ section {
     display: block;
     width: 3.987vw;
     height: 3.8vw;
-    top: 11vw;
+    top: 12vw;
   }
   .phone-helper-value,
   .phone-helper-placeholder {
@@ -3853,7 +3853,7 @@ section {
 
   .slides-nav-menu.active {
     width: 42%;
-    padding-top: 16vw;
+    padding-top: 17vw;
     padding-left: 5vw;
   }
   .slides-nav-menu.active:after {

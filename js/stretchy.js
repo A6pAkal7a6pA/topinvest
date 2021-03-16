@@ -66,7 +66,6 @@ function functionsResizeStretchy() {
           else if (type == "input") {
             // First test that it is actually visible, otherwise all measurements are off
             element.style.width = "1000px";
-
             if (element.offsetWidth) {
               element.style.width = "0";
 
