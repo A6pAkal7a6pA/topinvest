@@ -42,9 +42,15 @@
   bottom: 0;
   animation-delay: -1s;
 }
+.hidd-block {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
 
-.bg-photo .hidd {
-  position: absolute;
+.hidd-block .hidd {
+  /* position: fixed; */
   left: 0;
   top: 0;
   z-index: -1;
