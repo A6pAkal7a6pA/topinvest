@@ -2245,16 +2245,48 @@ $(document).ready(function () {
 
 
   $("[name=phone]").blur(function (event) {
+    let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width();
+    console.log(phoneHeplerPlaceholder)
     let thisInput = $(this);
-    if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
-      setTimeout(function (event) {
-        thisInput.setSelectionRange = 0;
-        thisInput.css("width", 'auto');
-      }, 100);
-    } else {
-      setTimeout(function (event) {
-        $(this).css("width", 'auto');
-      }, 100);
+    if ( $(window).width() > 800) {
+      if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+        setTimeout(function (event) {
+          thisInput.setSelectionRange = 0;
+          thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '1.042vw');
+  
+        }, 100);
+      } else {
+        setTimeout(function (event) {
+          $(this).css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '1.042vw');
+        }, 100);
+      }
+      
+    } else if ( $(window).width() <= 800 && $(window).width() > 500) {
+      if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+        setTimeout(function (event) {
+          thisInput.setSelectionRange = 0;
+          thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '4.225vw');
+  
+        }, 100);
+      } else {
+        setTimeout(function (event) {
+          $(this).css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '4.225vw');
+        }, 100);
+      }
+      
+    } else if ($(window).width() <= 500) {
+      if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+        setTimeout(function (event) {
+          thisInput.setSelectionRange = 0;
+          thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '2.936vw');
+  
+        }, 100);
+      } else {
+        setTimeout(function (event) {
+          $(this).css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '2.936vw');
+        }, 100);
+      }
+      
     }
   });
   //   $('#myMenu').hover(function() {
