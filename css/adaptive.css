@@ -2435,7 +2435,7 @@
         padding: 0 1.583vw;
     }
     .popup-privacyPolicy {
-        padding-top: 12vw;
+        padding-top: 17vw;
     }
     .popup-privacyPolicy .fancybox-close-small,
     .popup-services .fancybox-close-small {
@@ -2447,9 +2447,11 @@
     }
     .popup-services {
         padding: 17.5vw 0 1.875vw 6.5vw;
+        /* margin-bottom: 6vw!important; */
     }
     .popup-services_content {
         padding-right: 4.25vw;
+        padding-bottom: 3.5vw;
     }
     .popup-services_info1-title_icon img {
         width: 8.375vw;

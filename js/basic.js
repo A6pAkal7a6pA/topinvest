@@ -466,8 +466,23 @@ $(document).ready(function () {
 
   $("[name=phone]").mask("+9 (999) 999-9999");
 
+  let tmp = false;
   $("[name=phone]").keydown(function (e) {
+
     thisInput = this;
+    console.log('======')
+    var start = e.target.selectionStart;
+    var end = e.target.selectionEnd;
+    console.log(Number(start) === 0)
+    console.log(Number(end) === 17)
+    console.log(e.key)
+    console.log(thisInput.value)
+    if (e.key == "Delete") {
+      if (Number(start) === 0 && Number(end) === 17) {
+        tmp = true;
+        this.value = "+_ (___) ___-____";
+      }
+    }
     if (thisInput.value == "" || thisInput.value == "+_ (___) ___-____" || e.target.selectionStart == 0) {
       thisInput.value = "+_ (___) ___-____";
       // $(this).css('margin-left', '0em')
@@ -504,6 +519,17 @@ $(document).ready(function () {
 
 
   $("[name=phone]").keyup(function (e) {
+    // console.log(e.getSelection())
+
+    // let range = new Range();
+    // range.setStart(e.target.selectionStart);
+    // range.setEnd(e.target.selectionEnd);
+    // document.getSelection().addRange(range);
+    // console.log(range.toString)
+    if (tmp) {
+      this.value = "+_ (___) ___-____";
+      tmp = false;
+    }
     if (e.target.value[1] === "8") {
       const strArr = e.target.value.split("")
       strArr[1] = "7"
@@ -2228,8 +2254,6 @@ $(document).ready(function () {
 
   $("[name=phone]").focus(function (event) {
     let phoneHeplerValue = $(".phone-helper-value").innerWidth();
-    console.log(1.042 + 'vw')
-    console.log(phoneHeplerValue)
     // var wid = $(this).width() - 30;
     if ( $(window).width() > 800) {
       $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '1.042vw');
@@ -2246,8 +2270,9 @@ $(document).ready(function () {
 
   $("[name=phone]").blur(function (event) {
     let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width();
-    console.log(phoneHeplerPlaceholder)
     let thisInput = $(this);
+    // console.log(thisInput.val() == );
+    if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
     if ( $(window).width() > 800) {
       if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
         setTimeout(function (event) {
@@ -2288,6 +2313,17 @@ $(document).ready(function () {
       }
       
     }
+  } else {
+    let phoneHeplerValue = $(".phone-helper-value").innerWidth();
+    // var wid = $(this).width() - 30;
+    if ( $(window).width() > 800) {
+      $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '1.042vw');
+    } else if ( $(window).width() <= 800 && $(window).width() > 500) {
+      $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '4.225vw');
+    } else if ($(window).width() <= 500) {
+      $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '2.936vw');
+    }
+  }
   });
   //   $('#myMenu').hover(function() {
   //     console.log('mar')
