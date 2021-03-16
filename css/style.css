@@ -43,6 +43,13 @@
   animation-delay: -1s;
 }
 
+.bg-photo .hidd {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
 @keyframes preloader-rotate {
   100% {
     transform: rotate(360deg);
