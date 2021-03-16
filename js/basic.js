@@ -1274,9 +1274,11 @@ $(document).ready(function () {
     if ($(".slides-nav-menu").hasClass("active")) {
       var div = $(".slides-nav-menu");
       var dots = $(".slides-nav-dots");
-      if (!div.is(e.target) && div.has(e.target).length === 0 && !dots.is(e.target) && dots.has(e.target).length === 0) {
-        // $(".slides-nav-menu").removeClass("active");
-        // $(".slides-nav-dots").addClass("active");
+      var nano = $('.');
+      console.log(nano)
+      if (!div.is(e.target) && div.has(e.target).length === 0 && !dots.is(e.target) && dots.has(e.target).length === 0 && !nano.is(e.target) && nano.has(e.target).length === 0) {
+        $(".slides-nav-menu").removeClass("active");
+        $(".slides-nav-dots").addClass("active");
         // $('html').css('overflow-y', 'scroll');
         // $("body").addClass("main-menu_open");
         fullpage_api.setAllowScrolling(true);
