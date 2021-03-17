@@ -6,9 +6,10 @@ window.onload = function () {
   }, 1000);
 }
 $(document).ready(function () {
-  $(document).on('focus', ':input', function() {
-    $(this).attr('autocomplete', 'off');
-  });
+  // var some_id = $('[name=name]');
+  // some_id.prop('type', 'text');
+  // some_id.removeAttr('autocomplete');
+
   $('.header-menu #navig li a').click(function (e) {
     $('.header-menu #navig li a').removeClass('active');
     $(this).addClass('active');

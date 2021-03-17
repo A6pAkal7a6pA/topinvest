@@ -3763,6 +3763,12 @@ section {
   border-color: #eb5757;
 }
 
+@media (min-width: 800px) {
+  html {
+    position: fixed;
+  }
+}
+
 @media (max-width: 1200px) {
   .slides-nav-dots {
     top: 9vw;
