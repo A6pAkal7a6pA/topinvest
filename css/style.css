@@ -42,21 +42,6 @@
   bottom: 0;
   animation-delay: -1s;
 }
-.hidd-block {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: -1;
-  background-color: transparent;
-}
-
-.hidd-block .hidd {
-  /* position: fixed; */
-  left: 0;
-  top: 0;
-  z-index: -1;
-  background-color: transparent;
-}
 
 @keyframes preloader-rotate {
   100% {
@@ -91,7 +76,7 @@ body {
 }
 
 html {
-  position: fixed;
+  /* position: fixed; */
 }
 
 .main-wrapper {
@@ -936,7 +921,7 @@ textarea {
 }
 
 .fp-viewing-contacts-wr .header-phone ul li a {
-  font-weight: 500;
+  color: #000;
 }
 
 .fp-viewing-contacts-wr .header-phone_numb a {
@@ -3868,7 +3853,7 @@ section {
 
   .slides-nav-menu.active {
     width: 42%;
-    padding-top: 17vw;
+    padding-top: 18vw;
     padding-left: 5vw;
   }
   .slides-nav-menu.active:after {
