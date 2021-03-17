@@ -6,7 +6,9 @@ window.onload = function () {
   }, 1000);
 }
 $(document).ready(function () {
-
+  $(document).on('focus', ':input', function() {
+    $(this).attr('autocomplete', 'off');
+  });
   $('.header-menu #navig li a').click(function (e) {
     $('.header-menu #navig li a').removeClass('active');
     $(this).addClass('active');
