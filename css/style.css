@@ -50,7 +50,6 @@
 }
 
 @keyframes preloader-bounce {
-
   0%,
   100% {
     transform: scale(0);
@@ -103,8 +102,6 @@ body.loaded_hiding .animated.fadeInUp {
 /* body.loaded .animated {
   opacity: 1;
 } */
-
-
 
 body.nano > .nano-pane {
   right: 0;
@@ -188,7 +185,6 @@ p {
   line-height: 2.222vw;
 }
 
-
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: white;
@@ -210,10 +206,14 @@ textarea:-ms-input-placeholder {
 }
 
 input:valid,
-input:focus,
-textarea:valid,
-textarea:focus {
+input:focus{
   color: #eb5757;
+}
+textarea:focus,
+textarea:valid {
+  color: #eb5757;
+  outline: none;
+  border: 0;
 }
 
 input:-webkit-autofill,
@@ -229,7 +229,6 @@ label,
 input,
 select,
 textarea {
-
   color: white;
   font: 300 1.25vw "Montserrat", sans-serif;
 }
@@ -620,9 +619,7 @@ textarea {
 .field-phone {
   display: inline-flex;
   overflow: hidden;
-
 }
-
 
 .field-phone .form-icon img {
   width: 0.972vw;
@@ -874,7 +871,6 @@ textarea {
   background: #eff1f4;
 }
 
-
 .fp-viewing-contacts-wr .header:after {
   background: linear-gradient(#eff1f4 0%, rgba(255, 255, 255, 0));
 }
@@ -940,7 +936,7 @@ textarea {
   background-color: black !important;
 }
 body.main-menu_open.fp-viewing-contacts .header-sandwich svg path {
-  fill: #eb5757 ;
+  fill: #eb5757;
 }
 .fp-viewing-contacts-wr .slides-nav-dots.active:hover .slides-nav-dot {
   background-color: #eb5757 !important;
@@ -3538,7 +3534,6 @@ section {
 
 #myMenu {
   right: 10px;
-
 }
 
 #myMenu ul {
@@ -3551,7 +3546,6 @@ section {
   margin-bottom: 0.4vw;
   padding-left: 1.875vw;
 }
-
 
 #myMenu li a {
   position: relative;
@@ -3694,12 +3688,9 @@ section {
   transition: all 0.5s;
 }
 
-
 /* .field-phone input:focus {
   margin-left: -1.5em;
 } */
-
-
 
 .phone-helper-placeholder {
   font: 300 1.25vw "Montserrat", sans-serif;
@@ -3726,7 +3717,7 @@ section {
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
-  width: 11vw!important;
+  width: 11vw !important;
   cursor: pointer;
   padding: 0.5vw;
 }
@@ -3765,7 +3756,7 @@ section {
 
 @media (min-width: 800px) {
   html {
-    position: fixed;
+    /* position: fixed; */
   }
 }
 
@@ -3835,6 +3826,48 @@ section {
 
   .popup-privacyPolicy_content {
     height: 100%;
+  }
+
+  .popup-request {
+    width: 76vw;
+    padding: 2.806vw 2.806vw 2.528vw;
+  }
+  .popup-form {
+    width: 35vw;
+  }
+
+  .popup-form_title h2 {
+    font-size: 2vw;
+    line-height: 2.75vw;
+  }
+
+  .form_icon img {
+    width: 1.25vw;
+    height: 2.2vw;
+  }
+
+  .popup-form_field input {
+    font-size: 1.3vw;
+  }
+  .popup-form_message-title span {
+    font-size: 1.3vw;
+  }
+
+  .popup-form_btn .btn1-text {
+    font-size: 1.12vw;
+  }
+  .popup-photo img {
+      width: 28.8vw;
+      height: 36.4vw;
+  }
+  .popup-photo {
+    left: 4vw;
+  }
+  .fancybox-close-small {
+    height: 1.7vw;
+    width: 1.7vw;
+    top: 0.8vw;
+    right: 0.8vw;
   }
 }
 
@@ -3906,7 +3939,7 @@ section {
     overflow-x: hidden !important;
   }
   body {
-    overflow-y: hidden!important;
+    overflow-y: hidden !important;
   }
   #myMenu li:nth-child(5n + 5) {
     margin-bottom: 2.8vw;
@@ -3923,6 +3956,47 @@ section {
     text-align: left;
   }
 
+  .popup-request {
+    width: 85vw;
+    padding: 3.806vw 3.806vw 3.528vw;
+  }
+  .popup-form {
+    width: 39vw;
+  }
+
+  .popup-form_title h2 {
+    font-size: 2vw;
+    line-height: 2.75vw;
+  }
+
+  .popup-form_icon img {
+    width: 1.8vw!important;
+    height: 2.4vw!important;
+  }
+
+  .popup-form_field input {
+    font-size: 1.65vw;
+  }
+  .popup-form_message-title span {
+    font-size: 1.65vw;
+  }
+
+  .popup-form_btn .btn1-text {
+    font-size: 1.4vw;
+  }
+  .popup-photo img {
+      width: 37.8vw;
+      height: 46.4vw;
+  }
+  .popup-photo {
+    left: 1.5vw;
+  }
+  .fancybox-close-small {
+    height: 2.5vw;
+    width: 2.5vw;
+    top: 0.8vw;
+    right: 0.8vw;
+  }
 }
 
 @media (max-width: 500px) {
@@ -4005,8 +4079,9 @@ section {
     opacity: 0;
   }
 
-  html, body {
-    overflow-x: hidden!important;
+  html,
+  body {
+    overflow-x: hidden !important;
   }
 
   #myMenu li:nth-child(5n + 5) {

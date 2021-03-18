@@ -47,7 +47,7 @@ $(document).ready(function () {
   // ScrollBar Textarea
   function addListenerMulti(element, eventNames, listener) {
     var events = eventNames.split(" ");
-    for (var i = 0, iLen = events.length; i < iLen; i++) {
+    for (var i = 0, iLen = events.length; i < iLen - 1; i++) {
       element.addEventListener(events[i], listener, false);
     }
   }
@@ -1879,6 +1879,11 @@ $(document).ready(function () {
 
   $("[name=phone]").focus(function (event) {
     event.stopImmediatePropagation();
+    let tmp = event.target.value;
+    if (tmp === '') {
+      this.value = "+_ (___) ___-____";
+    }
+    
     // document.getSelection().removeAllRanges();
     let phoneHeplerValue = $(".phone-helper-value").innerWidth() - 4;
     if ($(window).width() > 800) {
