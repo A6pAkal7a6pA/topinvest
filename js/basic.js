@@ -9,6 +9,18 @@ $(document).ready(function () {
   // var some_id = $('[name=name]');
   // some_id.prop('type', 'text');
   // some_id.removeAttr('autocomplete');
+  function preload(images) {
+    if (document.images) {
+      var i = 0;
+      var imageArray = new Array();
+      imageArray = images.split(',');
+      var imageObj = new Image();
+      for (i = 0; i <= imageArray.length - 1; i++) {
+        //document.write('<img src="' + imageArray[i] + '" />');// Write to page (uncomment to check images)
+        imageObj.src = images[i];
+      }
+    }
+  }
 
   $('.header-menu #navig li a').click(function (e) {
     $('.header-menu #navig li a').removeClass('active');
@@ -482,7 +494,6 @@ $(document).ready(function () {
     var return_text = raw_text.replace(/[0-9]/g, '');
     jQuery(this).val(return_text);
   });
-
 
   $("[name=phone]").keyup(function (e) {
 
@@ -1883,7 +1894,7 @@ $(document).ready(function () {
     if (tmp === '') {
       this.value = "+_ (___) ___-____";
     }
-    
+
     // document.getSelection().removeAllRanges();
     let phoneHeplerValue = $(".phone-helper-value").innerWidth() - 4;
     if ($(window).width() > 800) {
