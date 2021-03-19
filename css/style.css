@@ -74,18 +74,11 @@ body {
   height: 100%;
 }
 
-body:after{
-  display:none;
-  content: url(../img/template1-bg.jpg)
-  url(../img/template2-bg.jpg)
-  url(../img/template3-bg.jpg)
-  url(../img/template4-bg.jpg)
-  url(../img/template5-bg.jpg)
-  url(../img/template6-bg.jpg)
-  url(../img/template7-bg.jpg)
-  url(../img/template8-bg.jpg)
-  url(../img/template9-bg.jpg)
-  url(../img/template10-bg.jpg)
+body:after {
+  display: none;
+  content: url(../img/template1-bg.jpg) url(../img/template2-bg.jpg) url(../img/template3-bg.jpg)
+    url(../img/template4-bg.jpg) url(../img/template5-bg.jpg) url(../img/template6-bg.jpg) url(../img/template7-bg.jpg)
+    url(../img/template8-bg.jpg) url(../img/template9-bg.jpg) url(../img/template10-bg.jpg);
 }
 html {
   /* position: fixed; */
@@ -219,17 +212,23 @@ textarea:-ms-input-placeholder {
 }
 
 input:valid,
-input:focus{
+input:focus {
   color: #eb5757;
 }
+
 
 textarea:focus,
 textarea:valid {
   color: #eb5757;
-  outline: none;
+  outline: none!important;
   border: 0;
   outline-width: 0;
   outline-color: #fff;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 input:-webkit-autofill,
@@ -3020,6 +3019,16 @@ section {
   z-index: 2;
 }
 
+.popup-form input,
+.popup-form textarea {
+  width: 100%!important;
+  /* height: 3.75vw!important; */
+}
+
+textarea {
+  height: auto!important;
+}
+
 .popup-form_title {
   padding-bottom: 1.9vw;
   text-align: center;
@@ -3873,8 +3882,8 @@ section {
     font-size: 1.12vw;
   }
   .popup-photo img {
-      width: 28.8vw;
-      height: 36.4vw;
+    width: 28.8vw;
+    height: 36.4vw;
   }
   .popup-photo {
     left: 4vw;
@@ -3986,8 +3995,8 @@ section {
   }
 
   .popup-form_icon img {
-    width: 1.8vw!important;
-    height: 2.4vw!important;
+    width: 1.8vw !important;
+    height: 2.4vw !important;
   }
 
   .popup-form_field input {
@@ -4001,8 +4010,8 @@ section {
     font-size: 1.4vw;
   }
   .popup-photo img {
-      width: 37.8vw;
-      height: 46.4vw;
+    width: 37.8vw;
+    height: 46.4vw;
   }
   .popup-photo {
     left: 1.5vw;

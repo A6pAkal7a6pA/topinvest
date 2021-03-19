@@ -53,6 +53,7 @@ function functionsResizeStretchy() {
 
           if (type == "textarea") {
             element.style.height = "0";
+            console.log(element.scrollHeight)
 
             if (cs.boxSizing == "border-box") {
               offset = element.offsetHeight;

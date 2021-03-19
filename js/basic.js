@@ -21,6 +21,16 @@ $(document).ready(function () {
       }
     }
   }
+  preload('../img/template1-bg.jpg',
+  '../img/template2-bg.jpg',
+  '../img/template3-bg.jpg',
+  '../img/template4-bg.jpg',
+  '../img/template5-bg.jpg',
+  '../img/template6-bg.jpg',
+  '../img/template7-bg.jpg',
+  '../img/template8-bg.jpg',
+  '../img/template9-bg.jpg',
+  '../img/template10-bg.jpg');
 
   $('.header-menu #navig li a').click(function (e) {
     $('.header-menu #navig li a').removeClass('active');
@@ -459,6 +469,10 @@ $(document).ready(function () {
     }
   };
 
+  $('[name=message]').focus(function () {
+    // $(this).css('outline', 'none')
+  })
+
   $("[name=phone]").mask("+9 (999) 999-9999", { selectOnFocus: false });
 
   let tmp = false;
@@ -663,7 +677,7 @@ $(document).ready(function () {
   }
 
   // Переход в форме с одного поля на другой по нажатию на Enter
-  var $inputs = $(".form").find("input, button");
+  var $inputs = $(".form, .popup-form").find("input, button");
   $inputs.keydown(function (e) {
     var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
     if (key == 13) {
@@ -671,7 +685,6 @@ $(document).ready(function () {
       if ($(this).hasClass("form-btn")) {
         return false;
       } else {
-
         e.preventDefault();
         var inputs = $(this).closest("form").find(":input:visible");
         inputs.eq(inputs.index(this) + 1).focus();

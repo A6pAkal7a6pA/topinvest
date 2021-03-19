@@ -49,7 +49,7 @@ var _ = self.Stretchy = {
 		var type = element.nodeName.toLowerCase();
 
 		if (type == "textarea") {
-			element.style.height = "0";
+			// element.style.height = "0";
 
 			if (cs.boxSizing == "border-box") {
 				offset = element.offsetHeight;
