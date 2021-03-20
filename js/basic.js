@@ -6,9 +6,6 @@ window.onload = function () {
   }, 1000);
 }
 $(document).ready(function () {
-  // var some_id = $('[name=name]');
-  // some_id.prop('type', 'text');
-  // some_id.removeAttr('autocomplete');
   function preload(images) {
     if (document.images) {
       var i = 0;
@@ -16,26 +13,24 @@ $(document).ready(function () {
       imageArray = images.split(',');
       var imageObj = new Image();
       for (i = 0; i <= imageArray.length - 1; i++) {
-        //document.write('<img src="' + imageArray[i] + '" />');// Write to page (uncomment to check images)
         imageObj.src = images[i];
       }
     }
   }
   preload('../img/template1-bg.jpg',
-  '../img/template2-bg.jpg',
-  '../img/template3-bg.jpg',
-  '../img/template4-bg.jpg',
-  '../img/template5-bg.jpg',
-  '../img/template6-bg.jpg',
-  '../img/template7-bg.jpg',
-  '../img/template8-bg.jpg',
-  '../img/template9-bg.jpg',
-  '../img/template10-bg.jpg');
+    '../img/template2-bg.jpg',
+    '../img/template3-bg.jpg',
+    '../img/template4-bg.jpg',
+    '../img/template5-bg.jpg',
+    '../img/template6-bg.jpg',
+    '../img/template7-bg.jpg',
+    '../img/template8-bg.jpg',
+    '../img/template9-bg.jpg',
+    '../img/template10-bg.jpg');
 
   $('.header-menu #navig li a').click(function (e) {
     $('.header-menu #navig li a').removeClass('active');
     $(this).addClass('active');
-    // }
   });
 
   $(window).resize(function (e) {
@@ -60,7 +55,6 @@ $(document).ready(function () {
   $("select").niceSelect();
 
   // Stretchy
-
   $(".form-stretchy .form-field-foo input").addClass("foo");
 
   // ScrollBar
@@ -69,7 +63,7 @@ $(document).ready(function () {
   // ScrollBar Textarea
   function addListenerMulti(element, eventNames, listener) {
     var events = eventNames.split(" ");
-    for (var i = 0, iLen = events.length; i < iLen - 1; i++) {
+    for (var i = 0, iLen = events.length; i < iLen; i++) {
       element.addEventListener(events[i], listener, false);
     }
   }
@@ -226,7 +220,7 @@ $(document).ready(function () {
         touch: false,
         beforeLoad: function () {
           if (document.querySelector(".fullpage-wrapper")) {
-            $('html').css('overflow', 'hidden');
+            // $('html').css('overflow', 'hidden');
             $.fn.fullpage.setAllowScrolling(false);
           }
           if ($(window).width() <= 800) {
@@ -263,6 +257,7 @@ $(document).ready(function () {
     }
     ++clicks;
   });
+
   $(".header-menu_item1").click(function () {
     $(".services-type3")
       .find(".popup-services_info1, .popup-services_info2")
@@ -311,7 +306,7 @@ $(document).ready(function () {
         touch: false,
         beforeLoad: function () {
           if (document.querySelector(".fullpage-wrapper")) {
-            $('html').css('overflow', 'hidden');
+            // $('html').css('overflow', 'hidden');
             $.fn.fullpage.setAllowScrolling(false);
           }
           $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
@@ -417,8 +412,6 @@ $(document).ready(function () {
   });
 
   // Menu
-
-
   $(".header-sandwich").click(function () {
     if ($("body").hasClass("main-menu_open")) {
       $("body").removeClass("main-menu_open");
@@ -438,6 +431,7 @@ $(document).ready(function () {
       $.fancybox.close();
     }
   });
+
   $(".main-menu_close").click(function () {
     if ($(window).width() <= 800) {
       $('html').css('overflow-y', "scroll");
@@ -455,7 +449,6 @@ $(document).ready(function () {
     }
   });
 
-
   // Masked Input
   $.fn.setCursorPosition = function (pos) {
     if ($(this).get(0).setSelectionRange) {
@@ -468,10 +461,6 @@ $(document).ready(function () {
       // range.select();
     }
   };
-
-  $('[name=message]').focus(function () {
-    // $(this).css('outline', 'none')
-  })
 
   $("[name=phone]").mask("+9 (999) 999-9999", { selectOnFocus: false });
 
@@ -510,7 +499,6 @@ $(document).ready(function () {
   });
 
   $("[name=phone]").keyup(function (e) {
-
     if (tmp) {
       this.value = "+_ (___) ___-____";
       tmp = false;
@@ -622,9 +610,6 @@ $(document).ready(function () {
     var payment1Result = payment1.toLocaleString();
     var payment2 = Math.trunc(calcAmount * k);
     var payment2Result = payment2.toLocaleString();
-
-
-
     if (calcPayment == "1") {
       $(".template4-calc_result-numb").text(payment1Result);
       document.getElementById("template4-ui-slider-amount-result-check").value = tmp;
@@ -681,7 +666,6 @@ $(document).ready(function () {
   $inputs.keydown(function (e) {
     var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
     if (key == 13) {
-
       if ($(this).hasClass("form-btn")) {
         return false;
       } else {
@@ -691,6 +675,7 @@ $(document).ready(function () {
       }
     }
   });
+
   $(".field-area input, .field-amount input").on("input", function () {
     $(this).val(
       $(this)
@@ -698,9 +683,11 @@ $(document).ready(function () {
         .replace(/[A-Za-zА-Яа-яЁё]/, "")
     );
   });
+
   $(".field-name input, .field-city input").on("input", function () {
     $(this).val($(this).val().replace(/[0-9]/, ""));
   });
+
   $(".field-amount input").on("input", function () {
     $(this).val(
       String(
@@ -735,7 +722,7 @@ $(document).ready(function () {
         touch: false,
         beforeLoad: function () {
           if (document.querySelector(".fullpage-wrapper")) {
-            $('html').css('overflow', 'hidden');
+            // $('html').css('overflow', 'hidden');
             $.fn.fullpage.setAllowScrolling(false);
           }
           $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
@@ -1031,7 +1018,7 @@ function fancyboxResize() {
           $('html').css('overflow', 'hidden');
         }
         if (document.querySelector(".fullpage-wrapper")) {
-          $('html').css('overflow', 'hidden');
+          // $('html').css('overflow', 'hidden');
           $.fn.fullpage.setAllowScrolling(false);
         }
         $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
@@ -1102,7 +1089,7 @@ function fancyboxResize() {
       backFocus: false,
       beforeLoad: function () {
         if (document.querySelector(".fullpage-wrapper")) {
-          $('html').css('overflow', 'hidden');
+          // $('html').css('overflow', 'hidden');
           $.fn.fullpage.setAllowScrolling(false);
         }
         if ($(window).width() <= 800) {
