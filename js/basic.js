@@ -6,808 +6,808 @@ window.onload = function () {
   }, 1000);
 }
 $(document).ready(function () {
-  // function preload(images) {
-  //   if (document.images) {
-  //     var i = 0;
-  //     var imageArray = new Array();
-  //     imageArray = images.split(',');
-  //     var imageObj = new Image();
-  //     for (i = 0; i <= imageArray.length - 1; i++) {
-  //       imageObj.src = images[i];
-  //     }
-  //   }
-  // }
-  // preload('../img/template1-bg.jpg',
-  //   '../img/template2-bg.jpg',
-  //   '../img/template3-bg.jpg',
-  //   '../img/template4-bg.jpg',
-  //   '../img/template5-bg.jpg',
-  //   '../img/template6-bg.jpg',
-  //   '../img/template7-bg.jpg',
-  //   '../img/template8-bg.jpg',
-  //   '../img/template9-bg.jpg',
-  //   '../img/template10-bg.jpg');
+  function preload(images) {
+    if (document.images) {
+      var i = 0;
+      var imageArray = new Array();
+      imageArray = images.split(',');
+      var imageObj = new Image();
+      for (i = 0; i <= imageArray.length - 1; i++) {
+        imageObj.src = images[i];
+      }
+    }
+  }
+  preload('../img/template1-bg.jpg',
+    '../img/template2-bg.jpg',
+    '../img/template3-bg.jpg',
+    '../img/template4-bg.jpg',
+    '../img/template5-bg.jpg',
+    '../img/template6-bg.jpg',
+    '../img/template7-bg.jpg',
+    '../img/template8-bg.jpg',
+    '../img/template9-bg.jpg',
+    '../img/template10-bg.jpg');
 
-  // $('.header-menu #navig li a').click(function (e) {
-  //   $('.header-menu #navig li a').removeClass('active');
-  //   $(this).addClass('active');
-  // });
+  $('.header-menu #navig li a').click(function (e) {
+    $('.header-menu #navig li a').removeClass('active');
+    $(this).addClass('active');
+  });
 
-  // $(window).resize(function (e) {
-  //   e.preventDefault();
-  //   if ($('body').hasClass('fancybox-active')) {
-  //     $('html').css('overflow', 'hidden');
-  //   }
-  // });
+  $(window).resize(function (e) {
+    e.preventDefault();
+    if ($('body').hasClass('fancybox-active')) {
+      $('html').css('overflow', 'hidden');
+    }
+  });
 
-  // $('html').on('wheel', function () {
-  //   if ($(window).width() <= 800) {
-  //     if ($('body').hasClass('fancybox-active')) {
-  //       $('html').css('overflow', 'hidden');
-  //     }
-  //   }
-  // });
+  $('html').on('wheel', function () {
+    if ($(window).width() <= 800) {
+      if ($('body').hasClass('fancybox-active')) {
+        $('html').css('overflow', 'hidden');
+      }
+    }
+  });
 
-  // // Lazy
-  // $(".lazy").lazy();
+  // Lazy
+  $(".lazy").lazy();
 
-  // // Styles Select
-  // $("select").niceSelect();
+  // Styles Select
+  $("select").niceSelect();
 
-  // // Stretchy
-  // $(".form-stretchy .form-field-foo input").addClass("foo");
+  // Stretchy
+  $(".form-stretchy .form-field-foo input").addClass("foo");
 
-  // // ScrollBar
-  // $(".nano").nanoScroller({ disableResize: true });
+  // ScrollBar
+  $(".nano").nanoScroller({ disableResize: true });
 
-  // // ScrollBar Textarea
-  // function addListenerMulti(element, eventNames, listener) {
-  //   var events = eventNames.split(" ");
-  //   for (var i = 0, iLen = events.length; i < iLen; i++) {
-  //     element.addEventListener(events[i], listener, false);
-  //   }
-  // }
-  // if (document.querySelector("#section1 .form-message_content")) {
-  //   var nanoTextarea = document.querySelector(
-  //     "#section1 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea, "keyup cut paste", function () {
-  //     $("#section1 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector("#section2 .form-message_content")) {
-  //   var nanoTextarea1 = document.querySelector(
-  //     "#section2 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea1, "keyup cut paste", function () {
-  //     $("#section2 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (
-  //   document.querySelector("#section3 .template3-form1 .form-message_content")
-  // ) {
-  //   var nanoTextarea2_1 = document.querySelector(
-  //     "#section3 .template3-form1 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea2_1, "keyup cut paste", function () {
-  //     $("#section3 .template3-form1 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (
-  //   document.querySelector("#section3 .template3-form2 .form-message_content")
-  // ) {
-  //   var nanoTextarea2_2 = document.querySelector(
-  //     "#section3 .template3-form2 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea2_2, "keyup cut paste", function () {
-  //     $("#section3 .template3-form2 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector("#section4 .form-message_content")) {
-  //   var nanoTextarea3 = document.querySelector(
-  //     "#section4 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea3, "keyup cut paste", function () {
-  //     $("#section4 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector("#section5 .form-message_content")) {
-  //   var nanoTextarea4 = document.querySelector(
-  //     "#section5 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea4, "keyup cut paste", function () {
-  //     $("#section5 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector("#section6 .form-message_content")) {
-  //   var nanoTextarea5 = document.querySelector(
-  //     "#section6 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea5, "keyup cut paste", function () {
-  //     $("#section6 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector("#section7 .form-message_content")) {
-  //   var nanoTextarea6 = document.querySelector(
-  //     "#section7 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea6, "keyup cut paste", function () {
-  //     $("#section7 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector("#section8 .form-message_content")) {
-  //   var nanoTextarea7 = document.querySelector(
-  //     "#section8 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea7, "keyup cut paste", function () {
-  //     $("#section8 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector("#section9 .form-message_content")) {
-  //   var nanoTextarea8 = document.querySelector(
-  //     "#section9 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea8, "keyup cut paste", function () {
-  //     $("#section9 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector("#section10 .form-message_content")) {
-  //   var nanoTextarea9 = document.querySelector(
-  //     "#section10 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea9, "keyup cut paste", function () {
-  //     $("#section10 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector("#section11 .form-message_content")) {
-  //   var nanoTextarea10 = document.querySelector(
-  //     "#section11 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea10, "keyup cut paste", function () {
-  //     $("#section11 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector("#section12 .form-message_content")) {
-  //   var nanoTextarea11 = document.querySelector(
-  //     "#section12 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea11, "keyup cut paste", function () {
-  //     $("#section12 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector("#section13 .form-message_content")) {
-  //   var nanoTextarea12 = document.querySelector(
-  //     "#section13 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea12, "keyup cut paste", function () {
-  //     $("#section13 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector("#section14 .form-message_content")) {
-  //   var nanoTextarea12 = document.querySelector(
-  //     "#section14 .form-message_content .nano-content"
-  //   );
-  //   addListenerMulti(nanoTextarea12, "keyup cut paste", function () {
-  //     $("#section14 .form-message_content").nanoScroller();
-  //   });
-  // }
-  // if (document.querySelector(".popup-request .form-message_content")) {
-  //   var nanoTextarea14 = document.querySelector(
-  //     ".popup-request .form-message_content textarea"
-  //   );
-  //   addListenerMulti(nanoTextarea14, "keyup cut paste", function () {
-  //     $(".popup-request .form-message_content").nanoScroller();
-  //   });
-  // }
+  // ScrollBar Textarea
+  function addListenerMulti(element, eventNames, listener) {
+    var events = eventNames.split(" ");
+    for (var i = 0, iLen = events.length; i < iLen; i++) {
+      element.addEventListener(events[i], listener, false);
+    }
+  }
+  if (document.querySelector("#section1 .form-message_content")) {
+    var nanoTextarea = document.querySelector(
+      "#section1 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea, "keyup cut paste", function () {
+      $("#section1 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector("#section2 .form-message_content")) {
+    var nanoTextarea1 = document.querySelector(
+      "#section2 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea1, "keyup cut paste", function () {
+      $("#section2 .form-message_content").nanoScroller();
+    });
+  }
+  if (
+    document.querySelector("#section3 .template3-form1 .form-message_content")
+  ) {
+    var nanoTextarea2_1 = document.querySelector(
+      "#section3 .template3-form1 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea2_1, "keyup cut paste", function () {
+      $("#section3 .template3-form1 .form-message_content").nanoScroller();
+    });
+  }
+  if (
+    document.querySelector("#section3 .template3-form2 .form-message_content")
+  ) {
+    var nanoTextarea2_2 = document.querySelector(
+      "#section3 .template3-form2 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea2_2, "keyup cut paste", function () {
+      $("#section3 .template3-form2 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector("#section4 .form-message_content")) {
+    var nanoTextarea3 = document.querySelector(
+      "#section4 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea3, "keyup cut paste", function () {
+      $("#section4 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector("#section5 .form-message_content")) {
+    var nanoTextarea4 = document.querySelector(
+      "#section5 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea4, "keyup cut paste", function () {
+      $("#section5 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector("#section6 .form-message_content")) {
+    var nanoTextarea5 = document.querySelector(
+      "#section6 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea5, "keyup cut paste", function () {
+      $("#section6 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector("#section7 .form-message_content")) {
+    var nanoTextarea6 = document.querySelector(
+      "#section7 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea6, "keyup cut paste", function () {
+      $("#section7 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector("#section8 .form-message_content")) {
+    var nanoTextarea7 = document.querySelector(
+      "#section8 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea7, "keyup cut paste", function () {
+      $("#section8 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector("#section9 .form-message_content")) {
+    var nanoTextarea8 = document.querySelector(
+      "#section9 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea8, "keyup cut paste", function () {
+      $("#section9 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector("#section10 .form-message_content")) {
+    var nanoTextarea9 = document.querySelector(
+      "#section10 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea9, "keyup cut paste", function () {
+      $("#section10 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector("#section11 .form-message_content")) {
+    var nanoTextarea10 = document.querySelector(
+      "#section11 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea10, "keyup cut paste", function () {
+      $("#section11 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector("#section12 .form-message_content")) {
+    var nanoTextarea11 = document.querySelector(
+      "#section12 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea11, "keyup cut paste", function () {
+      $("#section12 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector("#section13 .form-message_content")) {
+    var nanoTextarea12 = document.querySelector(
+      "#section13 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea12, "keyup cut paste", function () {
+      $("#section13 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector("#section14 .form-message_content")) {
+    var nanoTextarea12 = document.querySelector(
+      "#section14 .form-message_content .nano-content"
+    );
+    addListenerMulti(nanoTextarea12, "keyup cut paste", function () {
+      $("#section14 .form-message_content").nanoScroller();
+    });
+  }
+  if (document.querySelector(".popup-request .form-message_content")) {
+    var nanoTextarea14 = document.querySelector(
+      ".popup-request .form-message_content textarea"
+    );
+    addListenerMulti(nanoTextarea14, "keyup cut paste", function () {
+      $(".popup-request .form-message_content").nanoScroller();
+    });
+  }
 
-  // // Информация для Popap Services из главного меню
-  // var clicks = 0;
-  // $(".header-menu ul li a").on("click", function () {
-  //   if ($(window).width() <= 800) {
-  //     $('html').css('overflow', 'hidden');
-  //   }
-  //   $(
-  //     ".popup-request .fancybox-close-small, .popup-privacyPolicy .fancybox-close-small"
-  //   ).trigger("click");
-  //   if (clicks <= 0) {
-  //     $.fancybox.open({
-  //       src: "#popup-services",
-  //       type: "inline",
-  //       btnTpl: {
-  //         smallBtn:
-  //           '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
-  //       },
-  //       touch: false,
-  //       beforeLoad: function () {
-  //         if (document.querySelector(".fullpage-wrapper")) {
-  //           // $('html').css('overflow', 'hidden');
-  //           $.fn.fullpage.setAllowScrolling(false);
-  //         }
-  //         if ($(window).width() <= 800) {
-  //           $('html').css('overflow', 'hidden');
-  //         }
-  //         $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
-  //         $("body").removeClass("main-menu_open");
-  //       },
-  //       afterLoad: function () {
-  //         setTimeout(function () {
-  //           $(".popup-services .nano").nanoScroller();
-  //         }, 1);
-  //       },
-  //       beforeClose: function () {
-  //         $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
-  //         if ($(window).width() <= 800) {
-  //           $('html').css('overflow-y', 'scroll');
-  //         }
+  // Информация для Popap Services из главного меню
+  var clicks = 0;
+  $(".header-menu ul li a").on("click", function () {
+    if ($(window).width() <= 800) {
+      $('html').css('overflow', 'hidden');
+    }
+    $(
+      ".popup-request .fancybox-close-small, .popup-privacyPolicy .fancybox-close-small"
+    ).trigger("click");
+    if (clicks <= 0) {
+      $.fancybox.open({
+        src: "#popup-services",
+        type: "inline",
+        btnTpl: {
+          smallBtn:
+            '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
+        },
+        touch: false,
+        beforeLoad: function () {
+          if (document.querySelector(".fullpage-wrapper")) {
+            // $('html').css('overflow', 'hidden');
+            $.fn.fullpage.setAllowScrolling(false);
+          }
+          if ($(window).width() <= 800) {
+            $('html').css('overflow', 'hidden');
+          }
+          $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
+          $("body").removeClass("main-menu_open");
+        },
+        afterLoad: function () {
+          setTimeout(function () {
+            $(".popup-services .nano").nanoScroller();
+          }, 1);
+        },
+        beforeClose: function () {
+          $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
+          if ($(window).width() <= 800) {
+            $('html').css('overflow-y', 'scroll');
+          }
 
-  //       },
-  //       afterClose: function () {
-  //         $(".popup-services_content").empty();
+        },
+        afterClose: function () {
+          $(".popup-services_content").empty();
 
-  //         if (document.querySelector(".fullpage-wrapper")) {
-  //           $.fn.fullpage.setAllowScrolling(true);
-  //         }
-  //         clicks = 0;
-  //       },
-  //     });
-  //   } else {
-  //     $(
-  //       ".popup-services .popup-services_info1, .popup-services .popup-services_info2"
-  //     ).remove();
-  //   }
-  //   ++clicks;
-  // });
+          if (document.querySelector(".fullpage-wrapper")) {
+            $.fn.fullpage.setAllowScrolling(true);
+          }
+          clicks = 0;
+        },
+      });
+    } else {
+      $(
+        ".popup-services .popup-services_info1, .popup-services .popup-services_info2"
+      ).remove();
+    }
+    ++clicks;
+  });
 
-  // $(".header-menu_item1").click(function () {
-  //   $(".services-type3")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".header-menu_item2").click(function () {
-  //   $(".services-type11")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".header-menu_item3").click(function () {
-  //   $(".services-type7")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".header-menu_item4").click(function () {
-  //   $(".services-type10")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".header-menu_item5").click(function () {
-  //   $(".services-type4")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
+  $(".header-menu_item1").click(function () {
+    $(".services-type3")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".header-menu_item2").click(function () {
+    $(".services-type11")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".header-menu_item3").click(function () {
+    $(".services-type7")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".header-menu_item4").click(function () {
+    $(".services-type10")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".header-menu_item5").click(function () {
+    $(".services-type4")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
 
-  // // Информация для Popap Services из внутренного меню
-  // $(".main-menu1 ul li a").click(function (e) {
-  //   if ($(window).width() <= 800) {
-  //     $('html').css('overflow', 'hidden');
-  //   }
-  //   e.preventDefault();
-  //   if (clicks <= 0) {
-  //     $.fancybox.open({
-  //       src: "#popup-services",
-  //       type: "inline",
-  //       btnTpl: {
-  //         smallBtn:
-  //           '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
-  //       },
-  //       touch: false,
-  //       beforeLoad: function () {
-  //         if (document.querySelector(".fullpage-wrapper")) {
-  //           // $('html').css('overflow', 'hidden');
-  //           $.fn.fullpage.setAllowScrolling(false);
-  //         }
-  //         $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
-  //         $("body").removeClass("main-menu_open");
-  //       },
-  //       afterLoad: function () {
-  //         setTimeout(function () {
-  //           $(".popup-services .nano").nanoScroller();
-  //         }, 1);
-  //       },
-  //       beforeClose: function () {
-  //         if ($(window).width() <= 800) {
-  //           $('html').css('overflow-y', 'scroll');
-  //         }
-  //         $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
-  //       },
-  //       afterClose: function () {
-  //         $(".popup-services_content").empty();
-  //         if (document.querySelector(".fullpage-wrapper")) {
-  //           $.fn.fullpage.setAllowScrolling(true);
-  //         }
-  //         clicks = 0;
-  //       },
-  //     });
-  //   } else {
-  //     $(
-  //       ".popup-services .popup-services_info1, .popup-services .popup-services_info2"
-  //     ).remove();
-  //   }
-  //   ++clicks;
-  // });
-  // $(".main-menu1_item1").click(function () {
-  //   $(".services-type9")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".main-menu1_item2").click(function () {
-  //   $(".services-type11")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".main-menu1_item3").click(function () {
-  //   $(".services-type8")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".main-menu1_item4").click(function () {
-  //   $(".services-type7")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".main-menu1_item5").click(function () {
-  //   $(".services-type1")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".main-menu1_item6").click(function () {
-  //   $(".services-type10")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".main-menu1_item7").click(function () {
-  //   $(".services-type2")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".main-menu1_item8").click(function () {
-  //   $(".services-type3")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".main-menu1_item9").click(function () {
-  //   $(".services-type5")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".main-menu1_item10").click(function () {
-  //   $(".services-type4")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".main-menu1_item11").click(function () {
-  //   $(".services-type12")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
-  // $(".main-menu1_item12").click(function () {
-  //   $(".services-type6")
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
+  // Информация для Popap Services из внутренного меню
+  $(".main-menu1 ul li a").click(function (e) {
+    if ($(window).width() <= 800) {
+      $('html').css('overflow', 'hidden');
+    }
+    e.preventDefault();
+    if (clicks <= 0) {
+      $.fancybox.open({
+        src: "#popup-services",
+        type: "inline",
+        btnTpl: {
+          smallBtn:
+            '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
+        },
+        touch: false,
+        beforeLoad: function () {
+          if (document.querySelector(".fullpage-wrapper")) {
+            // $('html').css('overflow', 'hidden');
+            $.fn.fullpage.setAllowScrolling(false);
+          }
+          $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
+          $("body").removeClass("main-menu_open");
+        },
+        afterLoad: function () {
+          setTimeout(function () {
+            $(".popup-services .nano").nanoScroller();
+          }, 1);
+        },
+        beforeClose: function () {
+          if ($(window).width() <= 800) {
+            $('html').css('overflow-y', 'scroll');
+          }
+          $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
+        },
+        afterClose: function () {
+          $(".popup-services_content").empty();
+          if (document.querySelector(".fullpage-wrapper")) {
+            $.fn.fullpage.setAllowScrolling(true);
+          }
+          clicks = 0;
+        },
+      });
+    } else {
+      $(
+        ".popup-services .popup-services_info1, .popup-services .popup-services_info2"
+      ).remove();
+    }
+    ++clicks;
+  });
+  $(".main-menu1_item1").click(function () {
+    $(".services-type9")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".main-menu1_item2").click(function () {
+    $(".services-type11")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".main-menu1_item3").click(function () {
+    $(".services-type8")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".main-menu1_item4").click(function () {
+    $(".services-type7")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".main-menu1_item5").click(function () {
+    $(".services-type1")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".main-menu1_item6").click(function () {
+    $(".services-type10")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".main-menu1_item7").click(function () {
+    $(".services-type2")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".main-menu1_item8").click(function () {
+    $(".services-type3")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".main-menu1_item9").click(function () {
+    $(".services-type5")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".main-menu1_item10").click(function () {
+    $(".services-type4")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".main-menu1_item11").click(function () {
+    $(".services-type12")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
+  $(".main-menu1_item12").click(function () {
+    $(".services-type6")
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
 
-  // // Menu
-  // $(".header-sandwich").click(function () {
-  //   if ($("body").hasClass("main-menu_open")) {
-  //     $("body").removeClass("main-menu_open");
-  //     if ($(window).width() <= 800) {
-  //       $('html').css('overflow-y', "scroll");
-  //     }
-  //     if (document.querySelector(".fullpage-wrapper")) {
-  //       $.fn.fullpage.setAllowScrolling(true);
-  //     }
-  //   } else {
-  //     $(".slides-nav-menu").removeClass("active");
-  //     $("body").addClass("main-menu_open");
-  //     $('html').css('overflow', "hidden");
-  //     if (document.querySelector(".fullpage-wrapper")) {
-  //       $.fn.fullpage.setAllowScrolling(false);
-  //     }
-  //     $.fancybox.close();
-  //   }
-  // });
+  // Menu
+  $(".header-sandwich").click(function () {
+    if ($("body").hasClass("main-menu_open")) {
+      $("body").removeClass("main-menu_open");
+      if ($(window).width() <= 800) {
+        $('html').css('overflow-y', "scroll");
+      }
+      if (document.querySelector(".fullpage-wrapper")) {
+        $.fn.fullpage.setAllowScrolling(true);
+      }
+    } else {
+      $(".slides-nav-menu").removeClass("active");
+      $("body").addClass("main-menu_open");
+      $('html').css('overflow', "hidden");
+      if (document.querySelector(".fullpage-wrapper")) {
+        $.fn.fullpage.setAllowScrolling(false);
+      }
+      $.fancybox.close();
+    }
+  });
 
-  // $(".main-menu_close").click(function () {
-  //   if ($(window).width() <= 800) {
-  //     $('html').css('overflow-y', "scroll");
-  //   }
-  //   $("body").removeClass("main-menu_open");
-  //   if (document.querySelector(".fullpage-wrapper")) {
-  //     $.fn.fullpage.setAllowScrolling(true);
-  //   }
-  // });
-  // $(".header-phone_numb").click(function () {
-  //   $.fancybox.close();
-  //   $("body").removeClass("main-menu_open");
-  //   if (document.querySelector(".fullpage-wrapper")) {
-  //     $.fn.fullpage.setAllowScrolling(true);
-  //   }
-  // });
+  $(".main-menu_close").click(function () {
+    if ($(window).width() <= 800) {
+      $('html').css('overflow-y', "scroll");
+    }
+    $("body").removeClass("main-menu_open");
+    if (document.querySelector(".fullpage-wrapper")) {
+      $.fn.fullpage.setAllowScrolling(true);
+    }
+  });
+  $(".header-phone_numb").click(function () {
+    $.fancybox.close();
+    $("body").removeClass("main-menu_open");
+    if (document.querySelector(".fullpage-wrapper")) {
+      $.fn.fullpage.setAllowScrolling(true);
+    }
+  });
 
-  // // Masked Input
-  // $.fn.setCursorPosition = function (pos) {
-  //   if ($(this).get(0).setSelectionRange) {
-  //     $(this).get(0).setSelectionRange(pos, pos);
-  //   } else if ($(this).get(0).createTextRange) {
-  //     var range = $(this).get(0).createTextRange();
-  //     range.collapse(true);
-  //     range.moveEnd("character", pos);
-  //     range.moveStart("character", pos);
-  //     // range.select();
-  //   }
-  // };
+  // Masked Input
+  $.fn.setCursorPosition = function (pos) {
+    if ($(this).get(0).setSelectionRange) {
+      $(this).get(0).setSelectionRange(pos, pos);
+    } else if ($(this).get(0).createTextRange) {
+      var range = $(this).get(0).createTextRange();
+      range.collapse(true);
+      range.moveEnd("character", pos);
+      range.moveStart("character", pos);
+      // range.select();
+    }
+  };
 
-  // $("[name=phone]").mask("+9 (999) 999-9999", { selectOnFocus: false });
+  $("[name=phone]").mask("+9 (999) 999-9999", { selectOnFocus: false });
 
-  // let tmp = false;
-  // $("[name=phone]").keydown(function (e) {
+  let tmp = false;
+  $("[name=phone]").keydown(function (e) {
 
-  //   thisInput = this;
-  //   var start = e.target.selectionStart;
-  //   var end = e.target.selectionEnd;
+    thisInput = this;
+    var start = e.target.selectionStart;
+    var end = e.target.selectionEnd;
 
-  //   if (e.key == "Delete") {
-  //     if (Number(start) === 0 && Number(end) === 17) {
-  //       tmp = true;
-  //       this.value = "+_ (___) ___-____";
-  //     }
-  //   }
-  //   if (thisInput.value == "" || thisInput.value == "+_ (___) ___-____" || e.target.selectionStart == 0) {
-  //     thisInput.value = "+_ (___) ___-____";
-  //     // $(this).css('margin-left', '0em')
+    if (e.key == "Delete") {
+      if (Number(start) === 0 && Number(end) === 17) {
+        tmp = true;
+        this.value = "+_ (___) ___-____";
+      }
+    }
+    if (thisInput.value == "" || thisInput.value == "+_ (___) ___-____" || e.target.selectionStart == 0) {
+      thisInput.value = "+_ (___) ___-____";
+      // $(this).css('margin-left', '0em')
 
-  //     $(this).get(0).setSelectionRange(1, 1);
-  //   }
-  //   if (e.target.selectionStart == 1) {
-  //     if (e.key == "7" || e.key == "8") {
-  //       $("[name=phone]").mask("+9 (999) 999-9999", { selectOnFocus: false });
-  //     } else {
-  //       $("[name=phone]").mask("+7 (999) 999-9999", { selectOnFocus: false });
-  //     }
-  //   }
-  // });
+      $(this).get(0).setSelectionRange(1, 1);
+    }
+    if (e.target.selectionStart == 1) {
+      if (e.key == "7" || e.key == "8") {
+        $("[name=phone]").mask("+9 (999) 999-9999", { selectOnFocus: false });
+      } else {
+        $("[name=phone]").mask("+7 (999) 999-9999", { selectOnFocus: false });
+      }
+    }
+  });
 
-  // $("input[name=name]").keyup(function (e) {
-  //   var raw_text = jQuery(this).val();
-  //   var return_text = raw_text.replace(/[0-9]/g, '');
-  //   jQuery(this).val(return_text);
-  // });
+  $("input[name=name]").keyup(function (e) {
+    var raw_text = jQuery(this).val();
+    var return_text = raw_text.replace(/[0-9]/g, '');
+    jQuery(this).val(return_text);
+  });
 
-  // $("[name=phone]").keyup(function (e) {
-  //   if (tmp) {
-  //     this.value = "+_ (___) ___-____";
-  //     tmp = false;
-  //   }
-  //   if (e.target.value[1] === "8") {
-  //     const strArr = e.target.value.split("")
-  //     strArr[1] = "7"
-  //     e.target.value = strArr.join("")
+  $("[name=phone]").keyup(function (e) {
+    if (tmp) {
+      this.value = "+_ (___) ___-____";
+      tmp = false;
+    }
+    if (e.target.value[1] === "8") {
+      const strArr = e.target.value.split("")
+      strArr[1] = "7"
+      e.target.value = strArr.join("")
 
-  //     e.target.dispatchEvent(new Event("input"))
-  //   }
-  // });
+      e.target.dispatchEvent(new Event("input"))
+    }
+  });
 
-  // $("[name=phone]").blur(function () {
-  //   $("[name=phone]").mask("+9 (999) 999-9999", { selectOnFocus: false });
-  // });
+  $("[name=phone]").blur(function () {
+    $("[name=phone]").mask("+9 (999) 999-9999", { selectOnFocus: false });
+  });
 
-  // // Calculation slider
-  // $(".template4-calc_row").each(function () {
-  //   var calc = $(this).find(".template4-ui-slider");
-  //   $(this).find(".template4-ui-slider").html(calc.data("value"));
-  //   $(this)
-  //     .find(".template4-calc_slider")
-  //     .slider({
-  //       range: "min",
-  //       min: calc.data("min"),
-  //       max: calc.data("max"),
-  //       value: calc.data("value"),
-  //       step: calc.data("step"),
-  //       slide: function (event, ui) {
-  //         $(this).next().find(".template4-ui-slider").html(ui.value);
-  //         $(this)
-  //           .next()
-  //           .find(".template4-ui-slider-amount-result")
-  //           .val(ui.value.toLocaleString());
-  //         $(this)
-  //           .next()
-  //           .find(".template4-ui-slider-rate-result")
-  //           .val(ui.value.toLocaleString() + "%");
-  //         let godOrLet = "лет";
-  //         if (
-  //           ui.value.toLocaleString()[ui.value.toLocaleString().length - 2] == 1
-  //         ) {
-  //           godOrLet = "лет";
-  //         } else {
-  //           if (
-  //             ui.value.toLocaleString()[ui.value.toLocaleString().length - 1] >
-  //             1 &&
-  //             ui.value.toLocaleString()[ui.value.toLocaleString().length - 1] <=
-  //             4
-  //           ) {
-  //             godOrLet = "года";
-  //           } else if (
-  //             ui.value.toLocaleString()[ui.value.toLocaleString().length - 1] ==
-  //             1
-  //           ) {
-  //             godOrLet = "год";
-  //           } else {
-  //             godOrLet = "лет";
-  //           }
-  //         }
-  //         $(this)
-  //           .next()
-  //           .find(".template4-ui-slider-term-result")
-  //           .val(ui.value.toLocaleString() + " " + godOrLet);
-  //         changeData();
-  //       },
-  //     });
-  // });
+  // Calculation slider
+  $(".template4-calc_row").each(function () {
+    var calc = $(this).find(".template4-ui-slider");
+    $(this).find(".template4-ui-slider").html(calc.data("value"));
+    $(this)
+      .find(".template4-calc_slider")
+      .slider({
+        range: "min",
+        min: calc.data("min"),
+        max: calc.data("max"),
+        value: calc.data("value"),
+        step: calc.data("step"),
+        slide: function (event, ui) {
+          $(this).next().find(".template4-ui-slider").html(ui.value);
+          $(this)
+            .next()
+            .find(".template4-ui-slider-amount-result")
+            .val(ui.value.toLocaleString());
+          $(this)
+            .next()
+            .find(".template4-ui-slider-rate-result")
+            .val(ui.value.toLocaleString() + "%");
+          let godOrLet = "лет";
+          if (
+            ui.value.toLocaleString()[ui.value.toLocaleString().length - 2] == 1
+          ) {
+            godOrLet = "лет";
+          } else {
+            if (
+              ui.value.toLocaleString()[ui.value.toLocaleString().length - 1] >
+              1 &&
+              ui.value.toLocaleString()[ui.value.toLocaleString().length - 1] <=
+              4
+            ) {
+              godOrLet = "года";
+            } else if (
+              ui.value.toLocaleString()[ui.value.toLocaleString().length - 1] ==
+              1
+            ) {
+              godOrLet = "год";
+            } else {
+              godOrLet = "лет";
+            }
+          }
+          $(this)
+            .next()
+            .find(".template4-ui-slider-term-result")
+            .val(ui.value.toLocaleString() + " " + godOrLet);
+          changeData();
+        },
+      });
+  });
 
-  // var amountResult = $(".template4-ui-slider-amount")
-  //   .data("value")
-  //   .toLocaleString();
-  // $(".template4-ui-slider-amount-result").html(amountResult);
+  var amountResult = $(".template4-ui-slider-amount")
+    .data("value")
+    .toLocaleString();
+  $(".template4-ui-slider-amount-result").html(amountResult);
 
-  // var rateResult = $(".template4-ui-slider-rate")
-  //   .data("value")
-  //   .toLocaleString();
-  // $(".template4-ui-slider-rate-result").html(rateResult);
+  var rateResult = $(".template4-ui-slider-rate")
+    .data("value")
+    .toLocaleString();
+  $(".template4-ui-slider-rate-result").html(rateResult);
 
-  // var termResult = $(".template4-ui-slider-term")
-  //   .data("value")
-  //   .toLocaleString();
-  // $(".template4-ui-slider-term-result").html(termResult);
+  var termResult = $(".template4-ui-slider-term")
+    .data("value")
+    .toLocaleString();
+  $(".template4-ui-slider-term-result").html(termResult);
 
-  // $(".template4-ui-slider, .template4-calc_select select").on(
-  //   "change keyup",
-  //   function () {
-  //     changeData();
-  //   }
-  // );
-  // $(".template4-ui-slider, .template4-calc_select select").each(function () {
-  //   changeData();
-  // });
-  // function changeData() {
-  //   var tmp = document.getElementById("template4-ui-slider-amount-result").value;
-  //   var calcAmount = $(".template4-ui-slider-amount").text();
-  //   var calcRate = $(".template4-ui-slider-rate").text();
-  //   var calcTerm = $(".template4-ui-slider-term").text();
-  //   var calcPayment = $(".template4-calc_select option:selected").val();
-  //   var year = $(".template4-ui-slider-term").text();
-  //   var k = calcRate / 12 / 100;
-  //   var k2 = 1 + k;
-  //   var k3 = -calcTerm * 12;
-  //   var k4 = Math.pow(k2, k3);
-  //   var k5 = 1 - k4;
-  //   var k6 = k / k5;
-  //   var payment1 = Math.trunc(calcAmount * k6);
-  //   var payment1Result = payment1.toLocaleString();
-  //   var payment2 = Math.trunc(calcAmount * k);
-  //   var payment2Result = payment2.toLocaleString();
-  //   if (calcPayment == "1") {
-  //     $(".template4-calc_result-numb").text(payment1Result);
-  //     document.getElementById("template4-ui-slider-amount-result-check").value = tmp;
-  //   } else if (calcPayment == "2") {
-  //     $(".template4-calc_result-numb").text(payment2Result);
-  //     document.getElementById("template4-ui-slider-amount-result-check").value = tmp;
-  //   }
-  //   if ($(".template4-calc_result-numb").text().length < 8) {
-  //     $(".template4-calc_result-numb_million").removeClass("active");
-  //   }
-  //   if ($(".template4-calc_result-numb").text().length > 7) {
-  //     $(".template4-calc_result-numb_million").addClass("active");
-  //   }
-  //   if (
-  //     year == 1 ||
-  //     year == 21 ||
-  //     year == 31 ||
-  //     year == 41 ||
-  //     year == 51 ||
-  //     year == 61 ||
-  //     year == 71 ||
-  //     year == 81 ||
-  //     year == 91
-  //   ) {
-  //     $(
-  //       ".template4-calc_numb-wr .year2, .template4-calc_numb-wr .year3"
-  //     ).removeClass("active");
-  //     $(".template4-calc_numb-wr .year1").addClass("active");
-  //   } else if (
-  //     (year >= 2 && year <= 4) ||
-  //     (year >= 22 && year <= 24) ||
-  //     (year >= 32 && year <= 34) ||
-  //     (year >= 42 && year <= 44) ||
-  //     (year >= 52 && year <= 54) ||
-  //     (year >= 62 && year <= 64) ||
-  //     (year >= 72 && year <= 74) ||
-  //     (year >= 82 && year <= 84) ||
-  //     (year >= 92 && year <= 94)
-  //   ) {
-  //     $(
-  //       ".template4-calc_numb-wr .year1, .template4-calc_numb-wr .year3"
-  //     ).removeClass("active");
-  //     $(".template4-calc_numb-wr .year2").addClass("active");
-  //   } else if ((year) => 5) {
-  //     $(
-  //       ".template4-calc_numb-wr .year1, .template4-calc_numb-wr .year2"
-  //     ).removeClass("active");
-  //     $(".template4-calc_numb-wr .year3").addClass("active");
-  //   }
-  // }
+  $(".template4-ui-slider, .template4-calc_select select").on(
+    "change keyup",
+    function () {
+      changeData();
+    }
+  );
+  $(".template4-ui-slider, .template4-calc_select select").each(function () {
+    changeData();
+  });
+  function changeData() {
+    var tmp = document.getElementById("template4-ui-slider-amount-result").value;
+    var calcAmount = $(".template4-ui-slider-amount").text();
+    var calcRate = $(".template4-ui-slider-rate").text();
+    var calcTerm = $(".template4-ui-slider-term").text();
+    var calcPayment = $(".template4-calc_select option:selected").val();
+    var year = $(".template4-ui-slider-term").text();
+    var k = calcRate / 12 / 100;
+    var k2 = 1 + k;
+    var k3 = -calcTerm * 12;
+    var k4 = Math.pow(k2, k3);
+    var k5 = 1 - k4;
+    var k6 = k / k5;
+    var payment1 = Math.trunc(calcAmount * k6);
+    var payment1Result = payment1.toLocaleString();
+    var payment2 = Math.trunc(calcAmount * k);
+    var payment2Result = payment2.toLocaleString();
+    if (calcPayment == "1") {
+      $(".template4-calc_result-numb").text(payment1Result);
+      document.getElementById("template4-ui-slider-amount-result-check").value = tmp;
+    } else if (calcPayment == "2") {
+      $(".template4-calc_result-numb").text(payment2Result);
+      document.getElementById("template4-ui-slider-amount-result-check").value = tmp;
+    }
+    if ($(".template4-calc_result-numb").text().length < 8) {
+      $(".template4-calc_result-numb_million").removeClass("active");
+    }
+    if ($(".template4-calc_result-numb").text().length > 7) {
+      $(".template4-calc_result-numb_million").addClass("active");
+    }
+    if (
+      year == 1 ||
+      year == 21 ||
+      year == 31 ||
+      year == 41 ||
+      year == 51 ||
+      year == 61 ||
+      year == 71 ||
+      year == 81 ||
+      year == 91
+    ) {
+      $(
+        ".template4-calc_numb-wr .year2, .template4-calc_numb-wr .year3"
+      ).removeClass("active");
+      $(".template4-calc_numb-wr .year1").addClass("active");
+    } else if (
+      (year >= 2 && year <= 4) ||
+      (year >= 22 && year <= 24) ||
+      (year >= 32 && year <= 34) ||
+      (year >= 42 && year <= 44) ||
+      (year >= 52 && year <= 54) ||
+      (year >= 62 && year <= 64) ||
+      (year >= 72 && year <= 74) ||
+      (year >= 82 && year <= 84) ||
+      (year >= 92 && year <= 94)
+    ) {
+      $(
+        ".template4-calc_numb-wr .year1, .template4-calc_numb-wr .year3"
+      ).removeClass("active");
+      $(".template4-calc_numb-wr .year2").addClass("active");
+    } else if ((year) => 5) {
+      $(
+        ".template4-calc_numb-wr .year1, .template4-calc_numb-wr .year2"
+      ).removeClass("active");
+      $(".template4-calc_numb-wr .year3").addClass("active");
+    }
+  }
 
-  // // Переход в форме с одного поля на другой по нажатию на Enter
-  // var $inputs = $(".form, .popup-form").find("input, button");
-  // $inputs.keydown(function (e) {
-  //   var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
-  //   if (key == 13) {
-  //     if ($(this).hasClass("form-btn")) {
-  //       return false;
-  //     } else {
-  //       e.preventDefault();
-  //       var inputs = $(this).closest("form").find(":input:visible");
-  //       inputs.eq(inputs.index(this) + 1).focus();
-  //     }
-  //   }
-  // });
+  // Переход в форме с одного поля на другой по нажатию на Enter
+  var $inputs = $(".form, .popup-form").find("input, button");
+  $inputs.keydown(function (e) {
+    var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+    if (key == 13) {
+      if ($(this).hasClass("form-btn")) {
+        return false;
+      } else {
+        e.preventDefault();
+        var inputs = $(this).closest("form").find(":input:visible");
+        inputs.eq(inputs.index(this) + 1).focus();
+      }
+    }
+  });
 
-  // $(".field-area input, .field-amount input").on("input", function () {
-  //   $(this).val(
-  //     $(this)
-  //       .val()
-  //       .replace(/[A-Za-zА-Яа-яЁё]/, "")
-  //   );
-  // });
+  $(".field-area input, .field-amount input").on("input", function () {
+    $(this).val(
+      $(this)
+        .val()
+        .replace(/[A-Za-zА-Яа-яЁё]/, "")
+    );
+  });
 
-  // $(".field-name input, .field-city input").on("input", function () {
-  //   $(this).val($(this).val().replace(/[0-9]/, ""));
-  // });
+  $(".field-name input, .field-city input").on("input", function () {
+    $(this).val($(this).val().replace(/[0-9]/, ""));
+  });
 
-  // $(".field-amount input").on("input", function () {
-  //   $(this).val(
-  //     String(
-  //       $(this)
-  //         .val()
-  //         .replace(/[^0-9.]/g, "")
-  //     ).replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-  //   );
-  // });
+  $(".field-amount input").on("input", function () {
+    $(this).val(
+      String(
+        $(this)
+          .val()
+          .replace(/[^0-9.]/g, "")
+      ).replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+    );
+  });
 
-  // $(".header-logo").click(function (e) {
-  //   $.fancybox.close();
-  //   $("body").removeClass("main-menu_open");
-  //   e.preventDefault();
-  //   fullpage_api.moveTo(1);
-  // });
+  $(".header-logo").click(function (e) {
+    $.fancybox.close();
+    $("body").removeClass("main-menu_open");
+    e.preventDefault();
+    fullpage_api.moveTo(1);
+  });
 
-  // // Информация для Popap Services
-  // $(".services-list1_link, .services-list2_link").click(function (e) {
-  //   if ($(window).width() <= 800) {
-  //     $('html').css('overflow', 'hidden');
-  //   }
-  //   e.preventDefault();
-  //   if (clicks <= 0) {
-  //     $.fancybox.open({
-  //       src: "#popup-services",
-  //       type: "inline",
-  //       btnTpl: {
-  //         smallBtn:
-  //           '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
-  //       },
-  //       touch: false,
-  //       beforeLoad: function () {
-  //         if (document.querySelector(".fullpage-wrapper")) {
-  //           // $('html').css('overflow', 'hidden');
-  //           $.fn.fullpage.setAllowScrolling(false);
-  //         }
-  //         $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
-  //         $("body").removeClass("main-menu_open");
-  //       },
-  //       afterLoad: function () {
-  //         setTimeout(function () {
-  //           $(".popup-services .nano").nanoScroller();
-  //         }, 1);
-  //       },
-  //       beforeClose: function () {
-  //         if ($(window).width() <= 800) {
-  //           $('html').css('overflow-y', 'scroll');
-  //         }
-  //         $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
-  //       },
-  //       afterClose: function () {
-  //         $(".popup-services_content").empty();
-  //         if (document.querySelector(".fullpage-wrapper")) {
-  //           $.fn.fullpage.setAllowScrolling(true);
-  //         }
-  //         clicks = 0;
-  //       },
-  //     });
-  //   } else {
-  //     $(
-  //       ".popup-services .popup-services_info1, .popup-services .popup-services_info2"
-  //     ).remove();
-  //   }
-  //   ++clicks;
-  //   $(this)
-  //     .prev()
-  //     .find(".popup-services_info1, .popup-services_info2")
-  //     .clone()
-  //     .appendTo(".popup-services_content");
-  // });
+  // Информация для Popap Services
+  $(".services-list1_link, .services-list2_link").click(function (e) {
+    if ($(window).width() <= 800) {
+      $('html').css('overflow', 'hidden');
+    }
+    e.preventDefault();
+    if (clicks <= 0) {
+      $.fancybox.open({
+        src: "#popup-services",
+        type: "inline",
+        btnTpl: {
+          smallBtn:
+            '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
+        },
+        touch: false,
+        beforeLoad: function () {
+          if (document.querySelector(".fullpage-wrapper")) {
+            // $('html').css('overflow', 'hidden');
+            $.fn.fullpage.setAllowScrolling(false);
+          }
+          $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
+          $("body").removeClass("main-menu_open");
+        },
+        afterLoad: function () {
+          setTimeout(function () {
+            $(".popup-services .nano").nanoScroller();
+          }, 1);
+        },
+        beforeClose: function () {
+          if ($(window).width() <= 800) {
+            $('html').css('overflow-y', 'scroll');
+          }
+          $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
+        },
+        afterClose: function () {
+          $(".popup-services_content").empty();
+          if (document.querySelector(".fullpage-wrapper")) {
+            $.fn.fullpage.setAllowScrolling(true);
+          }
+          clicks = 0;
+        },
+      });
+    } else {
+      $(
+        ".popup-services .popup-services_info1, .popup-services .popup-services_info2"
+      ).remove();
+    }
+    ++clicks;
+    $(this)
+      .prev()
+      .find(".popup-services_info1, .popup-services_info2")
+      .clone()
+      .appendTo(".popup-services_content");
+  });
 
-  // // Изменение шапки и переключателей прокрутки при видимости экрана с Контактами
-  // $(window).scroll(function () {
-  //   if ($(window).scrollTop() > $(".screen-contacts").offset().top - 85)
-  //     $("html").addClass("fp-viewing-contacts-wr");
-  //   else $("html").removeClass("fp-viewing-contacts-wr");
-  // });
+  // Изменение шапки и переключателей прокрутки при видимости экрана с Контактами
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > $(".screen-contacts").offset().top - 85)
+      $("html").addClass("fp-viewing-contacts-wr");
+    else $("html").removeClass("fp-viewing-contacts-wr");
+  });
 
-  // $('[data-src="#popup-request"]').fancybox({
+  $('[data-src="#popup-request"]').fancybox({
 
-  //   touch: false,
-  //   beforeLoad: function () {
-  //     if ($(window).width() <= 800) {
-  //       $('html').css('overflow', 'hidden');
-  //     }
-  //     if (document.querySelector(".fullpage-wrapper")) {
-  //       $.fn.fullpage.setAllowScrolling(false);
-  //     }
-  //     $('.header-menu #navig li a').removeClass('active');
-  //     $("body").addClass("popup-request-wr popup-wr popup-wr-hidden");
-  //     $("body").removeClass("main-menu_open");
-  //     $(".fancybox-stage").addClass("nano");
-  //     $(".fancybox-slide").addClass("nano-content");
-  //   },
-  //   afterLoad: function () {
-  //     setTimeout(function () {
-  //       $(".popup-request-wr .nano").nanoScroller();
-  //     }, 1);
-  //   },
-  //   beforeClose: function () {
-  //     if ($(window).width() <= 800) {
-  //       $('html').css('overflow-y', 'scroll');
-  //     }
-  //     $("body").removeClass("popup-wr popup-wr-hidden");
-  //     $(".fancybox-stage").removeClass("nano");
-  //     $(".fancybox-slide").removeClass("nano-content");
-  //   },
-  //   afterClose: function () {
-  //     if (document.querySelector(".fullpage-wrapper")) {
-  //       $.fn.fullpage.setAllowScrolling(true);
-  //     }
-  //   },
-  // });
-  // $(".main-menu2 ul li a").click(function () {
-  //   $("body").removeClass("main-menu_open");
-  //   if (document.querySelector(".fullpage-wrapper")) {
-  //     $.fn.fullpage.setAllowScrolling(true);
-  //   }
-  // });
+    touch: false,
+    beforeLoad: function () {
+      if ($(window).width() <= 800) {
+        $('html').css('overflow', 'hidden');
+      }
+      if (document.querySelector(".fullpage-wrapper")) {
+        $.fn.fullpage.setAllowScrolling(false);
+      }
+      $('.header-menu #navig li a').removeClass('active');
+      $("body").addClass("popup-request-wr popup-wr popup-wr-hidden");
+      $("body").removeClass("main-menu_open");
+      $(".fancybox-stage").addClass("nano");
+      $(".fancybox-slide").addClass("nano-content");
+    },
+    afterLoad: function () {
+      setTimeout(function () {
+        $(".popup-request-wr .nano").nanoScroller();
+      }, 1);
+    },
+    beforeClose: function () {
+      if ($(window).width() <= 800) {
+        $('html').css('overflow-y', 'scroll');
+      }
+      $("body").removeClass("popup-wr popup-wr-hidden");
+      $(".fancybox-stage").removeClass("nano");
+      $(".fancybox-slide").removeClass("nano-content");
+    },
+    afterClose: function () {
+      if (document.querySelector(".fullpage-wrapper")) {
+        $.fn.fullpage.setAllowScrolling(true);
+      }
+    },
+  });
+  $(".main-menu2 ul li a").click(function () {
+    $("body").removeClass("main-menu_open");
+    if (document.querySelector(".fullpage-wrapper")) {
+      $.fn.fullpage.setAllowScrolling(true);
+    }
+  });
 
   $("#fullpage").fullpage({
     anchors: [
