@@ -1479,7 +1479,7 @@ body.main-menu_open .slides-nav-dots.active {
 }
 
 section {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .content {
