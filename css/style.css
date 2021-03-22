@@ -776,7 +776,7 @@ textarea {
   /* left: -3.333vw; */
   top: 0;
   left: 0;
-  filter: blur(0.139vw);
+  /* filter: blur(0.139vw); */
   /* width: calc(100% + 6.667vw);
   height: calc(100% + 4.653vw); */
   width: 100%;
@@ -789,7 +789,7 @@ textarea {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.57);
+  /* background: rgba(0, 0, 0, 0.57); */
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -3807,10 +3807,20 @@ textarea {
     /* position: fixed; */
   }
   #fullpage {
-    background: none;
+    background-image: none;
   }
   .bg-photo img {
     display: block;
+  }
+
+  .bg {
+    filter: blur(0.139vw);
+
+  }
+  
+  .bg:before {
+
+    background: rgba(0, 0, 0, 0.57);
   }
 
 }
