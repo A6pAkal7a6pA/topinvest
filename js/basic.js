@@ -833,11 +833,8 @@ $(document).ready(function () {
     scrollHorizontally: false,
     navigation: true,
     menu: "#myMenu",
-    bigSectionsDestination: top,
-    lazyLoading: false,
-    afterResponsive: function (isResponsive) {
-      autoScrolling: false;
-    },
+    bigSectionsDestination: top
+    // lazyLoading: false,
     // afterLoad: function (origin, destination, direction) {
     //   if (origin.anchor == "template1") {
     //     $("#section1 .animated").addClass("fadeInUp");
