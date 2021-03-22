@@ -829,1135 +829,1138 @@ $(document).ready(function () {
     normalScrollElements:
       ".popup-services_content, .popup-services_info2-desc, .popup-privacyPolicy_content, .main-menu1, .main-menu2, .textarea-noscroll, .slides-nav-menu",
     responsiveWidth: 800,
-    // scrollingSpeed: 1000,
+    scrollingSpeed: 1000,
     scrollHorizontally: false,
     navigation: true,
     menu: "#myMenu",
-    bigSectionsDestination: top
-    // lazyLoading: false,
-    // afterLoad: function (origin, destination, direction) {
-    //   if (origin.anchor == "template1") {
-    //     $("#section1 .animated").addClass("fadeInUp");
-    //   }
-    // },
-    // onLeave: function (origin, destination, direction) {
-    //   if (destination.anchor == "template2") {
-    //     $("#section2 .animated").addClass("fadeInUp");
-    //   }
-    //   if (destination.anchor == "template3") {
-    //     $("#section3 .animated").addClass("fadeInUp");
-    //   }
-    //   if (destination.anchor == "template4") {
-    //     $("#section4 .animated").addClass("fadeInUp");
-    //     setTimeout(function () {
-    //       $("#section4 .template4-calc").addClass("fadeInUpFilter");
-    //     }, 1);
-    //   }
-    //   if (destination.anchor == "template5") {
-    //     $("#section5 .animated").addClass("fadeInUp");
-    //   }
-    //   if (destination.anchor == "template6") {
-    //     $("#section6 .animated").addClass("fadeInUp");
-    //   }
-    //   if (destination.anchor == "template7") {
-    //     $("#section7 .animated").addClass("fadeInUp");
-    //   }
-    //   if (destination.anchor == "template8") {
-    //     $("#section8 .animated").addClass("fadeInUp");
-    //   }
-    //   if (destination.anchor == "template9") {
-    //     $("#section9 .animated").addClass("fadeInUp");
-    //   }
-    //   if (destination.anchor == "template10") {
-    //     $("#section10 .animated").addClass("fadeInUp");
-    //   }
-    //   if (destination.anchor == "services") {
-    //     $("#section11 .animated").addClass("fadeInUp");
-    //   }
-    //   if (destination.anchor == "advantages") {
-    //     $("#section12 .animated").addClass("fadeInUp");
-    //   }
-    //   if (destination.anchor == "investor") {
-    //     $("#section13 .animated").addClass("fadeInUp");
-    //   }
-    //   if (destination.anchor == "contacts") {
-    //     $("html").addClass("fp-viewing-contacts-wr");
-    //     $("#section13 .animated").addClass("fadeInUp");
-    //   }
-    //   if (origin.anchor == "contacts") {
-    //     $("html").removeClass("fp-viewing-contacts-wr");
-    //   }
-    // },
+    bigSectionsDestination: top,
+    lazyLoading: false,
+    afterResponsive: function (isResponsive) {
+      autoScrolling: false;
+    },
+    afterLoad: function (origin, destination, direction) {
+      if (origin.anchor == "template1") {
+        $("#section1 .animated").addClass("fadeInUp");
+      }
+    },
+    onLeave: function (origin, destination, direction) {
+      if (destination.anchor == "template2") {
+        $("#section2 .animated").addClass("fadeInUp");
+      }
+      if (destination.anchor == "template3") {
+        $("#section3 .animated").addClass("fadeInUp");
+      }
+      if (destination.anchor == "template4") {
+        $("#section4 .animated").addClass("fadeInUp");
+        setTimeout(function () {
+          $("#section4 .template4-calc").addClass("fadeInUpFilter");
+        }, 1);
+      }
+      if (destination.anchor == "template5") {
+        $("#section5 .animated").addClass("fadeInUp");
+      }
+      if (destination.anchor == "template6") {
+        $("#section6 .animated").addClass("fadeInUp");
+      }
+      if (destination.anchor == "template7") {
+        $("#section7 .animated").addClass("fadeInUp");
+      }
+      if (destination.anchor == "template8") {
+        $("#section8 .animated").addClass("fadeInUp");
+      }
+      if (destination.anchor == "template9") {
+        $("#section9 .animated").addClass("fadeInUp");
+      }
+      if (destination.anchor == "template10") {
+        $("#section10 .animated").addClass("fadeInUp");
+      }
+      if (destination.anchor == "services") {
+        $("#section11 .animated").addClass("fadeInUp");
+      }
+      if (destination.anchor == "advantages") {
+        $("#section12 .animated").addClass("fadeInUp");
+      }
+      if (destination.anchor == "investor") {
+        $("#section13 .animated").addClass("fadeInUp");
+      }
+      if (destination.anchor == "contacts") {
+        $("html").addClass("fp-viewing-contacts-wr");
+        $("#section13 .animated").addClass("fadeInUp");
+      }
+      if (origin.anchor == "contacts") {
+        $("html").removeClass("fp-viewing-contacts-wr");
+      }
+    },
   });
 });
 
-// function functionsResize() {
-//   if ($(window).width() >= 800) {
-//     $(".section").removeClass("fp-auto-height");
-//     $(".header-phone_link").click(function () {
-//       $.fancybox.close();
-//       $("body").removeClass("main-menu_open");
-//       setTimeout(function () {
-//         $(".template5-form .field-name input").focus();
-//       }, 1000);
-//     });
-//   } else {
-//     $(".section").addClass("fp-auto-height");
-//     $(".header-phone_link").click(function () {
-//       $.fancybox.close();
-//       $("body").removeClass("main-menu_open");
-//       $("html, body").animate(
-//         {
-//           scrollTop: $(".screen-template5").offset().top - 50,
-//         },
-//         1000
-//       );
-//       setTimeout(function () {
-//         $(".template5-form .field-name input").focus();
-//       }, 1000);
-//     });
-//   }
-// }
-// window.addEventListener("load", function () {
-//   functionsResize();
-// });
-// window.addEventListener("resize", function () {
-//   functionsResize();
-// });
-
-// function fancyboxResize() {
-//   if ($(window).width() >= 800) {
-//     $("[data-fancybox]").fancybox({
-
-//       btnTpl: {
-//         smallBtn:
-//           '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
-//       },
-
-//       closeExisting: true,
-//       touch: false,
-//       beforeLoad: function () {
-//         if ($(window).width() <= 800) {
-//           $('html').css('overflow', 'hidden');
-//         }
-//         if (document.querySelector(".fullpage-wrapper")) {
-//           $.fn.fullpage.setAllowScrolling(false);
-//         }
-//         $("body").addClass("popup-wr popup-wr-hidden");
-//         $("body").removeClass("main-menu_open");
-//       },
-//       afterLoad: function () {
-//         setTimeout(function () {
-//           $(".popup .nano").nanoScroller();
-//         }, 1);
-//       },
-//       beforeClose: function () {
-//         if ($(window).width() <= 800) {
-//           $('html').css('overflow-y', 'scroll');
-//         }
-//         $("body").removeClass("popup-wr popup-wr-hidden");
-//       },
-//       afterClose: function () {
-//         if (document.querySelector(".fullpage-wrapper")) {
-//           $.fn.fullpage.setAllowScrolling(true);
-//         }
-//       },
-//     });
-//     $('[data-src="#popup-privacyPolicy"]').fancybox({
-//       // $('html').css('overflow', 'hidden');
-//       btnTpl: {
-//         smallBtn:
-//           '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
-//       },
-//       closeExisting: true,
-//       touch: false,
-//       beforeLoad: function () {
-//         if ($(window).width() <= 800) {
-//           $('html').css('overflow', 'hidden');
-//         }
-//         $("body").addClass("popup-privacyPolicy-wr popup-wr popup-wr-hidden");
-//         $("body").removeClass("main-menu_open");
-//         if (document.querySelector(".fullpage-wrapper")) {
-//           $.fn.fullpage.setAllowScrolling(false);
-//         }
-//       },
-//       afterLoad: function () {
-//         setTimeout(function () {
-//           $(".popup-privacyPolicy .nano").nanoScroller();
-//         }, 1);
-//       },
-//       beforeClose: function () {
-//         if ($(window).width() <= 800) {
-//           $('html').css('overflow-y', 'scroll');
-//         }
-
-//         $("body").removeClass(
-//           "popup-wr popup-privacyPolicy-wr popup-wr-hidden"
-//         );
-//       },
-//       afterClose: function () {
-//         if (document.querySelector(".fullpage-wrapper")) {
-//           $.fn.fullpage.setAllowScrolling(true);
-//         }
-//       },
-//     });
-//     $('[data-src="#popup-services"]').fancybox({
-//       btnTpl: {
-//         smallBtn:
-//           '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
-//       },
-//       closeExisting: true,
-//       touch: false,
-//       beforeLoad: function () {
-//         if ($(window).width() <= 800) {
-//           $('html').css('overflow', 'hidden');
-//         }
-//         if (document.querySelector(".fullpage-wrapper")) {
-//           // $('html').css('overflow', 'hidden');
-//           $.fn.fullpage.setAllowScrolling(false);
-//         }
-//         $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
-//         $("body").removeClass("main-menu_open");
-//       },
-//       afterLoad: function () {
-//         setTimeout(function () {
-//           $(".popup-services .nano").nanoScroller();
-//         }, 1);
-//       },
-//       beforeClose: function () {
-//         if ($(window).width() <= 800) {
-//           $('html').css('overflow-y', 'scroll');
-//         }
-//         $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
-//       },
-//       afterClose: function () {
-//         $(".popup-services_content").empty();
-//         if (document.querySelector(".fullpage-wrapper")) {
-//           $.fn.fullpage.setAllowScrolling(true);
-//         }
-//       },
-//     });
-//   } else {
-//     $('[data-src="#popup-privacyPolicy"]').fancybox({
-//       btnTpl: {
-//         smallBtn:
-//           '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
-//       },
-//       touch: false,
-//       closeExisting: true,
-//       backFocus: false,
-//       beforeLoad: function () {
-//         if ($(window).width() <= 800) {
-//           $('html').css('overflow', 'hidden');
-//         }
-//         if (document.querySelector(".fullpage-wrapper")) {
-//           $.fn.fullpage.setAllowScrolling(false);
-//         }
-
-//         $("body").addClass("popup-privacyPolicy-wr popup-wr popup-wr-hidden");
-//         $("body").removeClass("main-menu_open");
-//       },
-//       afterLoad: function () {
-//         setTimeout(function () {
-//           $(".popup-privacyPolicy .nano").nanoScroller();
-//         }, 1);
-//       },
-//       beforeClose: function () {
-//         if (document.querySelector(".fullpage-wrapper")) {
-//           $.fn.fullpage.setAllowScrolling(true);
-//         }
-//         if ($(window).width() <= 800) {
-//           $('html').css('overflow-y', 'scroll');
-//         }
-//         $("body").removeClass(
-//           "popup-wr popup-privacyPolicy-wr popup-wr-hidden"
-//         );
-//       },
-//     });
-//     $('[data-src="#popup-services"]').fancybox({
-//       btnTpl: {
-//         smallBtn:
-//           '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
-//       },
-//       touch: false,
-//       closeExisting: true,
-//       backFocus: false,
-//       beforeLoad: function () {
-//         if (document.querySelector(".fullpage-wrapper")) {
-//           // $('html').css('overflow', 'hidden');
-//           $.fn.fullpage.setAllowScrolling(false);
-//         }
-//         if ($(window).width() <= 800) {
-//           $('html').css('overflow', 'hidden');
-//         }
-//         $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
-//         $("body").removeClass("main-menu_open");
-//       },
-//       afterLoad: function () {
-//         setTimeout(function () {
-//           $(".popup-services .nano").nanoScroller();
-//         }, 1);
-//       },
-//       beforeClose: function () {
-//         if (document.querySelector(".fullpage-wrapper")) {
-//           $.fn.fullpage.setAllowScrolling(true);
-//         }
-//         if ($(window).width() <= 800) {
-//           $('html').css('overflow-y', 'scroll');
-//         }
-//         $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
-//       },
-//       afterClose: function () {
-//         $(".popup-services_content").empty();
-//       },
-//     });
-//   }
-// }
-// window.addEventListener("load", function () {
-//   fancyboxResize();
-// });
-// window.addEventListener("resize", function () {
-//   fancyboxResize();
-// });
-
-// /*REVISIONS*/
-
-// $(document).ready(function () {
-//   $(".privacyLink").click(function () { });
-
-//   let sectionsCount = $("section").length + 1;
-//   let sectionNames = [
-//     "template1",
-//     "template2",
-//     "template3",
-//     "template4",
-//     "template5",
-//     "template6",
-//     "template7",
-//     "template8",
-//     "template9",
-//     "template10",
-//     "services",
-//     "advantages",
-//     "investor",
-//     "contacts",
-//   ];
-//   for (let i = 0; i < sectionsCount; i++) {
-//     $("#myMenu")
-//       .find("ul")
-//       .append(
-//         `<li data-menuanchor="${sectionNames[i]}"><a href="#${sectionNames[i]
-//         }">${$(`#section${i + 1}`).attr("data-name")}</a></li>`
-//       );
-//   }
-//   $("#myMenu").find("li:first-child").addClass("active");
-
-
-//   $(".slides-nav-dots").click(function () {
-//     if (!$(".slides-nav-menu").hasClass("active")) {
-//       $(".slides-nav-menu").addClass("active");
-//       $(".slides-nav-dots").removeClass("active");
-//       // $('html').css('overflow', 'hidden')
-
-//       fullpage_api.setAllowScrolling(true);
-//       fullpage_api.setKeyboardScrolling(true);
-//     }
-//   });
-
-
-
-//   $(".slides-nav-close").click(function () {
-//     $(".slides-nav-menu").removeClass("active");
-//     $(".slides-nav-dots").addClass("active");
-//     if ($(window).width() <= 800) {
-//       $('html').css('overflow-y', 'scroll')
-//     }
-//     fullpage_api.setAllowScrolling(true);
-//   });
-
-//   let isGlobalScrollEnabled = true
-
-//   document.body.addEventListener("wheel", function (e) {
-//     const menuScroll = document.querySelector("#myMenu").nanoscroller;
-//     const menuMy = document.querySelector("#myMenu").clientHeight;
-//     const menuUl = document.querySelector(".slides-nav-menu div ul").clientHeight;
-//     if (!isGlobalScrollEnabled) {
-//       if (menuScroll.contentScrollTop === 0 && e.deltaY < 0) {
-//         e.preventDefault();
-//       } else if ((menuScroll.contentScrollTop + 1 === menuScroll.maxScrollTop || menuScroll.contentScrollTop === menuScroll.maxScrollTop) && e.deltaY > 0) {
-//         e.preventDefault();
-//       }
-//     }
-//   }, { passive: false });
-
-//   $(".slides-nav-menu").mouseenter(function (e) {
-//     fullpage_api.setAllowScrolling(false);
-//     if ($(window).width() <= 800) {
-//       isGlobalScrollEnabled = false;
-//     }
-//   });
-
-//   $(".slides-nav-menu").mouseleave(function (e) {
-//     fullpage_api.setAllowScrolling(true);
-//     if ($(window).width() <= 800) {
-//       isGlobalScrollEnabled = true;
-//     }
-
-//   });
-//   let offCLient;
-//   window.addEventListener('mousedown', function (e) {
-//     offCLient = e.offsetX;
-//   })
-
-//   $(document).mouseup(function (e) {
-//     let width = document.documentElement.clientWidth;
-//     if ($(".slides-nav-menu").hasClass("active")) {
-//       var div = $(".slides-nav-menu");
-//       var dots = $(".slides-nav-dots");
-//       if (!div.is(e.target) && div.has(e.target).length === 0 && !dots.is(e.target) && dots.has(e.target).length === 0 && !(width < offCLient)) {
-//         $(".slides-nav-menu").removeClass("active");
-//         $(".slides-nav-dots").addClass("active");
-//         fullpage_api.setAllowScrolling(true);
-//       }
-//     }
-//   });
-
-//   function doGetCaretPosition(oField) {
-//     // Initialize
-//     var iCaretPos = 0;
-
-//     // IE Support
-//     if (document.selection) {
-//       // Set focus on the element
-//       oField.focus();
-
-//       // To get cursor position, get empty selection range
-//       var oSel = document.selection.createRange();
-
-//       // Move selection start to 0 position
-//       oSel.moveStart("character", -oField.value.length);
-
-//       // The caret position is selection length
-//       iCaretPos = oSel.text.length;
-//     }
-
-//     // Firefox support
-//     else if (oField.selectionStart || oField.selectionStart == "0")
-//       iCaretPos =
-//         oField.selectionDirection == "backward"
-//           ? oField.selectionStart
-//           : oField.selectionEnd;
-
-//     // Return results
-//     return iCaretPos;
-//   }
-
-//   $(".main-menu_inner.nano-content").css("outline", "none");
-
-//   function changeData2() {
-//     var calcAmount1 = document.getElementById("template4-ui-slider-amount-result").value;
-//     var calcAmount = noSpaceInNum(calcAmount1);
-//     var calcRate = $(".template4-ui-slider-rate").attr("data-value");
-//     var calcTerm = $(".template4-ui-slider-term").attr("data-value");
-//     var calcPayment = $(".template4-calc_select option:selected").val();
-//     var year = $(".template4-ui-slider-term").text();
-//     var k = calcRate / 12 / 100;
-//     var k2 = 1 + k;
-//     var k3 = -calcTerm * 12;
-//     var k4 = Math.pow(k2, k3);
-//     var k5 = 1 - k4;
-//     var k6 = k / k5;
-//     var payment1 = Math.trunc(calcAmount * k6);
-//     var payment1Result = payment1.toLocaleString();
-//     var payment2 = Math.trunc(calcAmount * k);
-//     var payment2Result = payment2.toLocaleString();
-//     if (calcPayment == "1") {
-//       $(".template4-calc_result-numb").text(payment1Result);
-//     } else if (calcPayment == "2") {
-//       $(".template4-calc_result-numb").text(payment2Result);
-//     }
-//     if ($(".template4-calc_result-numb").text().length < 8) {
-//       $(".template4-calc_result-numb_million").removeClass("active");
-//     }
-//     if ($(".template4-calc_result-numb").text().length > 7) {
-//       $(".template4-calc_result-numb_million").addClass("active");
-//     }
-//     if (
-//       year == 1 ||
-//       year == 21 ||
-//       year == 31 ||
-//       year == 41 ||
-//       year == 51 ||
-//       year == 61 ||
-//       year == 71 ||
-//       year == 81 ||
-//       year == 91
-//     ) {
-//       $(
-//         ".template4-calc_numb-wr .year2, .template4-calc_numb-wr .year3"
-//       ).removeClass("active");
-//       $(".template4-calc_numb-wr .year1").addClass("active");
-//     } else if (
-//       (year >= 2 && year <= 4) ||
-//       (year >= 22 && year <= 24) ||
-//       (year >= 32 && year <= 34) ||
-//       (year >= 42 && year <= 44) ||
-//       (year >= 52 && year <= 54) ||
-//       (year >= 62 && year <= 64) ||
-//       (year >= 72 && year <= 74) ||
-//       (year >= 82 && year <= 84) ||
-//       (year >= 92 && year <= 94)
-//     ) {
-//       $(
-//         ".template4-calc_numb-wr .year1, .template4-calc_numb-wr .year3"
-//       ).removeClass("active");
-//       $(".template4-calc_numb-wr .year2").addClass("active");
-//     } else if ((year) => 5) {
-//       $(
-//         ".template4-calc_numb-wr .year1, .template4-calc_numb-wr .year2"
-//       ).removeClass("active");
-//       $(".template4-calc_numb-wr .year3").addClass("active");
-//     }
-//   }
-
-//   function noSpaceInNum(str) {
-//     return str.replace(/\D+/g, "");
-//   }
-
-//   function digitsInTheNumber(x) {
-//     x = x.toString();
-//     var pattern = /(-?\d+)(\d{3})/;
-//     while (pattern.test(x))
-//       x = x.replace(pattern, "$1 $2");
-//     return x;
-//   }
-
-//   document.getElementById(
-//     "template4-ui-slider-amount-result"
-//   ).onkeypress = function (event) {
-
-//     thisInput = this;
-//     if (
-//       event.key == 1 ||
-//       event.key == 2 ||
-//       event.key == 3 ||
-//       event.key == 4 ||
-//       event.key == 5 ||
-//       event.key == 6 ||
-//       event.key == 7 ||
-//       event.key == 8 ||
-//       event.key == 9 ||
-//       event.key == 0
-//     ) {
-//       setTimeout(function () {
-
-//         let inputVal = event.target.value;
-//         let count;
-//         let maxCount = document
-//           .querySelector(".template4-ui-slider-amount")
-//           .getAttribute("data-max");
-//         let minCount = document
-//           .querySelector(".template4-ui-slider-amount")
-//           .getAttribute("data-min");
-//         count = noSpaceInNum(inputVal);
-//         let percent = (count / maxCount) * 100;
-//         if (Number(noSpaceInNum(inputVal)) <= minCount) {
-//           thisInput.parentNode.parentNode.querySelector(
-//             ".ui-slider .ui-slider-handle"
-//           ).style.left = 0 + "%";
-//           thisInput.parentNode.parentNode.querySelector(
-//             ".ui-slider .ui-slider-range"
-//           ).style.width = 0 + "%";
-//           thisInput.parentNode.classList.add("minCount");
-//           thisInput.parentNode.classList.remove("maxCount");
-//         } else if (Number(noSpaceInNum(inputVal)) >= maxCount) {
-//           thisInput.parentNode.parentNode.querySelector(
-//             ".ui-slider .ui-slider-handle"
-//           ).style.left = 100 + "%";
-//           thisInput.parentNode.parentNode.querySelector(
-//             ".ui-slider .ui-slider-range"
-//           ).style.width = 100 + "%";
-//           thisInput.parentNode.classList.add("maxCount");
-//           thisInput.parentNode.classList.remove("minCount");
-//         } else {
-//           thisInput.parentNode.parentNode.querySelector(
-//             ".ui-slider .ui-slider-handle"
-//           ).style.left = percent + "%";
-//           thisInput.parentNode.parentNode.querySelector(
-//             ".ui-slider .ui-slider-range"
-//           ).style.width = percent + "%";
-//           thisInput.parentNode.classList.remove("maxCount");
-//           thisInput.parentNode.classList.remove("minCount");
-//         }
-//         document
-//           .querySelector(".template4-ui-slider-amount")
-//           .setAttribute("data-value", count);
-//         let resultNum = document
-//           .querySelector(".template4-ui-slider-amount")
-//           .getAttribute("data-value");
-//         event.target.value = digitsInTheNumber(resultNum);
-//         document.querySelector(
-//           ".template4-ui-slider-amount"
-//         ).innerHTML = noSpaceInNum(event.target.value);
-//       }, 100);
-//     } else {
-//       return false;
-//     }
-//   };
-
-//   document.getElementById("template4-ui-slider-amount-result-check").addEventListener("input", function (e) {
-//     pr = document.getElementById("template4-ui-slider-amount-result-check").value;
-//     pr1 = noSpaceInNum(pr);
-//     if (pr1.length > 8) {
-//       pr1 = pr1.substr(0, 8);
-//     } else if (Number(pr1 <= 0)) {
-//       pr1 = "";
-//     }
-//     var calcRate = $(".template4-ui-slider-rate").text();
-//     var calcTerm = $(".template4-ui-slider-term").text();
-//     var calcPayment = $(".template4-calc_select option:selected").val();
-//     var year = $(".template4-ui-slider-term").text();
-//     var k = calcRate / 12 / 100;
-//     var k2 = 1 + k;
-//     var k3 = -calcTerm * 12;
-//     var k4 = Math.pow(k2, k3);
-//     var k5 = 1 - k4;
-//     var k6 = k / k5;
-//     var payment1 = Math.trunc(pr1 * k6);
-//     var payment1Result = payment1.toLocaleString();
-//     $(".template4-calc_result-numb").text(payment1Result);
-//     tmp1 = digitsInTheNumber(pr1);
-//     tmp = noSpaceInNum(tmp1)
-//     let maxCount = document
-//       .querySelector(".check")
-//       .getAttribute("data-max");
-//     if (tmp.length > 8) {
-//       tmp = "99999999";
-//       tmp1 = "99999999";
-//     }
-//     document.getElementById("template4-ui-slider-amount-result").value;
-//     document.getElementById("template4-ui-slider-amount-result").value = tmp;
-//     document.getElementById("template4-ui-slider-amount-result-check").value = tmp1;
-//     document.getElementById("template4-ui-slider-amount-result").parentElement.querySelector("span").dataset.value = tmp;
-//     document.getElementById("template4-ui-slider-amount-result").dispatchEvent(new Event("blur", { bubbles: true }));
-//     document.getElementById("template4-ui-slider-amount-result").dispatchEvent(new KeyboardEvent("keypress", { key: 1 }));
-//   });
-
-//   document.getElementById(
-//     "template4-ui-slider-amount-result-check"
-//   ).onkeypress = function (event) {
-//     some = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result-check").value);
-//     some1 = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result").value);
-//     var calcRate = $(".template4-ui-slider-rate").text();
-//     var calcTerm = $(".template4-ui-slider-term").text();
-//     var calcPayment = $(".template4-calc_select option:selected").val();
-//     var k = calcRate / 12 / 100;
-//     var k2 = 1 + k;
-//     var k3 = -calcTerm * 12;
-//     var k4 = Math.pow(k2, k3);
-//     var k5 = 1 - k4;
-//     var k6 = k / k5;
-//     var payment1 = Math.trunc(some1 * k6);
-//     var payment1Result = payment1.toLocaleString();
-//     var payment2 = Math.trunc(some1 * k);
-//     var payment2Result = payment2.toLocaleString();
-//     if (event.key == "Enter") {
-//       let rateValue = document.getElementById("template4-ui-slider-rate-result")
-//         .value;
-//       document.getElementById(
-//         "template4-ui-slider-rate-result"
-//       ).value = rateValue.replace("%", "");
-//       document.getElementById("template4-ui-slider-rate-result").focus();
-//       if (Number(some) <= 200000) {
-//         document.getElementById("template4-ui-slider-amount-result-check").value = "200 000";
-//         document.getElementById("template4-ui-slider-amount-result").value = "200000";
-//         changeData2();
-
-//       } else if (Number(some) >= 25000000) {
-//         document.getElementById("template4-ui-slider-amount-result-check").value = "25 000 000";
-//         document.getElementById("template4-ui-slider-amount-result").value = "25000000";
-//         changeData2();
-//       }
-//       return false;
-//     }
-
-//     thisInput = this;
-//     if (
-//       event.key == 1 ||
-//       event.key == 2 ||
-//       event.key == 3 ||
-//       event.key == 4 ||
-//       event.key == 5 ||
-//       event.key == 6 ||
-//       event.key == 7 ||
-//       event.key == 8 ||
-//       event.key == 9 ||
-//       event.key == 0
-//     ) {
-//       setTimeout(function () {
-
-//         let inputVal = event.target.value;
-
-//         let count;
-//         let maxCount = document
-//           .querySelector(".check")
-//           .getAttribute("data-max");
-//         let minCount = document
-//           .querySelector(".check")
-//           .getAttribute("data-min");
-//         count = noSpaceInNum(inputVal);
-//         let percent = (count / maxCount) * 100;
-//         if (Number(noSpaceInNum(tmp)) <= minCount) {
-//           document.getElementById("template4-ui-slider-amount-result-check").value = 200000;
-//           thisInput.parentNode.parentNode.querySelector(
-//             ".ui-slider .ui-slider-handle"
-//           ).style.left = 0 + "%";
-//           thisInput.parentNode.parentNode.querySelector(
-//             ".ui-slider .ui-slider-range"
-//           ).style.width = 0 + "%";
-//           thisInput.parentNode.classList.add("minCount");
-//           thisInput.parentNode.classList.remove("maxCount");
-
-//         } else if (Number(noSpaceInNum(inputVal)) >= maxCount) {
-//           thisInput.parentNode.parentNode.querySelector(
-//             ".ui-slider .ui-slider-handle"
-//           ).style.left = 100 + "%";
-//           thisInput.parentNode.parentNode.querySelector(
-//             ".ui-slider .ui-slider-range"
-//           ).style.width = 100 + "%";
-//           thisInput.parentNode.classList.add("maxCount");
-//           thisInput.parentNode.classList.remove("minCount");
-//         } else {
-//           thisInput.parentNode.parentNode.querySelector(
-//             ".ui-slider .ui-slider-handle"
-//           ).style.left = percent + "%";
-//           thisInput.parentNode.parentNode.querySelector(
-//             ".ui-slider .ui-slider-range"
-//           ).style.width = percent + "%";
-//           thisInput.parentNode.classList.remove("maxCount");
-//           thisInput.parentNode.classList.remove("minCount");
-//         }
-//         document
-//           .querySelector(".template4-ui-slider-amount")
-//           .setAttribute("data-value", count);
-//         let resultNum = document
-//           .querySelector(".template4-ui-slider-amount")
-//           .getAttribute("data-value");
-//         event.target.value = digitsInTheNumber(resultNum);
-//         document.querySelector(
-//           ".template4-ui-slider-amount"
-//         ).innerHTML = noSpaceInNum(event.target.value);
-//       }, 100);
-//     } else {
-//       return false;
-//     }
-//   };
-
-//   document.getElementById("template4-ui-slider-amount-result-check").addEventListener("blur", function (event) {
-//     some = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result-check").value);
-//     some1 = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result").value);
-
-//     if (Number(some) <= 200000) {
-//       document.getElementById("template4-ui-slider-amount-result-check").value = "200 000";
-//       document.getElementById("template4-ui-slider-amount-result").value = "200000";
-//       changeData2();
-
-//     } else if (Number(some) >= 25000000) {
-//       document.getElementById("template4-ui-slider-amount-result-check").value = "25 000 000";
-//       document.getElementById("template4-ui-slider-amount-result").value = "25000000";
-//       changeData2();
-//     }
-
-//   });
-//   document.getElementById("template4-ui-slider-amount-result-check").addEventListener("dblclick", function () {
-//     var p = document.getElementById("template4-ui-slider-amount-result-check");
-//     p.select();
-//   });
-
-//   document.getElementById(
-//     "template4-ui-slider-rate-result"
-//   ).onkeypress = function (event) {
-
-//     if (event.key == "Enter") {
-//       let termValue = document.getElementById("template4-ui-slider-term-result")
-//         .value;
-//       if (termValue.indexOf("лет") > -1) {
-//         termValue = termValue.replace(" лет", "");
-//       }
-//       if (termValue.indexOf("год") > -1) {
-//         termValue = termValue.replace(" год", "");
-//       }
-//       if (termValue.indexOf("года") > -1) {
-//         termValue = termValue.replace(" года", "");
-//       }
-//       document.getElementById(
-//         "template4-ui-slider-term-result"
-//       ).value = termValue;
-//       document.getElementById("template4-ui-slider-term-result").focus();
-//       changeData2();
-//       return false;
-//     }
-//     if (event.target.value.indexOf(",") > -1) {
-//       let inputArr = event.target.value.split(",");
-//       if (inputArr[1].length > 1) {
-//         return false;
-//       }
-//     }
-//     if (event.target.value.indexOf(".") > -1) {
-//       let inputArr = event.target.value.split(".");
-//       if (inputArr[1].length > 1) {
-//         return false;
-//       }
-//     }
-//     if (
-//       event.target.value.indexOf(",") > -1 &&
-//       (event.key == "," || event.key == ".")
-//     ) {
-//       return false;
-//     } else if (
-//       event.target.value.indexOf(".") > -1 &&
-//       (event.key == "," || event.key == ".")
-//     ) {
-//       return false;
-//     } else {
-//       thisInput = this;
-//       if (
-//         event.key == 1 ||
-//         event.key == 2 ||
-//         event.key == 3 ||
-//         event.key == 4 ||
-//         event.key == 5 ||
-//         event.key == 6 ||
-//         event.key == 7 ||
-//         event.key == 8 ||
-//         event.key == 9 ||
-//         event.key == 0 ||
-//         event.key == "," ||
-//         event.key == "."
-//       ) {
-//         setTimeout(function () {
-//           let inputVal;
-//           if (event.target.value.indexOf(",") > -1) {
-//             inputVal = event.target.value.replace(",", ".");
-//             inputVal = Number(inputVal.replace("%", ""));
-//           } else {
-//             inputVal = Number(event.target.value.replace("%", ""));
-//           }
-//           let maxCount = Number(
-//             document
-//               .querySelector(".template4-ui-slider-rate")
-//               .getAttribute("data-max")
-//           );
-//           let minCount = Number(
-//             document
-//               .querySelector(".template4-ui-slider-rate")
-//               .getAttribute("data-min")
-//           );
-//           let percent = ((inputVal - minCount) / (maxCount - minCount)) * 100;
-//           if (inputVal <= minCount) {
-//             thisInput.parentNode.parentNode.querySelector(
-//               ".ui-slider .ui-slider-handle"
-//             ).style.left = 0 + "%";
-//             thisInput.parentNode.parentNode.querySelector(
-//               ".ui-slider .ui-slider-range"
-//             ).style.width = 0 + "%";
-//             thisInput.parentNode.classList.add("minRate");
-//             thisInput.parentNode.classList.remove("maxRate");
-//           } else if (inputVal >= maxCount) {
-//             thisInput.parentNode.parentNode.querySelector(
-//               ".ui-slider .ui-slider-handle"
-//             ).style.left = 100 + "%";
-//             thisInput.parentNode.parentNode.querySelector(
-//               ".ui-slider .ui-slider-range"
-//             ).style.width = 100 + "%";
-//             thisInput.parentNode.classList.remove("minRate");
-//             thisInput.parentNode.classList.add("maxRate");
-//           } else {
-//             thisInput.parentNode.parentNode.querySelector(
-//               ".ui-slider .ui-slider-handle"
-//             ).style.left = percent + "%";
-//             thisInput.parentNode.parentNode.querySelector(
-//               ".ui-slider .ui-slider-range"
-//             ).style.width = percent + "%";
-//             thisInput.parentNode.classList.remove("minRate");
-//             thisInput.parentNode.classList.remove("maxRate");
-//           }
-//           document
-//             .querySelector(".template4-ui-slider-rate")
-//             .setAttribute("data-value", inputVal);
-//         }, 100);
-//       } else {
-//         return false;
-//       }
-//     }
-//   };
-
-//   $('.template4-ui-slider-rate-result').on('input keyup', function () {
-//     let inputValue;
-//     if ($(this).val().indexOf(',') > -1) {
-//       if ($(this).val().indexOf(',', $(this).val().indexOf(',') + 1) > -1) {
-//         return false;
-//       }
-//       if ($(this).val().indexOf('.', $(this).val().indexOf(',') + 1) > -1) {
-//         return false;
-//       }
-//       inputValue = $(this).val().replace(',', '.');
-//     } else {
-//       inputValue = $(this).val();
-//     }
-
-//     let inputVal = Number(inputValue.replace('%', ''));
-//     let maxCount = Number($('.template4-ui-slider-rate').attr('data-max'));
-//     let minCount = Number($('.template4-ui-slider-rate').attr('data-min'));
-//     let percent = ((inputVal - minCount) / (maxCount - minCount)) * 100;
-//     if (inputVal <= minCount) {
-//       $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `0%`);
-//       $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `0%`);
-//       $(this).parents('.template4-calc_numb-wr').addClass('minRate');
-//       $(this).parents('.template4-calc_numb-wr').removeClass('maxRate');
-//     } else if (inputVal >= maxCount) {
-//       $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `100%`);
-//       $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `100%`);
-//       $(this).parents('.template4-calc_numb-wr').addClass('maxRate');
-//       $(this).parents('.template4-calc_numb-wr').removeClass('minRate');
-//     } else {
-//       $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `${percent}%`);
-//       $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `${percent}%`);
-//       $(this).parents('.template4-calc_numb-wr').removeClass('maxCount');
-//       $(this).parents('.template4-calc_numb-wr').removeClass('minCount');
-//     }
-//     $('.template4-ui-slider-rate').attr('data-value', inputVal);
-//     let resultNum = $('.template4-ui-slider-rate').attr('data-value');
-//   });
-
-//   $(".template4-ui-slider-rate-result").on("mousedown", function () {
-//     $(this).val($(this).val().replace("%", ""));
-//   });
-
-//   $(".template4-ui-slider-rate-result").blur(function () {
-//     if ($(this).val()[$(this).val().length - 1] == ",") {
-//       $(this).val($(this).val().replace(",", ""));
-//     }
-//     $(this).val($(this).val().replace(",", "."));
-//     if (
-//       Number($(this).val()) < $(".template4-ui-slider-rate").attr("data-min")
-//     ) {
-//       $(this).val(
-//         digitsInTheNumber($(".template4-ui-slider-rate").attr("data-min")) + "%"
-//       );
-//       $(".template4-ui-slider-rate").attr(
-//         "data-value",
-//         digitsInTheNumber($(".template4-ui-slider-rate").attr("data-min"))
-//       );
-//       $(".template4-ui-slider-rate").text(
-//         digitsInTheNumber($(".template4-ui-slider-rate").attr("data-min"))
-//       );
-//     } else if (
-//       Number($(this).val()) > $(".template4-ui-slider-rate").attr("data-max")
-//     ) {
-//       $(this).val(
-//         digitsInTheNumber($(".template4-ui-slider-rate").attr("data-max")) + "%"
-//       );
-//       $(".template4-ui-slider-rate").attr(
-//         "data-value",
-//         digitsInTheNumber($(".template4-ui-slider-rate").attr("data-max"))
-//       );
-//       $(".template4-ui-slider-rate").text(
-//         digitsInTheNumber($(".template4-ui-slider-rate").attr("data-max"))
-//       );
-//     } else {
-//       $(this).val($(this).val().replace("%", "") + "%");
-//       $(".template4-ui-slider-rate").text($(this).val().replace("%", ""));
-//     }
-//     $(this).parents(".template4-calc_numb-wr").removeClass("maxRate");
-//     $(this).parents(".template4-calc_numb-wr").removeClass("minRate");
-//     // changeData2();
-//   });
-
-//   $(".template4-ui-slider-term-result").click(function () {
-//     $(this).val($(this).val().split(" ")[0]);
-//   });
-
-//   $(".template4-ui-slider-term-result").blur(function () {
-//     let godOrLet2 = "лет";
-//     if ($(this).val()[$(this).val().length - 2] == 1) {
-//       godOrLet2 = "лет";
-//     } else {
-//       if (
-//         $(this).val()[$(this).val().length - 1] > 1 &&
-//         $(this).val()[$(this).val().length - 1] <= 4
-//       ) {
-//         godOrLet2 = "года";
-//       } else if ($(this).val()[$(this).val().length - 1] == 1) {
-//         godOrLet2 = "год";
-//       } else {
-//         godOrLet2 = "лет";
-//       }
-//     }
-//     if (
-//       Number($(this).val()) < $(".template4-ui-slider-term").attr("data-min")
-//     ) {
-//       $(this).val(
-//         digitsInTheNumber($(".template4-ui-slider-term").attr("data-min")) +
-//         " " +
-//         godOrLet2
-//       );
-//       $(".template4-ui-slider-term").attr(
-//         "data-value",
-//         digitsInTheNumber($(".template4-ui-slider-term").attr("data-min"))
-//       );
-//       $(".template4-ui-slider-term").text(
-//         digitsInTheNumber($(".template4-ui-slider-term").attr("data-min"))
-//       );
-//     } else if (
-//       Number($(this).val()) > $(".template4-ui-slider-term").attr("data-max")
-//     ) {
-//       godOrLet2 = "лет";
-//       $(this).val(
-//         digitsInTheNumber($(".template4-ui-slider-term").attr("data-max")) +
-//         " " +
-//         godOrLet2
-//       );
-//       $(".template4-ui-slider-term").attr(
-//         "data-value",
-//         digitsInTheNumber($(".template4-ui-slider-term").attr("data-max"))
-//       );
-//       $(".template4-ui-slider-term").text(
-//         digitsInTheNumber($(".template4-ui-slider-term").attr("data-max"))
-//       );
-//     } else {
-//       $(this).val($(this).val().replace(" лет", "") + " " + godOrLet2);
-//       $(".template4-ui-slider-term").text($(this).val().replace("лет", ""));
-//     }
-//     // changeData2();
-//     $(this).parents(".template4-calc_numb-wr").removeClass("maxTemp");
-//     $(this).parents(".template4-calc_numb-wr").removeClass("minTemp");
-//   });
-
-//   if ($(window).width() <= 500) {
-//     $(function () {
-//       //Enable swiping...
-//       $(".slides-nav-dots").swipe({
-//         //Generic swipe handler for all directions
-//         swipe: function (
-//           event,
-//           direction,
-//           distance,
-//           duration,
-//           fingerCount,
-//           fingerData
-//         ) {
-//           if (direction == "left") {
-//             $(".slides-nav-menu").addClass("active");
-//             $(".slides-nav-dots").removeClass("active");
-//           }
-//         },
-//         //Default is 75px, set to 0 for demo so any distance triggers swipe
-//         threshold: 0,
-//       });
-
-//       $(".slides-nav-menu").swipe({
-//         //Generic swipe handler for all directions
-//         swipe: function (
-//           event,
-//           direction,
-//           distance,
-//           duration,
-//           fingerCount,
-//           fingerData
-//         ) {
-//           if (direction == "right") {
-//             $(".slides-nav-menu").removeClass("active");
-//             $(".slides-nav-dots").addClass("active");
-//           }
-//         },
-//         //Default is 75px, set to 0 for demo so any distance triggers swipe
-//         threshold: 0,
-//       });
-//     });
-
-
-//   }
-
-
-
-//   $("[name=phone]").focus(function (event) {
-//     event.stopImmediatePropagation();
-//     let tmp = event.target.value;
-//     if (tmp === '') {
-//       this.value = "+_ (___) ___-____";
-//     }
-
-//     // document.getSelection().removeAllRanges();
-//     let phoneHeplerValue = $(".phone-helper-value").innerWidth() - 4;
-//     if ($(window).width() > 800) {
-//       $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '1.042vw');
-//     } else if ($(window).width() <= 800 && $(window).width() > 500) {
-//       $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '4.225vw');
-//     } else if ($(window).width() <= 500) {
-//       $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '2.936vw');
-//     }
-
-//   });
-
-//   $("[name=phone]").blur(function (event) {
-//     event.stopImmediatePropagation();
-//     let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() - 4;
-//     let thisInput = $(this);
-//     if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
-//       if ($(window).width() > 800) {
-//         if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
-//           setTimeout(function (event) {
-//             thisInput.setSelectionRange = 0;
-//             thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '1.042vw');
-
-//           }, 100);
-//         } else {
-//           setTimeout(function (event) {
-//             thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '1.042vw');
-//           }, 100);
-//         }
-
-//       } else if ($(window).width() <= 800 && $(window).width() > 500) {
-//         if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
-//           setTimeout(function (event) {
-//             thisInput.setSelectionRange = 0;
-//             thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '4.225vw');
-
-//           }, 100);
-//         } else {
-//           setTimeout(function (event) {
-//             thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '4.225vw');
-//           }, 100);
-//         }
-
-//       } else if ($(window).width() <= 500) {
-//         if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
-//           setTimeout(function (event) {
-//             thisInput.setSelectionRange = 0;
-//             thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '2.936vw');
-
-//           }, 100);
-//         } else {
-//           setTimeout(function (event) {
-//             thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '2.936vw');
-//           }, 100);
-//         }
-
-//       }
-//     } else {
-//       let phoneHeplerValue = $(".phone-helper-value").innerWidth() - 4;
-//       // var wid = $(this).width() - 30;
-//       if ($(window).width() > 800) {
-//         $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '1.042vw');
-//       } else if ($(window).width() <= 800 && $(window).width() > 500) {
-//         $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '4.225vw');
-//       } else if ($(window).width() <= 500) {
-//         $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '2.936vw');
-//       }
-//     }
-//   });
-// });
+function functionsResize() {
+  if ($(window).width() >= 800) {
+    $(".section").removeClass("fp-auto-height");
+    $(".header-phone_link").click(function () {
+      $.fancybox.close();
+      $("body").removeClass("main-menu_open");
+      setTimeout(function () {
+        $(".template5-form .field-name input").focus();
+      }, 1000);
+    });
+  } else {
+    $(".section").addClass("fp-auto-height");
+    $(".header-phone_link").click(function () {
+      $.fancybox.close();
+      $("body").removeClass("main-menu_open");
+      $("html, body").animate(
+        {
+          scrollTop: $(".screen-template5").offset().top - 50,
+        },
+        1000
+      );
+      setTimeout(function () {
+        $(".template5-form .field-name input").focus();
+      }, 1000);
+    });
+  }
+}
+window.addEventListener("load", function () {
+  functionsResize();
+});
+window.addEventListener("resize", function () {
+  functionsResize();
+});
+
+function fancyboxResize() {
+  if ($(window).width() >= 800) {
+    $("[data-fancybox]").fancybox({
+
+      btnTpl: {
+        smallBtn:
+          '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
+      },
+
+      closeExisting: true,
+      touch: false,
+      beforeLoad: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow', 'hidden');
+        }
+        if (document.querySelector(".fullpage-wrapper")) {
+          $.fn.fullpage.setAllowScrolling(false);
+        }
+        $("body").addClass("popup-wr popup-wr-hidden");
+        $("body").removeClass("main-menu_open");
+      },
+      afterLoad: function () {
+        setTimeout(function () {
+          $(".popup .nano").nanoScroller();
+        }, 1);
+      },
+      beforeClose: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow-y', 'scroll');
+        }
+        $("body").removeClass("popup-wr popup-wr-hidden");
+      },
+      afterClose: function () {
+        if (document.querySelector(".fullpage-wrapper")) {
+          $.fn.fullpage.setAllowScrolling(true);
+        }
+      },
+    });
+    $('[data-src="#popup-privacyPolicy"]').fancybox({
+      // $('html').css('overflow', 'hidden');
+      btnTpl: {
+        smallBtn:
+          '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
+      },
+      closeExisting: true,
+      touch: false,
+      beforeLoad: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow', 'hidden');
+        }
+        $("body").addClass("popup-privacyPolicy-wr popup-wr popup-wr-hidden");
+        $("body").removeClass("main-menu_open");
+        if (document.querySelector(".fullpage-wrapper")) {
+          $.fn.fullpage.setAllowScrolling(false);
+        }
+      },
+      afterLoad: function () {
+        setTimeout(function () {
+          $(".popup-privacyPolicy .nano").nanoScroller();
+        }, 1);
+      },
+      beforeClose: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow-y', 'scroll');
+        }
+
+        $("body").removeClass(
+          "popup-wr popup-privacyPolicy-wr popup-wr-hidden"
+        );
+      },
+      afterClose: function () {
+        if (document.querySelector(".fullpage-wrapper")) {
+          $.fn.fullpage.setAllowScrolling(true);
+        }
+      },
+    });
+    $('[data-src="#popup-services"]').fancybox({
+      btnTpl: {
+        smallBtn:
+          '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
+      },
+      closeExisting: true,
+      touch: false,
+      beforeLoad: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow', 'hidden');
+        }
+        if (document.querySelector(".fullpage-wrapper")) {
+          // $('html').css('overflow', 'hidden');
+          $.fn.fullpage.setAllowScrolling(false);
+        }
+        $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
+        $("body").removeClass("main-menu_open");
+      },
+      afterLoad: function () {
+        setTimeout(function () {
+          $(".popup-services .nano").nanoScroller();
+        }, 1);
+      },
+      beforeClose: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow-y', 'scroll');
+        }
+        $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
+      },
+      afterClose: function () {
+        $(".popup-services_content").empty();
+        if (document.querySelector(".fullpage-wrapper")) {
+          $.fn.fullpage.setAllowScrolling(true);
+        }
+      },
+    });
+  } else {
+    $('[data-src="#popup-privacyPolicy"]').fancybox({
+      btnTpl: {
+        smallBtn:
+          '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
+      },
+      touch: false,
+      closeExisting: true,
+      backFocus: false,
+      beforeLoad: function () {
+        if ($(window).width() <= 800) {
+          $('html').css('overflow', 'hidden');
+        }
+        if (document.querySelector(".fullpage-wrapper")) {
+          $.fn.fullpage.setAllowScrolling(false);
+        }
+
+        $("body").addClass("popup-privacyPolicy-wr popup-wr popup-wr-hidden");
+        $("body").removeClass("main-menu_open");
+      },
+      afterLoad: function () {
+        setTimeout(function () {
+          $(".popup-privacyPolicy .nano").nanoScroller();
+        }, 1);
+      },
+      beforeClose: function () {
+        if (document.querySelector(".fullpage-wrapper")) {
+          $.fn.fullpage.setAllowScrolling(true);
+        }
+        if ($(window).width() <= 800) {
+          $('html').css('overflow-y', 'scroll');
+        }
+        $("body").removeClass(
+          "popup-wr popup-privacyPolicy-wr popup-wr-hidden"
+        );
+      },
+    });
+    $('[data-src="#popup-services"]').fancybox({
+      btnTpl: {
+        smallBtn:
+          '<button data-fancybox-close="" class="fancybox-close-small" title="Close"><svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.21436 31.5759L33.1137 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.1136 31.5759L1.21474 1.21094" stroke="#999999" stroke-width="1.26039" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>',
+      },
+      touch: false,
+      closeExisting: true,
+      backFocus: false,
+      beforeLoad: function () {
+        if (document.querySelector(".fullpage-wrapper")) {
+          // $('html').css('overflow', 'hidden');
+          $.fn.fullpage.setAllowScrolling(false);
+        }
+        if ($(window).width() <= 800) {
+          $('html').css('overflow', 'hidden');
+        }
+        $("body").addClass("popup-services-wr popup-wr popup-wr-hidden");
+        $("body").removeClass("main-menu_open");
+      },
+      afterLoad: function () {
+        setTimeout(function () {
+          $(".popup-services .nano").nanoScroller();
+        }, 1);
+      },
+      beforeClose: function () {
+        if (document.querySelector(".fullpage-wrapper")) {
+          $.fn.fullpage.setAllowScrolling(true);
+        }
+        if ($(window).width() <= 800) {
+          $('html').css('overflow-y', 'scroll');
+        }
+        $("body").removeClass("popup-wr popup-services-wr popup-wr-hidden");
+      },
+      afterClose: function () {
+        $(".popup-services_content").empty();
+      },
+    });
+  }
+}
+window.addEventListener("load", function () {
+  fancyboxResize();
+});
+window.addEventListener("resize", function () {
+  fancyboxResize();
+});
+
+/*REVISIONS*/
+
+$(document).ready(function () {
+  $(".privacyLink").click(function () { });
+
+  let sectionsCount = $("section").length + 1;
+  let sectionNames = [
+    "template1",
+    "template2",
+    "template3",
+    "template4",
+    "template5",
+    "template6",
+    "template7",
+    "template8",
+    "template9",
+    "template10",
+    "services",
+    "advantages",
+    "investor",
+    "contacts",
+  ];
+  for (let i = 0; i < sectionsCount; i++) {
+    $("#myMenu")
+      .find("ul")
+      .append(
+        `<li data-menuanchor="${sectionNames[i]}"><a href="#${sectionNames[i]
+        }">${$(`#section${i + 1}`).attr("data-name")}</a></li>`
+      );
+  }
+  $("#myMenu").find("li:first-child").addClass("active");
+
+
+  $(".slides-nav-dots").click(function () {
+    if (!$(".slides-nav-menu").hasClass("active")) {
+      $(".slides-nav-menu").addClass("active");
+      $(".slides-nav-dots").removeClass("active");
+      // $('html').css('overflow', 'hidden')
+
+      fullpage_api.setAllowScrolling(true);
+      fullpage_api.setKeyboardScrolling(true);
+    }
+  });
+
+
+
+  $(".slides-nav-close").click(function () {
+    $(".slides-nav-menu").removeClass("active");
+    $(".slides-nav-dots").addClass("active");
+    if ($(window).width() <= 800) {
+      $('html').css('overflow-y', 'scroll')
+    }
+    fullpage_api.setAllowScrolling(true);
+  });
+
+  let isGlobalScrollEnabled = true
+
+  document.body.addEventListener("wheel", function (e) {
+    const menuScroll = document.querySelector("#myMenu").nanoscroller;
+    const menuMy = document.querySelector("#myMenu").clientHeight;
+    const menuUl = document.querySelector(".slides-nav-menu div ul").clientHeight;
+    if (!isGlobalScrollEnabled) {
+      if (menuScroll.contentScrollTop === 0 && e.deltaY < 0) {
+        e.preventDefault();
+      } else if ((menuScroll.contentScrollTop + 1 === menuScroll.maxScrollTop || menuScroll.contentScrollTop === menuScroll.maxScrollTop) && e.deltaY > 0) {
+        e.preventDefault();
+      }
+    }
+  }, { passive: false });
+
+  $(".slides-nav-menu").mouseenter(function (e) {
+    fullpage_api.setAllowScrolling(false);
+    if ($(window).width() <= 800) {
+      isGlobalScrollEnabled = false;
+    }
+  });
+
+  $(".slides-nav-menu").mouseleave(function (e) {
+    fullpage_api.setAllowScrolling(true);
+    if ($(window).width() <= 800) {
+      isGlobalScrollEnabled = true;
+    }
+
+  });
+  let offCLient;
+  window.addEventListener('mousedown', function (e) {
+    offCLient = e.offsetX;
+  })
+
+  $(document).mouseup(function (e) {
+    let width = document.documentElement.clientWidth;
+    if ($(".slides-nav-menu").hasClass("active")) {
+      var div = $(".slides-nav-menu");
+      var dots = $(".slides-nav-dots");
+      if (!div.is(e.target) && div.has(e.target).length === 0 && !dots.is(e.target) && dots.has(e.target).length === 0 && !(width < offCLient)) {
+        $(".slides-nav-menu").removeClass("active");
+        $(".slides-nav-dots").addClass("active");
+        fullpage_api.setAllowScrolling(true);
+      }
+    }
+  });
+
+  function doGetCaretPosition(oField) {
+    // Initialize
+    var iCaretPos = 0;
+
+    // IE Support
+    if (document.selection) {
+      // Set focus on the element
+      oField.focus();
+
+      // To get cursor position, get empty selection range
+      var oSel = document.selection.createRange();
+
+      // Move selection start to 0 position
+      oSel.moveStart("character", -oField.value.length);
+
+      // The caret position is selection length
+      iCaretPos = oSel.text.length;
+    }
+
+    // Firefox support
+    else if (oField.selectionStart || oField.selectionStart == "0")
+      iCaretPos =
+        oField.selectionDirection == "backward"
+          ? oField.selectionStart
+          : oField.selectionEnd;
+
+    // Return results
+    return iCaretPos;
+  }
+
+  $(".main-menu_inner.nano-content").css("outline", "none");
+
+  function changeData2() {
+    var calcAmount1 = document.getElementById("template4-ui-slider-amount-result").value;
+    var calcAmount = noSpaceInNum(calcAmount1);
+    var calcRate = $(".template4-ui-slider-rate").attr("data-value");
+    var calcTerm = $(".template4-ui-slider-term").attr("data-value");
+    var calcPayment = $(".template4-calc_select option:selected").val();
+    var year = $(".template4-ui-slider-term").text();
+    var k = calcRate / 12 / 100;
+    var k2 = 1 + k;
+    var k3 = -calcTerm * 12;
+    var k4 = Math.pow(k2, k3);
+    var k5 = 1 - k4;
+    var k6 = k / k5;
+    var payment1 = Math.trunc(calcAmount * k6);
+    var payment1Result = payment1.toLocaleString();
+    var payment2 = Math.trunc(calcAmount * k);
+    var payment2Result = payment2.toLocaleString();
+    if (calcPayment == "1") {
+      $(".template4-calc_result-numb").text(payment1Result);
+    } else if (calcPayment == "2") {
+      $(".template4-calc_result-numb").text(payment2Result);
+    }
+    if ($(".template4-calc_result-numb").text().length < 8) {
+      $(".template4-calc_result-numb_million").removeClass("active");
+    }
+    if ($(".template4-calc_result-numb").text().length > 7) {
+      $(".template4-calc_result-numb_million").addClass("active");
+    }
+    if (
+      year == 1 ||
+      year == 21 ||
+      year == 31 ||
+      year == 41 ||
+      year == 51 ||
+      year == 61 ||
+      year == 71 ||
+      year == 81 ||
+      year == 91
+    ) {
+      $(
+        ".template4-calc_numb-wr .year2, .template4-calc_numb-wr .year3"
+      ).removeClass("active");
+      $(".template4-calc_numb-wr .year1").addClass("active");
+    } else if (
+      (year >= 2 && year <= 4) ||
+      (year >= 22 && year <= 24) ||
+      (year >= 32 && year <= 34) ||
+      (year >= 42 && year <= 44) ||
+      (year >= 52 && year <= 54) ||
+      (year >= 62 && year <= 64) ||
+      (year >= 72 && year <= 74) ||
+      (year >= 82 && year <= 84) ||
+      (year >= 92 && year <= 94)
+    ) {
+      $(
+        ".template4-calc_numb-wr .year1, .template4-calc_numb-wr .year3"
+      ).removeClass("active");
+      $(".template4-calc_numb-wr .year2").addClass("active");
+    } else if ((year) => 5) {
+      $(
+        ".template4-calc_numb-wr .year1, .template4-calc_numb-wr .year2"
+      ).removeClass("active");
+      $(".template4-calc_numb-wr .year3").addClass("active");
+    }
+  }
+
+  function noSpaceInNum(str) {
+    return str.replace(/\D+/g, "");
+  }
+
+  function digitsInTheNumber(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+      x = x.replace(pattern, "$1 $2");
+    return x;
+  }
+
+  document.getElementById(
+    "template4-ui-slider-amount-result"
+  ).onkeypress = function (event) {
+
+    thisInput = this;
+    if (
+      event.key == 1 ||
+      event.key == 2 ||
+      event.key == 3 ||
+      event.key == 4 ||
+      event.key == 5 ||
+      event.key == 6 ||
+      event.key == 7 ||
+      event.key == 8 ||
+      event.key == 9 ||
+      event.key == 0
+    ) {
+      setTimeout(function () {
+
+        let inputVal = event.target.value;
+        let count;
+        let maxCount = document
+          .querySelector(".template4-ui-slider-amount")
+          .getAttribute("data-max");
+        let minCount = document
+          .querySelector(".template4-ui-slider-amount")
+          .getAttribute("data-min");
+        count = noSpaceInNum(inputVal);
+        let percent = (count / maxCount) * 100;
+        if (Number(noSpaceInNum(inputVal)) <= minCount) {
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-handle"
+          ).style.left = 0 + "%";
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-range"
+          ).style.width = 0 + "%";
+          thisInput.parentNode.classList.add("minCount");
+          thisInput.parentNode.classList.remove("maxCount");
+        } else if (Number(noSpaceInNum(inputVal)) >= maxCount) {
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-handle"
+          ).style.left = 100 + "%";
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-range"
+          ).style.width = 100 + "%";
+          thisInput.parentNode.classList.add("maxCount");
+          thisInput.parentNode.classList.remove("minCount");
+        } else {
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-handle"
+          ).style.left = percent + "%";
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-range"
+          ).style.width = percent + "%";
+          thisInput.parentNode.classList.remove("maxCount");
+          thisInput.parentNode.classList.remove("minCount");
+        }
+        document
+          .querySelector(".template4-ui-slider-amount")
+          .setAttribute("data-value", count);
+        let resultNum = document
+          .querySelector(".template4-ui-slider-amount")
+          .getAttribute("data-value");
+        event.target.value = digitsInTheNumber(resultNum);
+        document.querySelector(
+          ".template4-ui-slider-amount"
+        ).innerHTML = noSpaceInNum(event.target.value);
+      }, 100);
+    } else {
+      return false;
+    }
+  };
+
+  document.getElementById("template4-ui-slider-amount-result-check").addEventListener("input", function (e) {
+    pr = document.getElementById("template4-ui-slider-amount-result-check").value;
+    pr1 = noSpaceInNum(pr);
+    if (pr1.length > 8) {
+      pr1 = pr1.substr(0, 8);
+    } else if (Number(pr1 <= 0)) {
+      pr1 = "";
+    }
+    var calcRate = $(".template4-ui-slider-rate").text();
+    var calcTerm = $(".template4-ui-slider-term").text();
+    var calcPayment = $(".template4-calc_select option:selected").val();
+    var year = $(".template4-ui-slider-term").text();
+    var k = calcRate / 12 / 100;
+    var k2 = 1 + k;
+    var k3 = -calcTerm * 12;
+    var k4 = Math.pow(k2, k3);
+    var k5 = 1 - k4;
+    var k6 = k / k5;
+    var payment1 = Math.trunc(pr1 * k6);
+    var payment1Result = payment1.toLocaleString();
+    $(".template4-calc_result-numb").text(payment1Result);
+    tmp1 = digitsInTheNumber(pr1);
+    tmp = noSpaceInNum(tmp1)
+    let maxCount = document
+      .querySelector(".check")
+      .getAttribute("data-max");
+    if (tmp.length > 8) {
+      tmp = "99999999";
+      tmp1 = "99999999";
+    }
+    document.getElementById("template4-ui-slider-amount-result").value;
+    document.getElementById("template4-ui-slider-amount-result").value = tmp;
+    document.getElementById("template4-ui-slider-amount-result-check").value = tmp1;
+    document.getElementById("template4-ui-slider-amount-result").parentElement.querySelector("span").dataset.value = tmp;
+    document.getElementById("template4-ui-slider-amount-result").dispatchEvent(new Event("blur", { bubbles: true }));
+    document.getElementById("template4-ui-slider-amount-result").dispatchEvent(new KeyboardEvent("keypress", { key: 1 }));
+  });
+
+  document.getElementById(
+    "template4-ui-slider-amount-result-check"
+  ).onkeypress = function (event) {
+    some = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result-check").value);
+    some1 = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result").value);
+    var calcRate = $(".template4-ui-slider-rate").text();
+    var calcTerm = $(".template4-ui-slider-term").text();
+    var calcPayment = $(".template4-calc_select option:selected").val();
+    var k = calcRate / 12 / 100;
+    var k2 = 1 + k;
+    var k3 = -calcTerm * 12;
+    var k4 = Math.pow(k2, k3);
+    var k5 = 1 - k4;
+    var k6 = k / k5;
+    var payment1 = Math.trunc(some1 * k6);
+    var payment1Result = payment1.toLocaleString();
+    var payment2 = Math.trunc(some1 * k);
+    var payment2Result = payment2.toLocaleString();
+    if (event.key == "Enter") {
+      let rateValue = document.getElementById("template4-ui-slider-rate-result")
+        .value;
+      document.getElementById(
+        "template4-ui-slider-rate-result"
+      ).value = rateValue.replace("%", "");
+      document.getElementById("template4-ui-slider-rate-result").focus();
+      if (Number(some) <= 200000) {
+        document.getElementById("template4-ui-slider-amount-result-check").value = "200 000";
+        document.getElementById("template4-ui-slider-amount-result").value = "200000";
+        changeData2();
+
+      } else if (Number(some) >= 25000000) {
+        document.getElementById("template4-ui-slider-amount-result-check").value = "25 000 000";
+        document.getElementById("template4-ui-slider-amount-result").value = "25000000";
+        changeData2();
+      }
+      return false;
+    }
+
+    thisInput = this;
+    if (
+      event.key == 1 ||
+      event.key == 2 ||
+      event.key == 3 ||
+      event.key == 4 ||
+      event.key == 5 ||
+      event.key == 6 ||
+      event.key == 7 ||
+      event.key == 8 ||
+      event.key == 9 ||
+      event.key == 0
+    ) {
+      setTimeout(function () {
+
+        let inputVal = event.target.value;
+
+        let count;
+        let maxCount = document
+          .querySelector(".check")
+          .getAttribute("data-max");
+        let minCount = document
+          .querySelector(".check")
+          .getAttribute("data-min");
+        count = noSpaceInNum(inputVal);
+        let percent = (count / maxCount) * 100;
+        if (Number(noSpaceInNum(tmp)) <= minCount) {
+          document.getElementById("template4-ui-slider-amount-result-check").value = 200000;
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-handle"
+          ).style.left = 0 + "%";
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-range"
+          ).style.width = 0 + "%";
+          thisInput.parentNode.classList.add("minCount");
+          thisInput.parentNode.classList.remove("maxCount");
+
+        } else if (Number(noSpaceInNum(inputVal)) >= maxCount) {
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-handle"
+          ).style.left = 100 + "%";
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-range"
+          ).style.width = 100 + "%";
+          thisInput.parentNode.classList.add("maxCount");
+          thisInput.parentNode.classList.remove("minCount");
+        } else {
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-handle"
+          ).style.left = percent + "%";
+          thisInput.parentNode.parentNode.querySelector(
+            ".ui-slider .ui-slider-range"
+          ).style.width = percent + "%";
+          thisInput.parentNode.classList.remove("maxCount");
+          thisInput.parentNode.classList.remove("minCount");
+        }
+        document
+          .querySelector(".template4-ui-slider-amount")
+          .setAttribute("data-value", count);
+        let resultNum = document
+          .querySelector(".template4-ui-slider-amount")
+          .getAttribute("data-value");
+        event.target.value = digitsInTheNumber(resultNum);
+        document.querySelector(
+          ".template4-ui-slider-amount"
+        ).innerHTML = noSpaceInNum(event.target.value);
+      }, 100);
+    } else {
+      return false;
+    }
+  };
+
+  document.getElementById("template4-ui-slider-amount-result-check").addEventListener("blur", function (event) {
+    some = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result-check").value);
+    some1 = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result").value);
+
+    if (Number(some) <= 200000) {
+      document.getElementById("template4-ui-slider-amount-result-check").value = "200 000";
+      document.getElementById("template4-ui-slider-amount-result").value = "200000";
+      changeData2();
+
+    } else if (Number(some) >= 25000000) {
+      document.getElementById("template4-ui-slider-amount-result-check").value = "25 000 000";
+      document.getElementById("template4-ui-slider-amount-result").value = "25000000";
+      changeData2();
+    }
+
+  });
+  document.getElementById("template4-ui-slider-amount-result-check").addEventListener("dblclick", function () {
+    var p = document.getElementById("template4-ui-slider-amount-result-check");
+    p.select();
+  });
+
+  document.getElementById(
+    "template4-ui-slider-rate-result"
+  ).onkeypress = function (event) {
+
+    if (event.key == "Enter") {
+      let termValue = document.getElementById("template4-ui-slider-term-result")
+        .value;
+      if (termValue.indexOf("лет") > -1) {
+        termValue = termValue.replace(" лет", "");
+      }
+      if (termValue.indexOf("год") > -1) {
+        termValue = termValue.replace(" год", "");
+      }
+      if (termValue.indexOf("года") > -1) {
+        termValue = termValue.replace(" года", "");
+      }
+      document.getElementById(
+        "template4-ui-slider-term-result"
+      ).value = termValue;
+      document.getElementById("template4-ui-slider-term-result").focus();
+      changeData2();
+      return false;
+    }
+    if (event.target.value.indexOf(",") > -1) {
+      let inputArr = event.target.value.split(",");
+      if (inputArr[1].length > 1) {
+        return false;
+      }
+    }
+    if (event.target.value.indexOf(".") > -1) {
+      let inputArr = event.target.value.split(".");
+      if (inputArr[1].length > 1) {
+        return false;
+      }
+    }
+    if (
+      event.target.value.indexOf(",") > -1 &&
+      (event.key == "," || event.key == ".")
+    ) {
+      return false;
+    } else if (
+      event.target.value.indexOf(".") > -1 &&
+      (event.key == "," || event.key == ".")
+    ) {
+      return false;
+    } else {
+      thisInput = this;
+      if (
+        event.key == 1 ||
+        event.key == 2 ||
+        event.key == 3 ||
+        event.key == 4 ||
+        event.key == 5 ||
+        event.key == 6 ||
+        event.key == 7 ||
+        event.key == 8 ||
+        event.key == 9 ||
+        event.key == 0 ||
+        event.key == "," ||
+        event.key == "."
+      ) {
+        setTimeout(function () {
+          let inputVal;
+          if (event.target.value.indexOf(",") > -1) {
+            inputVal = event.target.value.replace(",", ".");
+            inputVal = Number(inputVal.replace("%", ""));
+          } else {
+            inputVal = Number(event.target.value.replace("%", ""));
+          }
+          let maxCount = Number(
+            document
+              .querySelector(".template4-ui-slider-rate")
+              .getAttribute("data-max")
+          );
+          let minCount = Number(
+            document
+              .querySelector(".template4-ui-slider-rate")
+              .getAttribute("data-min")
+          );
+          let percent = ((inputVal - minCount) / (maxCount - minCount)) * 100;
+          if (inputVal <= minCount) {
+            thisInput.parentNode.parentNode.querySelector(
+              ".ui-slider .ui-slider-handle"
+            ).style.left = 0 + "%";
+            thisInput.parentNode.parentNode.querySelector(
+              ".ui-slider .ui-slider-range"
+            ).style.width = 0 + "%";
+            thisInput.parentNode.classList.add("minRate");
+            thisInput.parentNode.classList.remove("maxRate");
+          } else if (inputVal >= maxCount) {
+            thisInput.parentNode.parentNode.querySelector(
+              ".ui-slider .ui-slider-handle"
+            ).style.left = 100 + "%";
+            thisInput.parentNode.parentNode.querySelector(
+              ".ui-slider .ui-slider-range"
+            ).style.width = 100 + "%";
+            thisInput.parentNode.classList.remove("minRate");
+            thisInput.parentNode.classList.add("maxRate");
+          } else {
+            thisInput.parentNode.parentNode.querySelector(
+              ".ui-slider .ui-slider-handle"
+            ).style.left = percent + "%";
+            thisInput.parentNode.parentNode.querySelector(
+              ".ui-slider .ui-slider-range"
+            ).style.width = percent + "%";
+            thisInput.parentNode.classList.remove("minRate");
+            thisInput.parentNode.classList.remove("maxRate");
+          }
+          document
+            .querySelector(".template4-ui-slider-rate")
+            .setAttribute("data-value", inputVal);
+        }, 100);
+      } else {
+        return false;
+      }
+    }
+  };
+
+  $('.template4-ui-slider-rate-result').on('input keyup', function () {
+    let inputValue;
+    if ($(this).val().indexOf(',') > -1) {
+      if ($(this).val().indexOf(',', $(this).val().indexOf(',') + 1) > -1) {
+        return false;
+      }
+      if ($(this).val().indexOf('.', $(this).val().indexOf(',') + 1) > -1) {
+        return false;
+      }
+      inputValue = $(this).val().replace(',', '.');
+    } else {
+      inputValue = $(this).val();
+    }
+
+    let inputVal = Number(inputValue.replace('%', ''));
+    let maxCount = Number($('.template4-ui-slider-rate').attr('data-max'));
+    let minCount = Number($('.template4-ui-slider-rate').attr('data-min'));
+    let percent = ((inputVal - minCount) / (maxCount - minCount)) * 100;
+    if (inputVal <= minCount) {
+      $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `0%`);
+      $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `0%`);
+      $(this).parents('.template4-calc_numb-wr').addClass('minRate');
+      $(this).parents('.template4-calc_numb-wr').removeClass('maxRate');
+    } else if (inputVal >= maxCount) {
+      $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `100%`);
+      $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `100%`);
+      $(this).parents('.template4-calc_numb-wr').addClass('maxRate');
+      $(this).parents('.template4-calc_numb-wr').removeClass('minRate');
+    } else {
+      $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-handle').css('left', `${percent}%`);
+      $(this).parents('.template4-calc_row').find('.ui-slider').find('.ui-slider-range').css('width', `${percent}%`);
+      $(this).parents('.template4-calc_numb-wr').removeClass('maxCount');
+      $(this).parents('.template4-calc_numb-wr').removeClass('minCount');
+    }
+    $('.template4-ui-slider-rate').attr('data-value', inputVal);
+    let resultNum = $('.template4-ui-slider-rate').attr('data-value');
+  });
+
+  $(".template4-ui-slider-rate-result").on("mousedown", function () {
+    $(this).val($(this).val().replace("%", ""));
+  });
+
+  $(".template4-ui-slider-rate-result").blur(function () {
+    if ($(this).val()[$(this).val().length - 1] == ",") {
+      $(this).val($(this).val().replace(",", ""));
+    }
+    $(this).val($(this).val().replace(",", "."));
+    if (
+      Number($(this).val()) < $(".template4-ui-slider-rate").attr("data-min")
+    ) {
+      $(this).val(
+        digitsInTheNumber($(".template4-ui-slider-rate").attr("data-min")) + "%"
+      );
+      $(".template4-ui-slider-rate").attr(
+        "data-value",
+        digitsInTheNumber($(".template4-ui-slider-rate").attr("data-min"))
+      );
+      $(".template4-ui-slider-rate").text(
+        digitsInTheNumber($(".template4-ui-slider-rate").attr("data-min"))
+      );
+    } else if (
+      Number($(this).val()) > $(".template4-ui-slider-rate").attr("data-max")
+    ) {
+      $(this).val(
+        digitsInTheNumber($(".template4-ui-slider-rate").attr("data-max")) + "%"
+      );
+      $(".template4-ui-slider-rate").attr(
+        "data-value",
+        digitsInTheNumber($(".template4-ui-slider-rate").attr("data-max"))
+      );
+      $(".template4-ui-slider-rate").text(
+        digitsInTheNumber($(".template4-ui-slider-rate").attr("data-max"))
+      );
+    } else {
+      $(this).val($(this).val().replace("%", "") + "%");
+      $(".template4-ui-slider-rate").text($(this).val().replace("%", ""));
+    }
+    $(this).parents(".template4-calc_numb-wr").removeClass("maxRate");
+    $(this).parents(".template4-calc_numb-wr").removeClass("minRate");
+    // changeData2();
+  });
+
+  $(".template4-ui-slider-term-result").click(function () {
+    $(this).val($(this).val().split(" ")[0]);
+  });
+
+  $(".template4-ui-slider-term-result").blur(function () {
+    let godOrLet2 = "лет";
+    if ($(this).val()[$(this).val().length - 2] == 1) {
+      godOrLet2 = "лет";
+    } else {
+      if (
+        $(this).val()[$(this).val().length - 1] > 1 &&
+        $(this).val()[$(this).val().length - 1] <= 4
+      ) {
+        godOrLet2 = "года";
+      } else if ($(this).val()[$(this).val().length - 1] == 1) {
+        godOrLet2 = "год";
+      } else {
+        godOrLet2 = "лет";
+      }
+    }
+    if (
+      Number($(this).val()) < $(".template4-ui-slider-term").attr("data-min")
+    ) {
+      $(this).val(
+        digitsInTheNumber($(".template4-ui-slider-term").attr("data-min")) +
+        " " +
+        godOrLet2
+      );
+      $(".template4-ui-slider-term").attr(
+        "data-value",
+        digitsInTheNumber($(".template4-ui-slider-term").attr("data-min"))
+      );
+      $(".template4-ui-slider-term").text(
+        digitsInTheNumber($(".template4-ui-slider-term").attr("data-min"))
+      );
+    } else if (
+      Number($(this).val()) > $(".template4-ui-slider-term").attr("data-max")
+    ) {
+      godOrLet2 = "лет";
+      $(this).val(
+        digitsInTheNumber($(".template4-ui-slider-term").attr("data-max")) +
+        " " +
+        godOrLet2
+      );
+      $(".template4-ui-slider-term").attr(
+        "data-value",
+        digitsInTheNumber($(".template4-ui-slider-term").attr("data-max"))
+      );
+      $(".template4-ui-slider-term").text(
+        digitsInTheNumber($(".template4-ui-slider-term").attr("data-max"))
+      );
+    } else {
+      $(this).val($(this).val().replace(" лет", "") + " " + godOrLet2);
+      $(".template4-ui-slider-term").text($(this).val().replace("лет", ""));
+    }
+    // changeData2();
+    $(this).parents(".template4-calc_numb-wr").removeClass("maxTemp");
+    $(this).parents(".template4-calc_numb-wr").removeClass("minTemp");
+  });
+
+  if ($(window).width() <= 500) {
+    $(function () {
+      //Enable swiping...
+      $(".slides-nav-dots").swipe({
+        //Generic swipe handler for all directions
+        swipe: function (
+          event,
+          direction,
+          distance,
+          duration,
+          fingerCount,
+          fingerData
+        ) {
+          if (direction == "left") {
+            $(".slides-nav-menu").addClass("active");
+            $(".slides-nav-dots").removeClass("active");
+          }
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+        threshold: 0,
+      });
+
+      $(".slides-nav-menu").swipe({
+        //Generic swipe handler for all directions
+        swipe: function (
+          event,
+          direction,
+          distance,
+          duration,
+          fingerCount,
+          fingerData
+        ) {
+          if (direction == "right") {
+            $(".slides-nav-menu").removeClass("active");
+            $(".slides-nav-dots").addClass("active");
+          }
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+        threshold: 0,
+      });
+    });
+
+
+  }
+
+
+
+  $("[name=phone]").focus(function (event) {
+    event.stopImmediatePropagation();
+    let tmp = event.target.value;
+    if (tmp === '') {
+      this.value = "+_ (___) ___-____";
+    }
+
+    // document.getSelection().removeAllRanges();
+    let phoneHeplerValue = $(".phone-helper-value").innerWidth() - 4;
+    if ($(window).width() > 800) {
+      $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '1.042vw');
+    } else if ($(window).width() <= 800 && $(window).width() > 500) {
+      $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '4.225vw');
+    } else if ($(window).width() <= 500) {
+      $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '2.936vw');
+    }
+
+  });
+
+  $("[name=phone]").blur(function (event) {
+    event.stopImmediatePropagation();
+    let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() - 4;
+    let thisInput = $(this);
+    if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+      if ($(window).width() > 800) {
+        if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+          setTimeout(function (event) {
+            thisInput.setSelectionRange = 0;
+            thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '1.042vw');
+
+          }, 100);
+        } else {
+          setTimeout(function (event) {
+            thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '1.042vw');
+          }, 100);
+        }
+
+      } else if ($(window).width() <= 800 && $(window).width() > 500) {
+        if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+          setTimeout(function (event) {
+            thisInput.setSelectionRange = 0;
+            thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '4.225vw');
+
+          }, 100);
+        } else {
+          setTimeout(function (event) {
+            thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '4.225vw');
+          }, 100);
+        }
+
+      } else if ($(window).width() <= 500) {
+        if (thisInput.val() == "" || thisInput.val() == "+_ (___) ___-____") {
+          setTimeout(function (event) {
+            thisInput.setSelectionRange = 0;
+            thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '2.936vw');
+
+          }, 100);
+        } else {
+          setTimeout(function (event) {
+            thisInput.css("width", 'calc(' + phoneHeplerPlaceholder + 'px + ' + '2.936vw');
+          }, 100);
+        }
+
+      }
+    } else {
+      let phoneHeplerValue = $(".phone-helper-value").innerWidth() - 4;
+      // var wid = $(this).width() - 30;
+      if ($(window).width() > 800) {
+        $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '1.042vw');
+      } else if ($(window).width() <= 800 && $(window).width() > 500) {
+        $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '4.225vw');
+      } else if ($(window).width() <= 500) {
+        $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '2.936vw');
+      }
+    }
+  });
+});
 
 
 
