@@ -893,14 +893,6 @@ $(document).ready(function () {
     },
   });
 });
-// document.getElementById('fullpage')
-// document.getElementById('fullpage').addEventListener('wheel', function (event) {
-//   if ($(window).width() > 800) {
-//     // console.log(fullpage_api.getActiveSection())
-//     event.preventDefault();
-//   }
-
-// });
 
 function functionsResize() {
   if ($(window).width() >= 800) {
