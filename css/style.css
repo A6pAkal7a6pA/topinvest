@@ -74,10 +74,10 @@ body {
   height: 100%;
 }
 
-/* html::-webkit-scrollbar { 
+html::-webkit-scrollbar { 
   width: 0; 
   display: none;
-} */
+}
 
 body:after {
   display: none;
@@ -133,9 +133,10 @@ body.nano > .nano-pane {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  max-width: 93.611vw;
+  /* max-width: 93.611vw; */
+  width: 100%;
   height: 100%;
-  padding: 7.986vw 0 3.056vw;
+  padding: 7.986vw 3.2vw 3.056vw;
   margin: auto;
   z-index: 2;
 }
