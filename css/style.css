@@ -94,7 +94,7 @@ html {
 
 body {
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
   background: black;
   color: white;
   font: 1.25vw/2.222vw "Montserrat", sans-serif;
@@ -1477,11 +1477,11 @@ body.main-menu_open .slides-nav-dots.active {
 }
 
 .main {
-  flex: 1 0 auto;
+  /* flex: 1 0 auto; */
 }
 
 section {
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .content {
