@@ -838,59 +838,59 @@ $(document).ready(function () {
     afterResponsive: function (isResponsive) {
       autoScrolling: false;
     },
-    afterLoad: function (origin, destination, direction) {
-      if (origin.anchor == "template1") {
-        $("#section1 .animated").addClass("fadeInUp");
-      }
-    },
-    onLeave: function (origin, destination, direction) {
-      if (destination.anchor == "template2") {
-        $("#section2 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template3") {
-        $("#section3 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template4") {
-        $("#section4 .animated").addClass("fadeInUp");
-        setTimeout(function () {
-          $("#section4 .template4-calc").addClass("fadeInUpFilter");
-        }, 1);
-      }
-      if (destination.anchor == "template5") {
-        $("#section5 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template6") {
-        $("#section6 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template7") {
-        $("#section7 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template8") {
-        $("#section8 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template9") {
-        $("#section9 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template10") {
-        $("#section10 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "services") {
-        $("#section11 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "advantages") {
-        $("#section12 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "investor") {
-        $("#section13 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "contacts") {
-        $("html").addClass("fp-viewing-contacts-wr");
-        $("#section13 .animated").addClass("fadeInUp");
-      }
-      if (origin.anchor == "contacts") {
-        $("html").removeClass("fp-viewing-contacts-wr");
-      }
-    },
+    // afterLoad: function (origin, destination, direction) {
+    //   if (origin.anchor == "template1") {
+    //     $("#section1 .animated").addClass("fadeInUp");
+    //   }
+    // },
+    // onLeave: function (origin, destination, direction) {
+    //   if (destination.anchor == "template2") {
+    //     $("#section2 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template3") {
+    //     $("#section3 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template4") {
+    //     $("#section4 .animated").addClass("fadeInUp");
+    //     setTimeout(function () {
+    //       $("#section4 .template4-calc").addClass("fadeInUpFilter");
+    //     }, 1);
+    //   }
+    //   if (destination.anchor == "template5") {
+    //     $("#section5 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template6") {
+    //     $("#section6 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template7") {
+    //     $("#section7 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template8") {
+    //     $("#section8 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template9") {
+    //     $("#section9 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template10") {
+    //     $("#section10 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "services") {
+    //     $("#section11 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "advantages") {
+    //     $("#section12 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "investor") {
+    //     $("#section13 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "contacts") {
+    //     $("html").addClass("fp-viewing-contacts-wr");
+    //     $("#section13 .animated").addClass("fadeInUp");
+    //   }
+    //   if (origin.anchor == "contacts") {
+    //     $("html").removeClass("fp-viewing-contacts-wr");
+    //   }
+    // },
   });
 });
 
