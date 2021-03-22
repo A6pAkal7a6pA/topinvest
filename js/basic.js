@@ -896,7 +896,7 @@ $(document).ready(function () {
 
 function functionsResize() {
   if ($(window).width() >= 800) {
-    // $(".section").removeClass("fp-auto-height");
+    $(".section").removeClass("fp-auto-height");
     $(".header-phone_link").click(function () {
       $.fancybox.close();
       $("body").removeClass("main-menu_open");
