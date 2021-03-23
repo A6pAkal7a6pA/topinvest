@@ -6,39 +6,17 @@ window.onload = function () {
   }, 1000);
 }
 $(document).ready(function () {
-  function preload(images) {
-    if (document.images) {
-      var i = 0;
-      var imageArray = new Array();
-      imageArray = images.split(',');
-      var imageObj = new Image();
-      for (i = 0; i <= imageArray.length - 1; i++) {
-        imageObj.src = images[i];
-      }
-    }
-  }
-  preload('../img/template1-bg.jpg',
-    '../img/template2-bg.jpg',
-    '../img/template3-bg.jpg',
-    '../img/template4-bg.jpg',
-    '../img/template5-bg.jpg',
-    '../img/template6-bg.jpg',
-    '../img/template7-bg.jpg',
-    '../img/template8-bg.jpg',
-    '../img/template9-bg.jpg',
-    '../img/template10-bg.jpg');
-
   $('.header-menu #navig li a').click(function (e) {
     $('.header-menu #navig li a').removeClass('active');
     $(this).addClass('active');
   });
 
-  $(window).resize(function (e) {
-    e.preventDefault();
-    if ($('body').hasClass('fancybox-active')) {
-      $('html').css('overflow', 'hidden');
-    }
-  });
+  // $(window).resize(function (e) {
+  //   e.preventDefault();
+  //   if ($('body').hasClass('fancybox-active')) {
+  //     $('html').css('overflow', 'hidden');
+  //   }
+  // });
 
   $('html').on('wheel', function () {
     if ($(window).width() <= 800) {
@@ -450,17 +428,17 @@ $(document).ready(function () {
   });
 
   // Masked Input
-  $.fn.setCursorPosition = function (pos) {
-    if ($(this).get(0).setSelectionRange) {
-      $(this).get(0).setSelectionRange(pos, pos);
-    } else if ($(this).get(0).createTextRange) {
-      var range = $(this).get(0).createTextRange();
-      range.collapse(true);
-      range.moveEnd("character", pos);
-      range.moveStart("character", pos);
-      // range.select();
-    }
-  };
+  // $.fn.setCursorPosition = function (pos) {
+  //   if ($(this).get(0).setSelectionRange) {
+  //     $(this).get(0).setSelectionRange(pos, pos);
+  //   } else if ($(this).get(0).createTextRange) {
+  //     var range = $(this).get(0).createTextRange();
+  //     range.collapse(true);
+  //     range.moveEnd("character", pos);
+  //     range.moveStart("character", pos);
+  //     // range.select();
+  //   }
+  // };
 
   $("[name=phone]").mask("+9 (999) 999-9999", { selectOnFocus: false });
 
@@ -838,59 +816,59 @@ $(document).ready(function () {
     afterResponsive: function (isResponsive) {
       autoScrolling: false;
     },
-    afterLoad: function (origin, destination, direction) {
-      if (origin.anchor == "template1") {
-        $("#section1 .animated").addClass("fadeInUp");
-      }
-    },
-    onLeave: function (origin, destination, direction) {
-      if (destination.anchor == "template2") {
-        $("#section2 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template3") {
-        $("#section3 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template4") {
-        $("#section4 .animated").addClass("fadeInUp");
-        setTimeout(function () {
-          $("#section4 .template4-calc").addClass("fadeInUpFilter");
-        }, 1);
-      }
-      if (destination.anchor == "template5") {
-        $("#section5 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template6") {
-        $("#section6 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template7") {
-        $("#section7 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template8") {
-        $("#section8 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template9") {
-        $("#section9 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "template10") {
-        $("#section10 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "services") {
-        $("#section11 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "advantages") {
-        $("#section12 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "investor") {
-        $("#section13 .animated").addClass("fadeInUp");
-      }
-      if (destination.anchor == "contacts") {
-        $("html").addClass("fp-viewing-contacts-wr");
-        $("#section13 .animated").addClass("fadeInUp");
-      }
-      if (origin.anchor == "contacts") {
-        $("html").removeClass("fp-viewing-contacts-wr");
-      }
-    },
+    // afterLoad: function (origin, destination, direction) {
+    //   if (origin.anchor == "template1") {
+    //     $("#section1 .animated").addClass("fadeInUp");
+    //   }
+    // },
+    // onLeave: function (origin, destination, direction) {
+    //   if (destination.anchor == "template2") {
+    //     $("#section2 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template3") {
+    //     $("#section3 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template4") {
+    //     $("#section4 .animated").addClass("fadeInUp");
+    //     setTimeout(function () {
+    //       $("#section4 .template4-calc").addClass("fadeInUpFilter");
+    //     }, 1);
+    //   }
+    //   if (destination.anchor == "template5") {
+    //     $("#section5 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template6") {
+    //     $("#section6 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template7") {
+    //     $("#section7 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template8") {
+    //     $("#section8 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template9") {
+    //     $("#section9 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "template10") {
+    //     $("#section10 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "services") {
+    //     $("#section11 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "advantages") {
+    //     $("#section12 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "investor") {
+    //     $("#section13 .animated").addClass("fadeInUp");
+    //   }
+    //   if (destination.anchor == "contacts") {
+    //     $("html").addClass("fp-viewing-contacts-wr");
+    //     $("#section13 .animated").addClass("fadeInUp");
+    //   }
+    //   if (origin.anchor == "contacts") {
+    //     $("html").removeClass("fp-viewing-contacts-wr");
+    //   }
+    // },
   });
 });
 
@@ -1087,7 +1065,6 @@ function fancyboxResize() {
       backFocus: false,
       beforeLoad: function () {
         if (document.querySelector(".fullpage-wrapper")) {
-          // $('html').css('overflow', 'hidden');
           $.fn.fullpage.setAllowScrolling(false);
         }
         if ($(window).width() <= 800) {
@@ -1124,7 +1101,6 @@ window.addEventListener("resize", function () {
 });
 
 /*REVISIONS*/
-
 $(document).ready(function () {
   $(".privacyLink").click(function () { });
 
@@ -1160,10 +1136,8 @@ $(document).ready(function () {
     if (!$(".slides-nav-menu").hasClass("active")) {
       $(".slides-nav-menu").addClass("active");
       $(".slides-nav-dots").removeClass("active");
-      // $('html').css('overflow', 'hidden')
-
       fullpage_api.setAllowScrolling(true);
-      fullpage_api.setKeyboardScrolling(true);
+      // fullpage_api.setKeyboardScrolling(true);
     }
   });
 
@@ -1179,11 +1153,8 @@ $(document).ready(function () {
   });
 
   let isGlobalScrollEnabled = true
-
   document.body.addEventListener("wheel", function (e) {
     const menuScroll = document.querySelector("#myMenu").nanoscroller;
-    const menuMy = document.querySelector("#myMenu").clientHeight;
-    const menuUl = document.querySelector(".slides-nav-menu div ul").clientHeight;
     if (!isGlobalScrollEnabled) {
       if (menuScroll.contentScrollTop === 0 && e.deltaY < 0) {
         e.preventDefault();
@@ -1224,36 +1195,6 @@ $(document).ready(function () {
       }
     }
   });
-
-  function doGetCaretPosition(oField) {
-    // Initialize
-    var iCaretPos = 0;
-
-    // IE Support
-    if (document.selection) {
-      // Set focus on the element
-      oField.focus();
-
-      // To get cursor position, get empty selection range
-      var oSel = document.selection.createRange();
-
-      // Move selection start to 0 position
-      oSel.moveStart("character", -oField.value.length);
-
-      // The caret position is selection length
-      iCaretPos = oSel.text.length;
-    }
-
-    // Firefox support
-    else if (oField.selectionStart || oField.selectionStart == "0")
-      iCaretPos =
-        oField.selectionDirection == "backward"
-          ? oField.selectionStart
-          : oField.selectionEnd;
-
-    // Return results
-    return iCaretPos;
-  }
 
   $(".main-menu_inner.nano-content").css("outline", "none");
 
@@ -1418,8 +1359,6 @@ $(document).ready(function () {
     }
     var calcRate = $(".template4-ui-slider-rate").text();
     var calcTerm = $(".template4-ui-slider-term").text();
-    var calcPayment = $(".template4-calc_select option:selected").val();
-    var year = $(".template4-ui-slider-term").text();
     var k = calcRate / 12 / 100;
     var k2 = 1 + k;
     var k3 = -calcTerm * 12;
@@ -1431,9 +1370,6 @@ $(document).ready(function () {
     $(".template4-calc_result-numb").text(payment1Result);
     tmp1 = digitsInTheNumber(pr1);
     tmp = noSpaceInNum(tmp1)
-    let maxCount = document
-      .querySelector(".check")
-      .getAttribute("data-max");
     if (tmp.length > 8) {
       tmp = "99999999";
       tmp1 = "99999999";
@@ -1451,19 +1387,6 @@ $(document).ready(function () {
   ).onkeypress = function (event) {
     some = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result-check").value);
     some1 = noSpaceInNum(document.getElementById("template4-ui-slider-amount-result").value);
-    var calcRate = $(".template4-ui-slider-rate").text();
-    var calcTerm = $(".template4-ui-slider-term").text();
-    var calcPayment = $(".template4-calc_select option:selected").val();
-    var k = calcRate / 12 / 100;
-    var k2 = 1 + k;
-    var k3 = -calcTerm * 12;
-    var k4 = Math.pow(k2, k3);
-    var k5 = 1 - k4;
-    var k6 = k / k5;
-    var payment1 = Math.trunc(some1 * k6);
-    var payment1Result = payment1.toLocaleString();
-    var payment2 = Math.trunc(some1 * k);
-    var payment2Result = payment2.toLocaleString();
     if (event.key == "Enter") {
       let rateValue = document.getElementById("template4-ui-slider-rate-result")
         .value;
@@ -1774,7 +1697,6 @@ $(document).ready(function () {
     }
     $(this).parents(".template4-calc_numb-wr").removeClass("maxRate");
     $(this).parents(".template4-calc_numb-wr").removeClass("minRate");
-    // changeData2();
   });
 
   $(".template4-ui-slider-term-result").click(function () {
@@ -1878,8 +1800,6 @@ $(document).ready(function () {
         threshold: 0,
       });
     });
-
-
   }
 
 
@@ -1890,8 +1810,6 @@ $(document).ready(function () {
     if (tmp === '') {
       this.value = "+_ (___) ___-____";
     }
-
-    // document.getSelection().removeAllRanges();
     let phoneHeplerValue = $(".phone-helper-value").innerWidth() - 4;
     if ($(window).width() > 800) {
       $(this).css("width", 'calc(' + phoneHeplerValue + 'px + ' + '1.042vw');
@@ -1902,7 +1820,6 @@ $(document).ready(function () {
     }
 
   });
-
   $("[name=phone]").blur(function (event) {
     event.stopImmediatePropagation();
     let phoneHeplerPlaceholder = $(".phone-helper-placeholder").width() - 4;
